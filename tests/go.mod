@@ -1,4 +1,4 @@
-module github.com/terraform-ibm-modules/stack-ibm-template
+module github.com/terraform-ibm-modules/stack-ibm-core-security-services
 
 go 1.21
 

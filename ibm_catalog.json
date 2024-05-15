@@ -1,19 +1,236 @@
 {
-  "products": [
-    {
-      "label": "stack-template",
-      "name": "stack-template",
-      "product_kind": "solution",
-      "tags": [
-        "converged_infra"
-      ],
-      "offering_icon_url": "https://globalcatalog.cloud.ibm.com/api/v1/1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc/artifacts/solution.svg",
-      "flavors": [
-        {
-          "compliance": {},
-          "architecture": {}
-        }
-      ]
-    }
-  ]
+	"products": [
+		{
+			"label": "Core Security Services",
+			"name": "core-security-services",
+			"version": "0.0.1",
+			"product_kind": "solution",
+			"tags": [
+				"enterprise_app",
+				"Technology",
+				"SoftwareAndPlatformApplications"
+			],
+			"keywords": [
+				"kms",
+				"scc",
+				"secrets manager",
+				"security-compliance-center",
+				"keyprotect",
+				"IaC",
+				"infrastructure as code",
+				"security and compliance center",
+				"terraform",
+				"solution",
+				"secrets",
+				"key protect",
+				"compliance"
+			],
+			"short_description": "This architecture supports deploying core security services - Key Protect, Secrets Manager, Security and Compliance Center. It will deploy Event Notifications and Observability.",
+			"long_description": "This architecture supports deploying core security services like Key Protect, Secrets Manager, Security and Compliance Center.",
+			"provider_name": "Community",
+			"offering_icon_url": "https://globalcatalog.cloud.ibm.com/api/v1/1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc/artifacts/terraform.svg",
+			"features": [
+				{
+					"title": "Creates an IBM Key Protect instance",
+					"description": "Creates and configures IBM Key Protect instance and creates root keys for Cloud Object Storage and Secrets Manager."
+				},
+				{
+					"title": "Creates an IBM Secrets Manager Instance ",
+					"description": "Creates and configures an IBM Secrets Manager Instance."
+				},
+				{
+					"title": "Creates an IBM Security and Compliance Center Instance",
+					"description": "Creates and configures an IBM Security Compliance Center Instance."
+				},
+				{
+					"title": "Creates an IBM Cloud Object Storage Instance",
+					"description": "Creates and configures an IBM Cloud Object Storage Instance and a COS bucket that is encrypted by Key Protect"
+				},
+				{
+					"title": "Creates Service to Service Authorizations.",
+					"description": "Creates and configures service-to-service authorizations for the following: KMS, COS, Secrets Manager, and SCC"
+				}
+			],
+			"flavors": [
+				{
+					"label": "Standard",
+					"name": "Standard",
+					"licenses": [
+						{
+							"id": "LICENSE",
+							"name": "LICENSE",
+							"type": "text/plain",
+							"description": "LICENSE"
+						}
+					],
+					"compliance": {
+						"authority": "scc-v3",
+						"controls": [
+							{
+								"profile": {
+									"id": "",
+									"name": "CIS IBM Cloud Foundations Benchmark",
+									"version": "1.0.0"
+								},
+								"names": [
+									"8.1.2",
+									"8.1.1",
+									"2.1.1.2",
+									"3.7",
+									"3.6"
+								]
+							}
+						]
+					},
+					"iam_permissions": [
+						{
+							"service_name": "cloud-object-storage",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager"
+							]
+						},
+						{
+							"service_name": "secrets-manager",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
+								"crn:v1:bluemix:public:iam::::role:Editor",
+								"crn:v1:bluemix:public:iam::::role:Administrator",
+								"crn:v1:bluemix:public:iam::::role:Operator"
+							]
+						},
+						{
+							"service_name": "kms",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager"
+							]
+						},
+						{
+							"service_name": "compliance",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
+								"crn:v1:bluemix:public:iam::::role:Operator",
+								"crn:v1:bluemix:public:iam::::role:Administrator",
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							]
+						}
+					],
+					"architecture": {
+						"features": [
+							{
+								"title": "Creates IBM Cloud Core Security Services in a resource group.",
+								"description": "Creates a resource group called core-security-services or uses a preexisting one"
+							},
+							{
+								"title": "Creates an IBM Key Protect Instance",
+								"description": "Creates and configures an IBM Key Protect Instance and creates root keys for Secret Manager and COS."
+							},
+							{
+								"title": "Creates an IBM Secrets Manager Instance ",
+								"description": "Creates and configures an IBM Secrets Manager Instance"
+							},
+							{
+								"title": "Creates an IBM Security and Compliance Center Instance",
+								"description": "Creates and configures an IBM Security Compliance Center Instance"
+							},
+							{
+								"title": "Creates an IBM Event Notification Instance",
+								"description": "Creates and configures an Event Notifications Instance"
+							}
+						],
+						"diagrams": [
+							{
+								"diagram": {
+									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-kms-all-inclusive/main/reference-architecture/key_protect.svg",
+									"caption": "Key Protect",
+									"type": "image/svg+xml",
+									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-kms-all-inclusive/main/reference-architecture/key_protect.svg"
+								},
+								"description": "The architecture of Key Protect"
+							},
+							{
+								"diagram": {
+									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-observability-da/main/reference-architecture/deployable-architecture-observability-instances.svg",
+									"caption": "Observability",
+									"type": "image/svg+xml",
+									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-observability-da/main/reference-architecture/deployable-architecture-observability-instances.svg"
+								},
+								"description": "The architecture of Observability"
+							},
+							{
+								"diagram": {
+									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-event-notifications/main/reference-architecture/en.svg",
+									"caption": "Event Notifications",
+									"type": "image/svg+xml",
+									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-event-notifications/main/reference-architecture/en.svg"
+								},
+								"description": "The architecture of Event Notifications"
+							},
+							{
+								"diagram": {
+									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-scc-da/main/reference-architecture/scc.svg",
+									"caption": "IBM Cloud Security and Compliance Center",
+									"type": "image/svg+xml",
+									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-scc-da/main/reference-architecture/scc.svg"
+								},
+								"description": "The architecture of Security and Compliance Center"
+							},
+							{
+								"diagram": {
+									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-secrets-manager/main/reference-architecture/secrets_manager.svg",
+									"caption": "Secrets Manager",
+									"type": "image/svg+xml",
+									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-secrets-manager/main/reference-architecture/secrets_manager.svg"
+								},
+								"description": "The architecture of Secrets Manager"
+							}
+						]
+					},
+					"configuration": [
+						{
+							"key": "prefix",
+							"type": "string",
+							"default_value": "",
+							"description": "The prefix to use for all resources deployed.",
+							"required": true
+						},
+						{
+							"key": "use_existing_resource_group",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Whether to use an existing resource group.",
+							"required": true
+						},
+						{
+							"key": "region",
+							"type": "string",
+							"default_value": "us-south",
+							"description": "The region to deploy the Deployable Architecture",
+							"required": true,
+							"options": [
+								{
+									"displayname": "us-south",
+									"value": "us-south"
+								},
+								{
+									"displayname": "eu-de",
+									"value": "eu-de"
+								},
+								{
+									"displayname": "eu-es",
+									"value": "eu-es"
+								}
+							]
+						},
+						{
+							"key": "resource_group_name",
+							"type": "string",
+							"default_value": "__NOT_SET__",
+							"required": true
+						}
+					],
+					"install_type": "fullstack"
+				}
+			]
+		}
+	]
 }

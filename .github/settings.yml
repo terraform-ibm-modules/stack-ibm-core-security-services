@@ -15,7 +15,7 @@ repository:
   # By changing this field, you rename the repository.
 
   # Uncomment this name property and set the name to the current repo name.
-  # name: ""
+  name: "stack-ibm-core-security-services"
 
   # The description is displayed under the repository name on the
   # organization page and in the 'About' section of the repository.
@@ -25,4 +25,4 @@ repository:
   # description: ""
 
   # Use a comma-separated list of topics to set on the repo (ensure not to use any caps in the topic string).
-  topics: terraform, ibm-cloud, terraform-stack, ibm-cloud-stack
+  topics: terraform, ibm-cloud, terraform-stack, ibm-cloud-stack, core-team

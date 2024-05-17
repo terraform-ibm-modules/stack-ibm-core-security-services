@@ -6,9 +6,11 @@
 			"version": "0.0.1",
 			"product_kind": "solution",
 			"tags": [
-				"enterprise_app",
-				"Technology",
-				"SoftwareAndPlatformApplications"
+				"solution",
+				"support_ibm",
+				"target_terraform",
+				"ibm_beta",
+				"security"
 			],
 			"keywords": [
 				"kms",
@@ -44,7 +46,7 @@
 				},
 				{
 					"title": "Creates an IBM Cloud Object Storage Instance",
-					"description": "Creates and configures an IBM Cloud Object Storage Instance and a COS bucket that is encrypted by Key Protect"
+					"description": "Creates and configures an IBM Cloud Object Storage Instance and multiple COS buckets that is encrypted by Key Protect"
 				},
 				{
 					"title": "Creates Service to Service Authorizations.",
@@ -55,14 +57,6 @@
 				{
 					"label": "Standard",
 					"name": "Standard",
-					"licenses": [
-						{
-							"id": "LICENSE",
-							"name": "LICENSE",
-							"type": "text/plain",
-							"description": "LICENSE"
-						}
-					],
 					"compliance": {
 						"authority": "scc-v3",
 						"controls": [
@@ -94,7 +88,6 @@
 							"role_crns": [
 								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
 								"crn:v1:bluemix:public:iam::::role:Editor",
-								"crn:v1:bluemix:public:iam::::role:Administrator",
 								"crn:v1:bluemix:public:iam::::role:Operator"
 							]
 						},
@@ -109,7 +102,6 @@
 							"role_crns": [
 								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
 								"crn:v1:bluemix:public:iam::::role:Operator",
-								"crn:v1:bluemix:public:iam::::role:Administrator",
 								"crn:v1:bluemix:public:iam::::role:Editor"
 							]
 						}
@@ -226,6 +218,40 @@
 							"type": "string",
 							"default_value": "__NOT_SET__",
 							"required": true
+						},
+						{
+							"key": "sm_service_plan",
+							"type": "string",
+							"default_value": "standard",
+							"description": "The pricing plan to use when deploying the Secrets Manager Deployable Architecture",
+							"required": false,
+							"options": [
+								{
+									"displayname": "standard",
+									"value": "standard"
+								},
+								{
+									"displayname": "trial",
+									"value": "trial"
+								}
+							]
+						},
+						{
+							"key": "scc_service_plan",
+							"type": "string",
+							"default_value": "security-compliance-center-standard-plan",
+							"description": "The pricing plan to use when deploying IBM Cloud Security Compliance Center",
+							"required": false,
+							"options": [
+								{
+									"displayname": "standard",
+									"value": "security-compliance-center-standard-plan"
+								},
+								{
+									"displayname": "trial",
+									"value": "security-compliance-center-trial-plan"
+								}
+							]
 						}
 					],
 					"install_type": "fullstack"

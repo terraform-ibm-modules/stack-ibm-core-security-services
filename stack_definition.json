@@ -34,6 +34,30 @@
 			"hidden": false,
 			"default": "__NOT_SET__",
 			"custom_config": {}
+		},
+		{
+			"name": "scc_service_plan",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "The pricing plan to use when deploying IBM Cloud Security Compliance Center",
+			"custom_config": {}
+		},
+		{
+			"name": "sm_service_plan",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "standard",
+			"custom_config": {}
+		},
+		{
+			"name": "scc_service_plan",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "security-compliance-center-standard-plan",
+			"custom_config": {}
 		}
 	],
 	"members": [
@@ -150,6 +174,10 @@
 					"value": "ref:../../members/core-security-observability/outputs/cos_instance_crn"
 				},
 				{
+					"name": "existing_en_instance_crn",
+					"value": "ref:../../members/core-security-services-en/outputs/crn"
+				},
+				{
 					"name": "kms_endpoint_type",
 					"value": "private"
 				},
@@ -160,6 +188,10 @@
 				{
 					"name": "existing_en_crn",
 					"value": "ref:../../members/core-security-services-en/outputs/crn"
+				},
+				{
+					"name": "scc_service_plan",
+					"value": "ref:../../inputs/scc_service_plan"
 				}
 			],
 			"name": "core-security-services-scc",
@@ -186,6 +218,14 @@
 				{
 					"name": "existing_kms_instance_crn",
 					"value": "ref:../../members/core-security-services-kms/outputs/key_protect_crn"
+				},
+				{
+					"name": "existing_event_notification_instance_crn",
+					"value": "ref:../../members/core-security-services-en/outputs/crn"
+				},
+				{
+					"name": "service_plan",
+					"value": "ref:../../inputs/sm_service_plan"
 				}
 			],
 			"name": "core-security-services-sm",

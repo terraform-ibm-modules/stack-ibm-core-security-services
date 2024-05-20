@@ -94,6 +94,10 @@
 					"value": "ref:../../members/core-security-services-kms/outputs/key_protect_crn"
 				},
 				{
+					"name": "cos_instance_name",
+					"value": "secure-services"
+				},
+				{
 					"name": "kms_endpoint_type",
 					"value": "private"
 				},

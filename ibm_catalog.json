@@ -58,13 +58,10 @@
 					"name": "Standard",
 					"compliance": {
 						"authority": "scc-v3",
-						"controls": [
+						"profiles": [
 							{
-								"profile": {
-									"id": "",
-									"name": "CIS IBM Cloud Foundations Benchmark",
-									"version": "1.0.0"
-								}
+								"profile_name": "CIS IBM Cloud Foundations Benchmark",
+								"profile_version": "1.0.0"
 							}
 						]
 					},

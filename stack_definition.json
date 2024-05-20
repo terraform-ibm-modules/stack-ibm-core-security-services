@@ -73,7 +73,7 @@
 				}
 			],
 			"name": "1 - core-security-services-kms",
-			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.05f53606-6eaf-4c4b-a5bb-4ad0d8bcf890"
+			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.05f53606-6eaf-4c4b-a5bb-4ad0d8bcf890-global"
 		},
 		{
 			"inputs": [
@@ -107,7 +107,7 @@
 				}
 			],
 			"name": "3 - core-security-observability",
-			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.3ae7c6ae-20c2-4214-b3b9-7110356b4b6c"
+			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.3ae7c6ae-20c2-4214-b3b9-7110356b4b6c-global"
 		},
 		{
 			"inputs": [
@@ -137,7 +137,7 @@
 				}
 			],
 			"name": "2 - core-security-services-en",
-			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.d3a319a6-4b74-43c8-8843-0da80df5f236"
+			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.d3a319a6-4b74-43c8-8843-0da80df5f236-global"
 		},
 		{
 			"inputs": [
@@ -191,7 +191,7 @@
 				}
 			],
 			"name": "4a - core-security-services-scc",
-			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.f64fe6f5-de0e-4d7c-9f49-06dbbd289160"
+			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.f64fe6f5-de0e-4d7c-9f49-06dbbd289160-global"
 		},
 		{
 			"inputs": [
@@ -225,7 +225,7 @@
 				}
 			],
 			"name": "4b - core-security-services-sm",
-			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.4c4b156f-22ff-47be-8519-a09d5fb80d9c"
+			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.4c4b156f-22ff-47be-8519-a09d5fb80d9c-global"
 		}
 	]
 }

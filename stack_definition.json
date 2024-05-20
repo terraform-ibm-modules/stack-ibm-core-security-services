@@ -150,7 +150,7 @@
 					"value": true
 				},
 				{
-					"name": "region",
+					"name": "scc_region",
 					"value": "ref:../../inputs/region"
 				},
 				{
@@ -170,7 +170,7 @@
 					"value": "ref:../../members/3 - core-security-observability/outputs/cos_instance_crn"
 				},
 				{
-					"name": "existing_en_instance_crn",
+					"name": "existing_en_crn",
 					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
 				},
 				{

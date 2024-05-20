@@ -36,14 +36,6 @@
 			"custom_config": {}
 		},
 		{
-			"name": "scc_service_plan",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "The pricing plan to use when deploying IBM Cloud Security Compliance Center",
-			"custom_config": {}
-		},
-		{
 			"name": "sm_service_plan",
 			"required": false,
 			"type": "string",

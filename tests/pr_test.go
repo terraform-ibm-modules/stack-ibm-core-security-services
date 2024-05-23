@@ -9,15 +9,9 @@ import (
 func TestProjectsFullTest(t *testing.T) {
 
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
-		Testing: t,
-		Prefix:  "cs", // setting prefix here gets a random string appended to it
-		StackConfigurationOrder: []string{
-			"1 - core-security-services-kms",
-			"2 - core-security-services-en",
-			"3 - core-security-observability",
-			"4a - core-security-services-scc",
-			"4b - core-security-services-sm",
-		},
+		Testing:        t,
+		Prefix:         "cs", // setting prefix here gets a random string appended to it
+		ParallelDeploy: true,
 	})
 
 	options.StackInputs = map[string]interface{}{

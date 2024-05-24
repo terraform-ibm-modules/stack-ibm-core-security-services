@@ -1,33 +1,30 @@
 package tests
 
 import (
-	"fmt"
 	"github.com/stretchr/testify/assert"
 	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/testprojects"
-	"os"
 	"testing"
 )
 
 func TestProjectsFullTest(t *testing.T) {
 
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
-		Testing: t,
-		StackConfigurationOrder: []string{
-			"primary-da",
-			"secondary-da",
-		},
+		Testing:        t,
+		Prefix:         "cs", // setting prefix here gets a random string appended to it
+		ParallelDeploy: true,
 	})
+
 	options.StackMemberInputs = map[string]map[string]interface{}{
-		"primary-da": {
-			"prefix": fmt.Sprintf("p%s", options.Prefix),
-		},
-		"secondary-da": {
-			"prefix": fmt.Sprintf("s%s", options.Prefix),
+		"3 - core-security-observability": {
+			"enable_platform_logs": false,
 		},
 	}
 	options.StackInputs = map[string]interface{}{
-		"resource_group_name": options.ResourceGroup,
-		"ibmcloud_api_key":    os.Getenv("TF_VAR_ibmcloud_api_key"),
+		"prefix":                      options.Prefix,
+		"resource_group_name":         options.Prefix,
+		"sm_service_plan":             "trial",
+		"use_existing_resource_group": false,
+		"ibmcloud_api_key":            options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
 	}
 
 	err := options.RunProjectsTest()

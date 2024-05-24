@@ -14,6 +14,11 @@ func TestProjectsFullTest(t *testing.T) {
 		ParallelDeploy: true,
 	})
 
+	options.StackMemberInputs = map[string]map[string]interface{}{
+		"3 - core-security-observability": {
+			"enable_platform_logs": false,
+		},
+	}
 	options.StackInputs = map[string]interface{}{
 		"prefix":                      options.Prefix,
 		"resource_group_name":         options.Prefix,

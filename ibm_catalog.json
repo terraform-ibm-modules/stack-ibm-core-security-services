@@ -55,7 +55,7 @@
 			"flavors": [
 				{
 					"label": "Standard",
-					"name": "Standard",
+					"name": "standard",
 					"compliance": {
 						"authority": "scc-v3",
 						"profiles": [

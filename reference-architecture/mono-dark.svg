@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-fc6f257b-1f5c-4efa-a954-d1141e976c93" data-name="Build icon here" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="uuid-416fdd56-98dc-43b5-8efc-edea5473b034" x1="255.495" y1="-120.126" x2="275.179" y2="-114.852" gradientTransform="translate(287.206 -109.392) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset=".301" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".84" stop-color="#000"/>
+    </linearGradient>
+    <linearGradient id="uuid-4f52f5fb-fd57-47c5-bf23-c5f8af1e2377" x1="1334.667" y1="3052.168" x2="1357.543" y2="3058.298" gradientTransform="translate(-1334.192 -3028.608)" gradientUnits="userSpaceOnUse">
+      <stop offset=".245" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".801" stop-color="#000"/>
+    </linearGradient>
+    <mask id="uuid-b2f20e5b-8c4c-468e-aa1e-ac22dcec08b5" data-name="mask" x="1" y="1" width="30.024" height="30" maskUnits="userSpaceOnUse">
+      <g>
+        <circle cx="16" cy="16" r="12" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+        <polygon points="12 8.011 12 2.011 31.024 2.011 31.024 18.011 27 18.011 21 8.011 12 8.011" fill="url(#uuid-416fdd56-98dc-43b5-8efc-edea5473b034)"/>
+        <polygon points="23 25 23 31 1.965 31 1.965 18 6 18 11 25 23 25" fill="url(#uuid-4f52f5fb-fd57-47c5-bf23-c5f8af1e2377)"/>
+        <rect x="1" y="1" width="11" height="15"/>
+        <rect x="22" y="16" width="9" height="15"/>
+      </g>
+    </mask>
+  </defs>
+  <g mask="url(#uuid-b2f20e5b-8c4c-468e-aa1e-ac22dcec08b5)">
+    <path d="M0,0H32v32H0V0Z" fill="#fff"/>
+  </g>
+  <path d="M13,9c0-.552-.111-1.074-.278-1.572l1.84-1.062-1-1.732-1.839,1.062c-.705-.794-1.644-1.375-2.723-1.594V2h-2v2.101c-1.079,.22-2.018,.801-2.723,1.594l-1.839-1.062-1,1.732,1.84,1.062c-.166,.497-.278,1.019-.278,1.572s.111,1.074,.278,1.572l-1.84,1.062,1,1.732,1.839-1.062c.705,.794,1.644,1.375,2.723,1.594v2.101h2v-2.101c1.079-.22,2.018-.801,2.723-1.594l1.839,1.062,1-1.732-1.84-1.062c.166-.497,.278-1.019,.278-1.572Zm-5,3c-1.654,0-3-1.346-3-3s1.346-3,3-3,3,1.346,3,3-1.346,3-3,3Z" fill="#fff"/>
+  <path d="M25,30l-2.139-1.012c-1.738-.823-2.861-2.598-2.861-4.521v-6.468h10v6.468c0,1.924-1.123,3.697-2.861,4.52l-2.139,1.013Zm-1.283-2.82l1.283,.607,1.283-.607c1.043-.493,1.717-1.558,1.717-2.712v-4.468h-6v4.468c0,1.154,.674,2.219,1.717,2.712h0Z" fill="#fff"/>
+</svg>

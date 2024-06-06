@@ -135,51 +135,6 @@
 									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/core-security-services-architecture.svg"
 								},
 								"description": "The architecture of Core Security Service stack."
-							},
-							{
-								"diagram": {
-									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-kms-all-inclusive/main/reference-architecture/key_protect.svg",
-									"caption": "Key Protect",
-									"type": "image/svg+xml",
-									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-kms-all-inclusive/main/reference-architecture/key_protect.svg"
-								},
-								"description": "The architecture of Key Protect"
-							},
-							{
-								"diagram": {
-									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-observability-da/main/reference-architecture/deployable-architecture-observability-instances.svg",
-									"caption": "Observability",
-									"type": "image/svg+xml",
-									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-observability-da/main/reference-architecture/deployable-architecture-observability-instances.svg"
-								},
-								"description": "The architecture of Observability"
-							},
-							{
-								"diagram": {
-									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-event-notifications/main/reference-architecture/en.svg",
-									"caption": "Event Notifications",
-									"type": "image/svg+xml",
-									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-event-notifications/main/reference-architecture/en.svg"
-								},
-								"description": "The architecture of Event Notifications"
-							},
-							{
-								"diagram": {
-									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-scc-da/main/reference-architecture/scc.svg",
-									"caption": "IBM Cloud Security and Compliance Center",
-									"type": "image/svg+xml",
-									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-scc-da/main/reference-architecture/scc.svg"
-								},
-								"description": "The architecture of Security and Compliance Center"
-							},
-							{
-								"diagram": {
-									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-secrets-manager/main/reference-architecture/secrets_manager.svg",
-									"caption": "Secrets Manager",
-									"type": "image/svg+xml",
-									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-secrets-manager/main/reference-architecture/secrets_manager.svg"
-								},
-								"description": "The architecture of Secrets Manager"
 							}
 						]
 					},

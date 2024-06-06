@@ -121,6 +121,15 @@
 						"diagrams": [
 							{
 								"diagram": {
+									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-kms-all-inclusive/main/reference-architecture/core-security-services-architecture.svg",
+									"caption": "Core Security Services Stack Architecture",
+									"type": "image/svg+xml",
+									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-kms-all-inclusive/main/reference-architecture/core-security-services-architecture.svg"
+								},
+								"description": "The architecture of Core Security Service stack."
+							},
+							{
+								"diagram": {
 									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-kms-all-inclusive/main/reference-architecture/key_protect.svg",
 									"caption": "Key Protect",
 									"type": "image/svg+xml",

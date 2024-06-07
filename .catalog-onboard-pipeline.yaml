@@ -4,7 +4,7 @@ offerings:
   - name: deploy-arch-ibm-core-security-svcs
     kind: solution
     catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
-    offering_id: 2f033bd2-009d-4e89-86c2-d5edf8f641a2
+    offering_id: 0294f96e-7314-48d1-a710-c08a541b2119
     variations:
       - name: standard
         mark_ready: true

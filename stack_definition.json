@@ -50,6 +50,14 @@
 			"hidden": false,
 			"default": "security-compliance-center-standard-plan",
 			"custom_config": {}
+		},
+		{
+			"name": "existing_secrets_manager_crn",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": null,
+			"custom_config": {}
 		}
 	],
 	"members": [

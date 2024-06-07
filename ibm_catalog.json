@@ -26,30 +26,34 @@
 				"key protect",
 				"compliance"
 			],
-			"short_description": "This architecture supports deploying core security services - Key Protect, Secrets Manager, Security and Compliance Center. It will deploy Event Notifications and Observability.",
-			"long_description": "This architecture supports deploying core security services like Key Protect, Secrets Manager, Security and Compliance Center.",
+			"short_description": "Deploys core security services and some related services.",
+			"long_description": "This architecture deploys the following core security services: Key Protect, Secrets Manager, Security and Compliance Center, and Security and Compliance Center Workload Protection. It also deploys Event Notifications and Observability.",
 			"provider_name": "IBM",
 			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/light-theme.svg",
 			"features": [
 				{
 					"title": "Creates an IBM Key Protect instance",
-					"description": "Creates and configures IBM Key Protect instance and creates root keys for Cloud Object Storage and Secrets Manager."
+					"description": "Creates and configures an IBM Key Protect instance and creates root keys for IBM Cloud Object Storage, Event Notifications, and Secrets Manager."
 				},
 				{
-					"title": "Creates an IBM Secrets Manager Instance ",
-					"description": "Creates and configures an IBM Secrets Manager Instance."
+					"title": "Creates an IBM Secrets Manager instance",
+					"description": "Creates and configures an IBM Secrets Manager instance."
 				},
 				{
-					"title": "Creates an IBM Security and Compliance Center Instance",
-					"description": "Creates and configures an IBM Security Compliance Center Instance."
+					"title": "Creates an IBM Security and Compliance Center instance",
+					"description": "Creates and configures an IBM Security Compliance Center instance."
 				},
 				{
-					"title": "Creates an IBM Cloud Object Storage Instance",
-					"description": "Creates and configures an IBM Cloud Object Storage Instance and multiple COS buckets that is encrypted by Key Protect"
+					"title": "Creates an Security and Compliance Center Workload Protection instance",
+					"description": "Creates and configures an Security and Compliance Center Workload Protection instance."
 				},
 				{
-					"title": "Creates Service to Service Authorizations.",
-					"description": "Creates and configures service-to-service authorizations for the following: KMS, COS, Secrets Manager, and SCC"
+					"title": "Creates an IBM Cloud Object Storage instance",
+					"description": "Creates and configures an IBM Cloud Object Storage instance and multiple Object Storage buckets that is encrypted by Key Protect."
+				},
+				{
+					"title": "Creates service-to-service authorizations",
+					"description": "Creates and configures service-to-service authorizations for the following services: KMS, Event Notifications, Object Storage, Secrets Manager, and Security and Compliance Center."
 				}
 			],
 			"flavors": [
@@ -98,24 +102,28 @@
 					"architecture": {
 						"features": [
 							{
-								"title": "Creates IBM Cloud Core Security Services in a resource group.",
-								"description": "Creates a resource group called core-security-services or uses a preexisting one"
+								"title": "Creates IBM Cloud core security services in a resource group.",
+								"description": "Creates a resource group called `core-security-services` or uses an existing group."
 							},
 							{
-								"title": "Creates an IBM Key Protect Instance",
-								"description": "Creates and configures an IBM Key Protect Instance and creates root keys for Secret Manager and COS."
+								"title": "Creates an IBM Key Protect instance",
+								"description": "Creates and configures an IBM Key Protect instance and creates root keys for IBM Cloud Object Storage, Event Notifications, and Secrets Manager."
 							},
 							{
-								"title": "Creates an IBM Secrets Manager Instance ",
-								"description": "Creates and configures an IBM Secrets Manager Instance"
+								"title": "Creates an IBM Secrets Manager instance ",
+								"description": "Creates and configures an IBM Secrets Manager instance."
 							},
 							{
-								"title": "Creates an IBM Security and Compliance Center Instance",
-								"description": "Creates and configures an IBM Security Compliance Center Instance"
+								"title": "Creates an IBM Security and Compliance Center instance",
+								"description": "Creates and configures an IBM Security Compliance Center instance."
 							},
+              {
+                "title": "Creates an Security and Compliance Center Workload Protection instance",
+                "description": "Creates and configures an Security and Compliance Center Workload Protection instance."
+              },
 							{
-								"title": "Creates an IBM Event Notification Instance",
-								"description": "Creates and configures an Event Notifications Instance"
+								"title": "Creates an IBM Event Notification instance",
+								"description": "Creates and configures an Event Notifications instance."
 							}
 						],
 						"diagrams": [
@@ -171,21 +179,21 @@
 							"key": "prefix",
 							"type": "string",
 							"default_value": "",
-							"description": "The prefix to use for all resources deployed.",
+							"description": "An identifier prepended to resources that are provisioned. Must begin with a lowercase letter and end with a lowercase letter or number.",
 							"required": true
 						},
 						{
 							"key": "use_existing_resource_group",
 							"type": "boolean",
 							"default_value": false,
-							"description": "Whether to use an existing resource group.",
+							"description": "Whether to use an existing resource group. If set to `false, a resource group is created.",
 							"required": true
 						},
 						{
 							"key": "region",
 							"type": "string",
 							"default_value": "us-south",
-							"description": "The region to deploy the Deployable Architecture",
+							"description": "The region where the resources are created.",
 							"required": true,
 							"options": [
 								{
@@ -212,7 +220,7 @@
 							"key": "sm_service_plan",
 							"type": "string",
 							"default_value": "standard",
-							"description": "The pricing plan to use when deploying the Secrets Manager Deployable Architecture",
+							"description": "The pricing plan to use for Secrets Manager.",
 							"required": false,
 							"options": [
 								{
@@ -229,7 +237,7 @@
 							"key": "scc_service_plan",
 							"type": "string",
 							"default_value": "security-compliance-center-standard-plan",
-							"description": "The pricing plan to use when deploying IBM Cloud Security Compliance Center",
+							"description": "The pricing plan to use for the IBM Cloud Security and Compliance Center.",
 							"required": false,
 							"options": [
 								{

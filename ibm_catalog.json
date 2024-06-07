@@ -2,7 +2,7 @@
 	"products": [
 		{
 			"label": "Core Security Services",
-			"name": "core-security-services",
+			"name": "deploy-arch-ibm-core-security-svcs",
 			"product_kind": "solution",
 			"tags": [
 				"solution",

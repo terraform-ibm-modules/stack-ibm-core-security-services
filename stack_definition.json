@@ -56,7 +56,7 @@
 			"required": false,
 			"type": "string",
 			"hidden": false,
-			"default": null,
+			"default": "__NULL__",
 			"custom_config": {}
 		}
 	],

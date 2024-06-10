@@ -228,6 +228,10 @@
 					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
 				},
 				{
+					"name": "existing_secrets_manager_crn",
+					"value": "ref:../../inputs/existing_secrets_manager_crn"
+				},
+				{
 					"name": "service_plan",
 					"value": "ref:../../inputs/sm_service_plan"
 				}

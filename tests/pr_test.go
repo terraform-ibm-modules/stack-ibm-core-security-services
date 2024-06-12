@@ -15,7 +15,7 @@ func TestProjectsFullTest(t *testing.T) {
 	})
 
 	options.StackMemberInputs = map[string]map[string]interface{}{
-		"3 - core-security-observability": {
+		"2 - core-security-observability": {
 			"enable_platform_logs": false,
 		},
 	}

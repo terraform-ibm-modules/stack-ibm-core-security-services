@@ -106,7 +106,7 @@
 					"value": "ref:../../inputs/prefix"
 				}
 			],
-			"name": "3 - core-security-observability",
+			"name": "2 - core-security-observability",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dbb2626f-f6d7-498c-9a89-3a0b69997b8a-global"
 		},
 		{
@@ -144,7 +144,7 @@
 					"value": "ref:../../inputs/region"
 				}
 			],
-			"name": "2 - core-security-services-en",
+			"name": "3 - core-security-services-en",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.37107197-4505-442a-8ac0-406bf8927bc5-global"
 		},
 		{

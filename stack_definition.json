@@ -64,7 +64,7 @@
 			"required": false,
 			"type": "boolean",
 			"hidden": false,
-			"default": false,
+			"default": true,
 			"custom_config": {}
 		  }
 	],

@@ -130,11 +130,19 @@
 					"value": "ref:../../inputs/enable_platform_logs_metrics"
 				  }
 			],
-			"name": "3 - core-security-observability",
+			"name": "2 - core-security-observability",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dbb2626f-f6d7-498c-9a89-3a0b69997b8a-global"
 		},
 		{
 			"inputs": [
+				{
+					"name": "existing_cos_instance_crn",
+					"value": "ref:../../members/2 - core-security-observability/outputs/cos_instance_crn"
+				},
+				{
+					"name": "skip_cos_kms_auth_policy",
+					"value": true
+				},
 				{
 					"name": "kms_endpoint_url",
 					"value": "ref:../../members/1 - core-security-services-kms/outputs/kp_private_endpoint"
@@ -160,8 +168,8 @@
 					"value": "ref:../../inputs/region"
 				}
 			],
-			"name": "2 - core-security-services-en",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.32981b83-1aba-493e-be15-9c951578b1fb-global"
+			"name": "3 - core-security-services-en",
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.37107197-4505-442a-8ac0-406bf8927bc5-global"
 		},
 		{
 			"inputs": [
@@ -187,15 +195,15 @@
 				},
 				{
 					"name": "existing_monitoring_crn",
-					"value": "ref:../../members/3 - core-security-observability/outputs/cloud_monitoring_crn"
+					"value": "ref:../../members/2 - core-security-observability/outputs/cloud_monitoring_crn"
 				},
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/3 - core-security-observability/outputs/cos_instance_crn"
+					"value": "ref:../../members/2 - core-security-observability/outputs/cos_instance_crn"
 				},
 				{
 					"name": "existing_en_crn",
-					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
 				},
 				{
 					"name": "kms_endpoint_type",
@@ -207,7 +215,7 @@
 				},
 				{
 					"name": "existing_en_crn",
-					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
 				},
 				{
 					"name": "scc_service_plan",
@@ -241,7 +249,7 @@
 				},
 				{
 					"name": "existing_event_notification_instance_crn",
-					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
 				},
 				{
 					"name": "existing_secrets_manager_crn",

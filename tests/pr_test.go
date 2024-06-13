@@ -13,6 +13,7 @@ func TestProjectsFullTest(t *testing.T) {
 		Prefix:         "cs", // setting prefix here gets a random string appended to it
 		ParallelDeploy: true,
 	})
+
 	options.StackInputs = map[string]interface{}{
 		"prefix":                       options.Prefix,
 		"resource_group_name":          options.Prefix,

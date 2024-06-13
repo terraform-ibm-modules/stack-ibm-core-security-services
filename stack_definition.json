@@ -137,7 +137,7 @@
 			"inputs": [
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/3 - core-security-observability/outputs/cos_instance_crn"
+					"value": "ref:../../members/2 - core-security-observability/outputs/cos_instance_crn"
 				},
 				{
 					"name": "skip_cos_kms_auth_policy",

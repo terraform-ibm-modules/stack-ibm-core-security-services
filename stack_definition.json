@@ -195,15 +195,15 @@
 				},
 				{
 					"name": "existing_monitoring_crn",
-					"value": "ref:../../members/3 - core-security-observability/outputs/cloud_monitoring_crn"
+					"value": "ref:../../members/2 - core-security-observability/outputs/cloud_monitoring_crn"
 				},
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/3 - core-security-observability/outputs/cos_instance_crn"
+					"value": "ref:../../members/2 - core-security-observability/outputs/cos_instance_crn"
 				},
 				{
 					"name": "existing_en_crn",
-					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
 				},
 				{
 					"name": "kms_endpoint_type",
@@ -215,7 +215,7 @@
 				},
 				{
 					"name": "existing_en_crn",
-					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
 				},
 				{
 					"name": "scc_service_plan",
@@ -249,7 +249,7 @@
 				},
 				{
 					"name": "existing_event_notification_instance_crn",
-					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
 				},
 				{
 					"name": "existing_secrets_manager_crn",

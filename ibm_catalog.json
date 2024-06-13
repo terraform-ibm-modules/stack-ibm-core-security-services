@@ -8,7 +8,6 @@
 				"solution",
 				"support_ibm",
 				"target_terraform",
-				"ibm_beta",
 				"security"
 			],
 			"keywords": [

@@ -50,7 +50,23 @@
 			"hidden": false,
 			"default": "security-compliance-center-standard-plan",
 			"custom_config": {}
-		}
+		},
+		{
+			"name": "existing_secrets_manager_crn",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "__NULL__",
+			"custom_config": {}
+		},
+		{
+			"name": "enable_platform_logs_metrics",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": true,
+			"custom_config": {}
+		  }
 	],
 	"members": [
 		{
@@ -104,7 +120,15 @@
 				{
 					"name": "prefix",
 					"value": "ref:../../inputs/prefix"
-				}
+				},
+				{
+					"name": "enable_platform_logs",
+					"value": "ref:../../inputs/enable_platform_logs_metrics"
+				  },
+				  {
+					"name": "enable_platform_metrics",
+					"value": "ref:../../inputs/enable_platform_logs_metrics"
+				  }
 			],
 			"name": "2 - core-security-observability",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dbb2626f-f6d7-498c-9a89-3a0b69997b8a-global"
@@ -226,6 +250,10 @@
 				{
 					"name": "existing_event_notification_instance_crn",
 					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
+				},
+				{
+					"name": "existing_secrets_manager_crn",
+					"value": "ref:../../inputs/existing_secrets_manager_crn"
 				},
 				{
 					"name": "service_plan",

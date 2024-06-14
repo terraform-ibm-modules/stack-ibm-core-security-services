@@ -89,7 +89,7 @@
 				}
 			],
 			"name": "1 - core-security-services-kms",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.8493fc70-8755-47c2-a696-ddabe2031673-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.bd58fecf-8628-42f5-9954-a5c8a027a10a-global"
 		},
 		{
 			"inputs": [
@@ -107,7 +107,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_protect_crn"
+					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_instance_crn"
 				},
 				{
 					"name": "cos_instance_name",
@@ -131,7 +131,7 @@
 				  }
 			],
 			"name": "2 - core-security-observability",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dbb2626f-f6d7-498c-9a89-3a0b69997b8a-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.29c8fa33-52b8-4756-8c7b-5e53da217d7d-global"
 		},
 		{
 			"inputs": [
@@ -149,7 +149,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_protect_crn"
+					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_instance_crn"
 				},
 				{
 					"name": "kms_endpoint_type",
@@ -169,7 +169,7 @@
 				}
 			],
 			"name": "3 - core-security-services-en",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.37107197-4505-442a-8ac0-406bf8927bc5-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e01967f5-df14-4331-b26a-23ce9d547a4c-global"
 		},
 		{
 			"inputs": [
@@ -191,7 +191,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_protect_crn"
+					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_instance_crn"
 				},
 				{
 					"name": "existing_monitoring_crn",
@@ -223,7 +223,7 @@
 				}
 			],
 			"name": "4a - core-security-services-scc",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.09aeab5e-2f02-4a86-a281-844fa19d969d-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.9090e716-9f05-4f50-aa15-d52a4c974f35-global"
 		},
 		{
 			"inputs": [
@@ -245,7 +245,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_protect_crn"
+					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_instance_crn"
 				},
 				{
 					"name": "existing_event_notification_instance_crn",
@@ -261,7 +261,7 @@
 				}
 			],
 			"name": "4b - core-security-services-sm",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.ba032ffb-286c-4a00-ad79-ae9e09cea687-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c1f0f9ad-6d6b-4941-af3f-3ca21f8181a5-global"
 		}
 	]
 }

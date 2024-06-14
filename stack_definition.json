@@ -60,6 +60,13 @@
 			"custom_config": {}
 		},
 		{
+			"name": "existing_kms_instance_crn",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": null
+		  },
+		{
 			"name": "enable_platform_logs_metrics",
 			"required": false,
 			"type": "boolean",

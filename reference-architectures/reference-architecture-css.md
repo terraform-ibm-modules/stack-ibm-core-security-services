@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-06-14"
 
 subcollection: security-services
 
@@ -50,7 +50,7 @@ https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-g
 -->
 
 # Core security services
-{: #genai-pattern}
+{: #core-security-services-pattern}
 {: toc-content-type="reference-architecture"}
 {: toc-version="1.0"}
 

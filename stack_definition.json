@@ -107,7 +107,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_instance_crn"
+					"value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
 				},
 				{
 					"name": "cos_instance_name",
@@ -149,7 +149,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_instance_crn"
+					"value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
 				},
 				{
 					"name": "kms_endpoint_type",
@@ -191,7 +191,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_instance_crn"
+					"value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
 				},
 				{
 					"name": "existing_monitoring_crn",
@@ -245,7 +245,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_instance_crn"
+					"value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
 				},
 				{
 					"name": "existing_event_notification_instance_crn",

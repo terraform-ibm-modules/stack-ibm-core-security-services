@@ -29,7 +29,7 @@
 			"short_description": "Deploys core security services and some related services.",
 			"long_description": "This architecture deploys the following core security services: Key Protect, Secrets Manager, Security and Compliance Center, and Security and Compliance Center Workload Protection. It also deploys Event Notifications and Observability.",
 			"provider_name": "IBM",
-			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/light-theme.svg",
+			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/light-theme.svg",
 			"features": [
 				{
 					"title": "Creates an IBM Key Protect instance",
@@ -129,7 +129,7 @@
 						"diagrams": [
 							{
 								"diagram": {
-									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/core-security-services-architecture.svg",
+									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/core-security-services-architecture.svg",
 									"caption": "Core Security Services Stack Architecture",
 									"type": "image/svg+xml",
 									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/core-security-services-architecture.svg"

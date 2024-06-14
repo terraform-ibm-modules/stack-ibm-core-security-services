@@ -63,7 +63,7 @@ This reference architecture summarizes the deployment and best practices on IBM 
 
 Here’s a brief overview of each service:
 
-Key Protect: This service provides a secure and scalable way to manage encryption keys for your cloud applications. It ensures that sensitive data is protected by managing and safeguarding cryptographic keys, facilitating compliance with industry standards and regulatory requirements. 
+Key Protect: This service provides a secure and scalable way to manage encryption keys for your cloud applications. It ensures that sensitive data is protected by managing and safeguarding cryptographic keys, facilitating compliance with industry standards and regulatory requirements.
 
 Secrets Manager: This service helps in securely storing and managing sensitive information such as API keys, credentials, and certificates. By centralizing secret management, it reduces the risk of exposure and simplifies the process of accessing and rotating secrets, thereby enhancing security posture.
 
@@ -71,7 +71,7 @@ Security and Compliance Center: This platform offers a comprehensive suite of to
 
 IBM Cloud Security and Compliance Center Workload Protection: This service offers functionality to protect workloads, get deep cloud and container visibility, posture management (compliance, benchmarks, CIEM), vulnerability scanning, forensics, and threat detection and blocking.
 
-This reference architecture showcases how these services form a foundational security layer that enhances data protection, simplifies compliance, and strengthens overall cloud security for any workload in IBM Cloud. 
+This reference architecture showcases how these services form a foundational security layer that enhances data protection, simplifies compliance, and strengthens overall cloud security for any workload in IBM Cloud.
 
 ## Architecture diagram
 {: #architecture-diagram}

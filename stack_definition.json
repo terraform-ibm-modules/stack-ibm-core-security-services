@@ -258,10 +258,14 @@
 				{
 					"name": "service_plan",
 					"value": "ref:../../inputs/sm_service_plan"
+				},
+				{
+					"name": "profile_attachments",
+					"value": ["CIS IBM Cloud Foundations Benchmark"]
 				}
 			],
 			"name": "4b - Security and Compliance Center",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.ba032ffb-286c-4a00-ad79-ae9e09cea687-global"
+			"version_locator": "update"
 		}
 	]
 }

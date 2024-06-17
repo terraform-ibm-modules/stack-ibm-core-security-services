@@ -97,7 +97,7 @@
 				}
 			],
 			"name": "1 - Key management",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.8493fc70-8755-47c2-a696-ddabe2031673-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e7f105c4-8af4-4238-a98d-e89999ff14c8-global"
 		},
 		{
 			"inputs": [
@@ -139,7 +139,7 @@
 				  }
 			],
 			"name": "2 - Observability",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dbb2626f-f6d7-498c-9a89-3a0b69997b8a-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.39f6c1d0-73b1-4465-887c-c38a795d21f7-global"
 		},
 		{
 			"inputs": [
@@ -185,7 +185,7 @@
 				}
 			],
 			"name": "3 - Event Notifications",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.266656f1-fb10-42b6-9d3f-c7986e04d09b-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.0941aa62-7cc0-4fca-acb6-03f85330e70f-global"
 		},
 		{
 			"inputs": [
@@ -227,7 +227,7 @@
 				}
 			],
 			"name": "4a - Secrets Manager",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.09aeab5e-2f02-4a86-a281-844fa19d969d-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.506429ee-7013-4070-aa27-9e8ce8aa6b78-global"
 		},
 		{
 			"inputs": [

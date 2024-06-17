@@ -168,6 +168,10 @@
 					"value": "ref:../../members/1 - Key management/outputs/resource_group_name"
 				},
 				{
+					"name": "service_plan",
+					"value": "ref:../../inputs/en_service_plan"
+				},
+				{
 					"name": "use_existing_resource_group",
 					"value": true
 				},

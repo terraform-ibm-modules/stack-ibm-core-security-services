@@ -169,7 +169,7 @@
 				},
 				{
 					"name": "prefix",
-					"value": "ref:../../inputs/region"
+					"value": "ref:../../inputs/prefix"
 				}
 			],
 			"name": "3 - Event Notifications",
@@ -250,6 +250,10 @@
 				{
 					"name": "existing_kms_instance_crn",
 					"value": "ref:../../members/1 - Key management/outputs/key_protect_crn"
+				},
+				{
+					"name": "existing_en_crn",
+					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
 				},
 				{
 					"name": "existing_secrets_manager_crn",

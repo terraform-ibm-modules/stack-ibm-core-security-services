@@ -169,7 +169,7 @@
 				}
 			],
 			"name": "3 - Event Notifications",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.37107197-4505-442a-8ac0-406bf8927bc5-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.9cc9ad04-94b7-4f23-8c18-7583985cf3ac-global"
 		},
 		{
 			"inputs": [
@@ -265,7 +265,7 @@
 				}
 			],
 			"name": "4b - Security and Compliance Center",
-			"version_locator": "update"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c93d5e84-a2b5-4b33-a5a0-d8b4d8cfa42f-global"
 		}
 	]
 }

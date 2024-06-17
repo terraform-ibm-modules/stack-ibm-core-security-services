@@ -166,6 +166,10 @@
 				{
 					"name": "region",
 					"value": "ref:../../inputs/region"
+				},
+				{
+					"name": "prefix",
+					"value": "ref:../../inputs/prefix"
 				}
 			],
 			"name": "3 - Event Notifications",

@@ -52,6 +52,14 @@
 			"custom_config": {}
 		},
 		{
+			"name": "en_service_plan",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "standard",
+			"custom_config": {}
+		},
+		{
 			"name": "existing_secrets_manager_crn",
 			"required": false,
 			"type": "string",
@@ -186,7 +194,7 @@
 					"value": true
 				},
 				{
-					"name": "scc_region",
+					"name": "region",
 					"value": "ref:../../inputs/region"
 				},
 				{
@@ -198,15 +206,7 @@
 					"value": "ref:../../members/1 - Key management/outputs/key_protect_crn"
 				},
 				{
-					"name": "existing_monitoring_crn",
-					"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
-				},
-				{
-					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/2 - Observability/outputs/cos_instance_crn"
-				},
-				{
-					"name": "existing_en_crn",
+					"name": "existing_event_notification_instance_crn",
 					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
 				},
 				{
@@ -214,16 +214,12 @@
 					"value": "private"
 				},
 				{
-					"name": "skip_cos_kms_auth_policy",
-					"value": "true"
+					"name": "service_plan",
+					"value": "ref:../../inputs/sm_service_plan"
 				},
 				{
-					"name": "existing_en_crn",
-					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
-				},
-				{
-					"name": "scc_service_plan",
-					"value": "ref:../../inputs/scc_service_plan"
+					"name": "existing_secrets_manager_crn",
+					"value": "ref:../../inputs/existing_secrets_manager_crn"
 				}
 			],
 			"name": "4a - Secrets Manager",
@@ -240,7 +236,11 @@
 					"value": true
 				},
 				{
-					"name": "region",
+					"name": "existing_cos_instance_crn",
+					"value": "ref:../../members/2 - Observability/outputs/cos_instance_crn"
+				},
+				{
+					"name": "scc_region",
 					"value": "ref:../../inputs/region"
 				},
 				{
@@ -256,12 +256,12 @@
 					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
 				},
 				{
-					"name": "existing_secrets_manager_crn",
-					"value": "ref:../../inputs/existing_secrets_manager_crn"
+					"name": "existing_monitoring_crn",
+					"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
 				},
 				{
-					"name": "service_plan",
-					"value": "ref:../../inputs/sm_service_plan"
+					"name": "scc_service_plan",
+					"value": "ref:../../inputs/scc_service_plan"
 				},
 				{
 					"name": "profile_attachments",

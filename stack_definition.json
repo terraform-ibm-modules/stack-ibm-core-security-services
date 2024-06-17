@@ -130,14 +130,14 @@
 					"value": "ref:../../inputs/enable_platform_logs_metrics"
 				  }
 			],
-			"name": "2 - Logging Monitoring Activity Tracker",
+			"name": "2 - Observability",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dbb2626f-f6d7-498c-9a89-3a0b69997b8a-global"
 		},
 		{
 			"inputs": [
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/2 - Logging Monitoring Activity Tracker/outputs/cos_instance_crn"
+					"value": "ref:../../members/2 - Observability/outputs/cos_instance_crn"
 				},
 				{
 					"name": "skip_cos_kms_auth_policy",
@@ -195,11 +195,11 @@
 				},
 				{
 					"name": "existing_monitoring_crn",
-					"value": "ref:../../members/2 - Logging Monitoring Activity Tracker/outputs/cloud_monitoring_crn"
+					"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
 				},
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/2 - Logging Monitoring Activity Tracker/outputs/cos_instance_crn"
+					"value": "ref:../../members/2 - Observability/outputs/cos_instance_crn"
 				},
 				{
 					"name": "existing_en_crn",

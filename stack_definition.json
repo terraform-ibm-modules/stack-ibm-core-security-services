@@ -210,18 +210,6 @@
 					"value": "ref:../../members/1 - Key management/outputs/key_protect_crn"
 				},
 				{
-					"name": "existing_monitoring_crn",
-					"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
-				},
-				{
-					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/2 - Observability/outputs/cos_instance_crn"
-				},
-				{
-					"name": "skip_cos_kms_auth_policy",
-					"value": true
-				},
-				{
 					"name": "kms_endpoint_type",
 					"value": "private"
 				},

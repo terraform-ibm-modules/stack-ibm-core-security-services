@@ -231,6 +231,10 @@
 				{
 					"name": "scc_service_plan",
 					"value": "ref:../../inputs/scc_service_plan"
+				},
+				{
+					"name": "profile_attachments",
+					"value": ["CIS IBM Cloud Foundations Benchmark"]
 				}
 			],
 			"name": "4a - Security and Compliance Center",

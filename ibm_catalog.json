@@ -213,6 +213,23 @@
 									"value": "security-compliance-center-trial-plan"
 								}
 							]
+						},
+						{
+							"key": "en_service_plan",
+							"type": "string",
+							"default_value": "standard",
+							"description": "The pricing plan to use for the Event Notifications instance.",
+							"required": false,
+							"options": [
+								{
+									"displayname": "standard",
+									"value": "standard"
+								},
+								{
+									"displayname": "lite",
+									"value": "lite"
+								}
+							]
 						}
 					],
 					"install_type": "fullstack"

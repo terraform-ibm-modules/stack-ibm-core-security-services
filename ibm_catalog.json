@@ -230,6 +230,27 @@
 									"value": "lite"
 								}
 							]
+            },
+            {
+							"key": "existing_secrets_manager_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "The CRN of an existing Secrets Manager instance to use in this solution. If not set, a new Secrets Manager instance is provisioned.",
+							"required": false
+						},
+						{
+							"key": "existing_kms_instance_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "The CRN of an existing KMS instance to use in this solution. If not set, a new Key Protect instance is provisioned.",
+							"required": false
+						},
+						{
+							"key": "enable_platform_logs_metrics",
+							"type": "boolean",
+							"default_value": true,
+							"description": "Whether to provision logging and monitoring instances are configured to receive all platform logs and metrics in the target region. There can only be one instance per region provisioned for platform logs/metrics.",
+							"required": false
 						}
 					],
 					"install_type": "fullstack"

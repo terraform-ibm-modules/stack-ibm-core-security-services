@@ -177,7 +177,7 @@
 						{
 							"key": "resource_group_name",
 							"type": "string",
-							"default_value": "__NOT_SET__",
+							"default_value": "__NULL__",
 							"required": true
 						},
 						{

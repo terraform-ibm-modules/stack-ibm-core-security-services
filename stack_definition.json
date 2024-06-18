@@ -64,7 +64,7 @@
 			"required": false,
 			"type": "string",
 			"hidden": false,
-			"default": null
+			"default": "__NULL__"
 		  },
 		{
 			"name": "enable_platform_logs_metrics",

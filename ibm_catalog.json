@@ -239,7 +239,7 @@
 							"key": "en_email_list",
 							"type": "array",
 							"default_value": [],
-							"description": "List of emails to configure for Secrets Manager and SCC event notifications.",
+							"description": "List of emails to configure event notifications.",
 							"required": false
 						}
 					],

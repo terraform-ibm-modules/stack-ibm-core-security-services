@@ -95,14 +95,14 @@
 					"value": "ref:../../inputs/prefix"
 				}
 			],
-			"name": "1 - core-security-services-kms",
+			"name": "1 - Key management",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.bd58fecf-8628-42f5-9954-a5c8a027a10a-global"
 		},
 		{
 			"inputs": [
 				{
 					"name": "resource_group_name",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/resource_group_name"
+					"value": "ref:../../members/1 - Key management/outputs/resource_group_name"
 				},
 				{
 					"name": "use_existing_resource_group",
@@ -114,7 +114,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
+					"value": "ref:../../members/1 - Key management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "cos_instance_name",
@@ -137,14 +137,14 @@
 					"value": "ref:../../inputs/enable_platform_logs_metrics"
 				  }
 			],
-			"name": "2 - core-security-observability",
+			"name": "2 - Observability",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.725bb882-ba86-4c9e-9714-429054549bf2-global"
 		},
 		{
 			"inputs": [
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/2 - core-security-observability/outputs/cos_instance_crn"
+					"value": "ref:../../members/2 - Observability/outputs/cos_instance_crn"
 				},
 				{
 					"name": "skip_cos_kms_auth_policy",
@@ -152,11 +152,11 @@
 				},
 				{
 					"name": "kms_endpoint_url",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/kp_private_endpoint"
+					"value": "ref:../../members/1 - Key management/outputs/kp_private_endpoint"
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
+					"value": "ref:../../members/1 - Key management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "kms_endpoint_type",
@@ -164,7 +164,7 @@
 				},
 				{
 					"name": "resource_group_name",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/resource_group_name"
+					"value": "ref:../../members/1 - Key management/outputs/resource_group_name"
 				},
 				{
 					"name": "use_existing_resource_group",
@@ -173,16 +173,20 @@
 				{
 					"name": "region",
 					"value": "ref:../../inputs/region"
+				},
+				{
+					"name": "prefix",
+					"value": "ref:../../inputs/prefix"
 				}
 			],
-			"name": "3 - core-security-services-en",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e01967f5-df14-4331-b26a-23ce9d547a4c-global"
+			"name": "3 - Event Notifications",
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f3c5e78c-4a87-44eb-9a4e-a7a03de30c51-global"
 		},
 		{
 			"inputs": [
 				{
 					"name": "resource_group_name",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/resource_group_name"
+					"value": "ref:../../members/1 - Key management/outputs/resource_group_name"
 				},
 				{
 					"name": "use_existing_resource_group",
@@ -198,19 +202,19 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
+					"value": "ref:../../members/1 - Key management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "existing_monitoring_crn",
-					"value": "ref:../../members/2 - core-security-observability/outputs/cloud_monitoring_crn"
+					"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
 				},
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/2 - core-security-observability/outputs/cos_instance_crn"
+					"value": "ref:../../members/2 - Observability/outputs/cos_instance_crn"
 				},
 				{
 					"name": "existing_en_crn",
-					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
 				},
 				{
 					"name": "kms_endpoint_type",
@@ -222,21 +226,25 @@
 				},
 				{
 					"name": "existing_en_crn",
-					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
 				},
 				{
 					"name": "scc_service_plan",
 					"value": "ref:../../inputs/scc_service_plan"
+				},
+				{
+					"name": "profile_attachments",
+					"value": ["CIS IBM Cloud Foundations Benchmark"]
 				}
 			],
-			"name": "4a - core-security-services-scc",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.9090e716-9f05-4f50-aa15-d52a4c974f35-global"
+			"name": "4a - Security and Compliance Center",
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.55673fb4-336d-4ab9-90cd-2d6268df813b-global"
 		},
 		{
 			"inputs": [
 				{
 					"name": "resource_group_name",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/resource_group_name"
+					"value": "ref:../../members/1 - Key management/outputs/resource_group_name"
 				},
 				{
 					"name": "use_existing_resource_group",
@@ -252,11 +260,11 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
+					"value": "ref:../../members/1 - Key management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "existing_event_notification_instance_crn",
-					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
 				},
 				{
 					"name": "existing_secrets_manager_crn",
@@ -267,7 +275,7 @@
 					"value": "ref:../../inputs/sm_service_plan"
 				}
 			],
-			"name": "4b - core-security-services-sm",
+			"name": "4b - Secrets Manager",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c1f0f9ad-6d6b-4941-af3f-3ca21f8181a5-global"
 		}
 	]

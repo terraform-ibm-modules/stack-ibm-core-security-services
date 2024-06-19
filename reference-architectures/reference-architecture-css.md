@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-06-19"
 
 subcollection: security-services
 
@@ -78,7 +78,7 @@ This reference architecture showcases how these services form a foundational sec
 
 The following diagram represents the architecture for the core security services deployable architecture on {{site.data.keyword.cloud_notm}} and reuses the [best practices](/docs/framework-financial-services?topic=framework-financial-services-about) for {{site.data.keyword.framework-fs_full}}.
 
-![Architecture.](core-security-services-architecture.svg "Architecture"){: caption="Figure 1. Architecture diagram" caption-side="bottom"}
+![Architecture.](core-security-services-architecture.svg "Architecture"){: caption="Figure 1. Architecture diagram" caption-side="bottom"}{: external download="core-security-services-architecture.svg"}
 
 The architecture is anchored by three fundamental services: {{site.data.keyword.keymanagementserviceshort}}, {{site.data.keyword.secrets-manager_short}}, and IBM Cloud Security Services and {{site.data.keyword.sysdigsecure_full_notm}}. These services provide integration endpoints for any customer workload that is hosted on {{site.data.keyword.cloud_notm}}.
 
@@ -106,7 +106,7 @@ The Security Compliance Center instance is preconfigured to scan all resources p
 - Resiliency: High availability
 - Service management: Monitoring, logging, auditing and tracking, automated deployment
 
-![heatmap](heat-map-ccs.svg "Current diagram"){: caption="Figure 2. Architecture design scope" caption-side="bottom"}
+![heatmap](heat-map-ccs.svg "Current diagram"){: caption="Figure 2. Architecture design scope" caption-side="bottom"}{: external download="heat-map-ccs.svg"}
 
 ## Requirements
 {: #requirements}

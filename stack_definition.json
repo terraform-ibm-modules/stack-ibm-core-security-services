@@ -285,10 +285,6 @@
 				{
 					"name": "service_plan",
 					"value": "ref:../../inputs/sm_service_plan"
-				},
-				{
-					"name": "sm_en_email_list",
-					"value": "ref:../../inputs/en_email_list"
 				}
 			],
 			"name": "4b - Secrets Manager",

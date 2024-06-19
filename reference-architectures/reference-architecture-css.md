@@ -149,7 +149,6 @@ The following table outlines the products or services used in the architecture f
 
 - Ensure Object Storage encryption is enabled with BYOK
 - Ensure Activity Tracker data is encrypted at rest
-- Ensure Activity Tracker trails are integrated with Log Analysis logs
 - Ensure Key Protect has automated rotation enabled for customer-managed keys
 - Ensure that the Key Protect service instance is highly available
 

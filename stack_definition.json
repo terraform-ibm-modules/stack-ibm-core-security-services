@@ -65,7 +65,7 @@
 			"type": "string",
 			"hidden": false,
 			"default": "__NULL__"
-		  },
+		},
 		{
 			"name": "enable_platform_logs_metrics",
 			"required": false,
@@ -73,7 +73,15 @@
 			"hidden": false,
 			"default": true,
 			"custom_config": {}
-		  }
+		},
+		{
+			"name": "en_email_list",
+			"required": false,
+			"type": "array",
+			"hidden": false,
+			"default": [],
+			"custom_config": {}
+		}
 	],
 	"members": [
 		{
@@ -96,7 +104,7 @@
 				}
 			],
 			"name": "1 - Key management",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.bd58fecf-8628-42f5-9954-a5c8a027a10a-global"
+			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.e7f105c4-8af4-4238-a98d-e89999ff14c8-global"
 		},
 		{
 			"inputs": [
@@ -138,7 +146,7 @@
 				  }
 			],
 			"name": "2 - Observability",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.725bb882-ba86-4c9e-9714-429054549bf2-global"
+			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.756a5374-5be7-49b4-97f4-99d3b4011b54-global"
 		},
 		{
 			"inputs": [
@@ -180,7 +188,7 @@
 				}
 			],
 			"name": "3 - Event Notifications",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f3c5e78c-4a87-44eb-9a4e-a7a03de30c51-global"
+			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.f3c5e78c-4a87-44eb-9a4e-a7a03de30c51-global"
 		},
 		{
 			"inputs": [
@@ -235,10 +243,14 @@
 				{
 					"name": "profile_attachments",
 					"value": ["CIS IBM Cloud Foundations Benchmark"]
+				},
+				{
+					"name": "scc_en_email_list",
+					"value": "ref:../../inputs/en_email_list"
 				}
 			],
 			"name": "4a - Security and Compliance Center",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.55673fb4-336d-4ab9-90cd-2d6268df813b-global"
+			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.55673fb4-336d-4ab9-90cd-2d6268df813b-global"
 		},
 		{
 			"inputs": [
@@ -273,10 +285,14 @@
 				{
 					"name": "service_plan",
 					"value": "ref:../../inputs/sm_service_plan"
+				},
+				{
+					"name": "sm_en_email_list",
+					"value": "ref:../../inputs/en_email_list"
 				}
 			],
 			"name": "4b - Secrets Manager",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c1f0f9ad-6d6b-4941-af3f-3ca21f8181a5-global"
+			"version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.8c00bf59-2ae8-4f5d-a0da-534f31107019-global"
 		}
 	]
 }

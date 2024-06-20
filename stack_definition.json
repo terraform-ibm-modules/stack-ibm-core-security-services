@@ -230,11 +230,7 @@
 				},
 				{
 					"name": "skip_cos_kms_auth_policy",
-					"value": "true"
-				},
-				{
-					"name": "existing_en_crn",
-					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
+					"value": true
 				},
 				{
 					"name": "scc_service_plan",
@@ -290,5 +286,40 @@
 			"name": "4b - Secrets Manager",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.506429ee-7013-4070-aa27-9e8ce8aa6b78-global"
 		}
-	]
+	],
+	"outputs": [
+		{
+			"name": "key_management_service_instance_crn",
+			"value": "ref:../../members/1 - Key management/outputs/kms_instance_crn"
+		},
+		{
+			"name": "secrets_manager_crn",
+			"value": "ref:../../members/4b - Secrets Manager/outputs/secrets_manager_crn"
+		},
+		{
+			"name": "scc_crn",
+			"value": "ref:../../members/4a - Security and Compliance Center/outputs/scc_crn"
+		},
+		{
+			"name": "monitoring_crn",
+			"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
+		},
+		{
+			"name": "cos_instance_crn",
+			"value": "ref:../../members/2 - Observability/outputs/cos_instance_crn"
+		},
+		{
+			"name": "en_crn",
+			"value": "ref:../../members/3 - Event Notifications/outputs/crn"
+		},
+		{
+			"name": "log_analysis_crn",
+			"value": "ref:../../members/2 - Observability/outputs/log_analysis_crn"
+		},
+		{
+			"name": "scc_workload_protection_crn",
+			"value": "ref:../../members/4a - Security and Compliance Center/outputs/crn"
+		}
+	  ]
+
 }

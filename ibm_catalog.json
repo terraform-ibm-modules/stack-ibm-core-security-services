@@ -234,6 +234,13 @@
 							"default_value": true,
 							"description": "Whether to provision logging and monitoring instances are configured to receive all platform logs and metrics in the target region. There can only be one instance per region provisioned for platform logs/metrics.",
 							"required": false
+						},
+						{
+							"key": "en_email_list",
+							"type": "array",
+							"default_value": [],
+							"description": "List of emails to configure event notifications.",
+							"required": false
 						}
 					],
 					"install_type": "fullstack"

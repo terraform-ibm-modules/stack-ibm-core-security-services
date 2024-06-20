@@ -65,7 +65,7 @@
 			"type": "string",
 			"hidden": false,
 			"default": "__NULL__"
-		  },
+		},
 		{
 			"name": "enable_platform_logs_metrics",
 			"required": false,
@@ -73,7 +73,15 @@
 			"hidden": false,
 			"default": true,
 			"custom_config": {}
-		  }
+		},
+		{
+			"name": "en_email_list",
+			"required": false,
+			"type": "array",
+			"hidden": false,
+			"default": [],
+			"custom_config": {}
+		}
 	],
 	"members": [
 		{
@@ -96,7 +104,7 @@
 				}
 			],
 			"name": "1 - Key management",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.bd58fecf-8628-42f5-9954-a5c8a027a10a-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e7f105c4-8af4-4238-a98d-e89999ff14c8-global"
 		},
 		{
 			"inputs": [
@@ -138,7 +146,7 @@
 				  }
 			],
 			"name": "2 - Observability",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.725bb882-ba86-4c9e-9714-429054549bf2-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.756a5374-5be7-49b4-97f4-99d3b4011b54-global"
 		},
 		{
 			"inputs": [
@@ -235,6 +243,10 @@
 				{
 					"name": "profile_attachments",
 					"value": ["CIS IBM Cloud Foundations Benchmark"]
+				},
+				{
+					"name": "scc_en_email_list",
+					"value": "ref:../../inputs/en_email_list"
 				}
 			],
 			"name": "4a - Security and Compliance Center",
@@ -276,7 +288,7 @@
 				}
 			],
 			"name": "4b - Secrets Manager",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c1f0f9ad-6d6b-4941-af3f-3ca21f8181a5-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.506429ee-7013-4070-aa27-9e8ce8aa6b78-global"
 		}
 	]
 }

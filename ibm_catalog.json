@@ -245,8 +245,8 @@
 					],
 					"outputs": [
 						{
-							"key": "kms_instance_crn",
-							"description": "The CRN of the Key Protect instance."
+							"key": "key_management_service_instance_crn",
+							"description": "The CRN of the Hyper Protect Crypto Service instance or Key Protect instance."
 						},
 						{
 							"key": "secrets_manager_crn",
@@ -267,6 +267,14 @@
 						{
 							"key": "en_crn",
 							"description": "The crn of the Event Notifications instance."
+						},
+						{
+							"key": "log_analysis_crn",
+							"description": "The id of the provisioned Log Analysis instance."
+						},
+						{
+							"key": "scc_workload_protection_crn",
+							"description": "SCC Workload Protection instance CRN."
 						}
 					],
 					"install_type": "fullstack"

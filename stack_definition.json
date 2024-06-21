@@ -198,6 +198,10 @@
 				{
 					"name": "prefix",
 					"value": "ref:../../inputs/prefix"
+				},
+				{
+					"name": "existing_monitoring_crn",
+					"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
 				}
 			],
 			"name": "3 - Event Notifications",

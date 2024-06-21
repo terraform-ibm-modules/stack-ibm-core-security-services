@@ -25,30 +25,6 @@
 			"custom_config": {}
 		},
 		{
-			"name": "sm_service_plan",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "standard",
-			"custom_config": {}
-		},
-		{
-			"name": "scc_service_plan",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "security-compliance-center-standard-plan",
-			"custom_config": {}
-		},
-		{
-			"name": "existing_secrets_manager_crn",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "__NULL__",
-			"custom_config": {}
-		},
-		{
 			"name": "enable_platform_logs_metrics",
 			"required": false,
 			"type": "boolean",
@@ -62,6 +38,30 @@
 			"type": "array",
 			"hidden": false,
 			"default": [],
+			"custom_config": {}
+		},
+		{
+			"name": "existing_secrets_manager_crn",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "__NULL__",
+			"custom_config": {}
+		},
+		{
+			"name": "sm_service_plan",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "standard",
+			"custom_config": {}
+		},
+		{
+			"name": "scc_service_plan",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "security-compliance-center-standard-plan",
 			"custom_config": {}
 		}
 	],

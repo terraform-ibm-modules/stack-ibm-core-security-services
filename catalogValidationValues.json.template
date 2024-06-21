@@ -1,7 +1,7 @@
 {
   "ibmcloud_api_key": $VALIDATION_APIKEY,
   "prefix": $PREFIX,
-  "resource_group_name": $PREFIX,
+  "existing_resource_group_name": $RG_NAME,
   "sm_service_plan": "trial",
   "enable_platform_logs_metrics": false
 }

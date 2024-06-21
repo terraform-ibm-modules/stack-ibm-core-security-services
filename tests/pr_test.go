@@ -6,6 +6,9 @@ import (
 	"testing"
 )
 
+// Use existing resource group
+const resourceGroup = "geretain-test-resources"
+
 func TestProjectsFullTest(t *testing.T) {
 
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
@@ -13,9 +16,10 @@ func TestProjectsFullTest(t *testing.T) {
 		Prefix:         "cs", // setting prefix here gets a random string appended to it
 		ParallelDeploy: true,
 	})
+
 	options.StackInputs = map[string]interface{}{
 		"prefix":                       options.Prefix,
-		"resource_group_name":          options.Prefix,
+		"existing_resource_group_name": resourceGroup,
 		"sm_service_plan":              "trial",
 		"use_existing_resource_group":  false,
 		"ibmcloud_api_key":             options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack

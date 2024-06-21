@@ -25,10 +25,10 @@
 				"key protect",
 				"compliance"
 			],
-			"short_description": "Deploys core security services and some related services.",
-			"long_description": "This architecture deploys the following core security services: Key Protect, Secrets Manager, Security and Compliance Center, and Security and Compliance Center Workload Protection. It also deploys Event Notifications and Observability.",
+			"short_description": "Deploy core security and other supporting services to get set up to manage the security compliance of the resources in your account.",
+			"long_description": "Get IBM Cloud’s suite of core security services with a single deployment enabling you to securely manage keys and secrets and run security and compliance scans so that you always know the posture of the resources in your account. You can also take advantage of an event notification routing service that notifies you to critical events that occur in your IBM Cloud account and observability services that provide enterprise-grade monitoring and logging giving you operational visibility into the performance and health of your apps, services, and infrastructure.",
 			"provider_name": "IBM",
-			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/light-theme.svg",
+			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/light-theme.svg",
 			"features": [
 				{
 					"title": "Creates an IBM Key Protect instance",
@@ -124,10 +124,10 @@
 								"title": "Creates an IBM Security and Compliance Center instance",
 								"description": "Creates and configures an IBM Security Compliance Center instance."
 							},
-              {
-                "title": "Creates an Security and Compliance Center Workload Protection instance",
-                "description": "Creates and configures an Security and Compliance Center Workload Protection instance."
-              },
+							{
+								"title": "Creates a Security and Compliance Center Workload Protection instance",
+								"description": "Creates and configures a Security and Compliance Center Workload Protection instance."
+							},
 							{
 								"title": "Creates an IBM Event Notification instance",
 								"description": "Creates and configures an Event Notifications instance."
@@ -136,7 +136,7 @@
 						"diagrams": [
 							{
 								"diagram": {
-									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/core-security-services-architecture.svg",
+									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/core-security-services-architecture.svg",
 									"caption": "Core Security Services Stack Architecture",
 									"type": "image/svg+xml",
 									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/core-security-services-architecture.svg"
@@ -150,14 +150,7 @@
 							"key": "prefix",
 							"type": "string",
 							"default_value": "",
-							"description": "An identifier prepended to resources that are provisioned. Must begin with a lowercase letter and end with a lowercase letter or number.",
-							"required": true
-						},
-						{
-							"key": "use_existing_resource_group",
-							"type": "boolean",
-							"default_value": false,
-							"description": "Whether to use an existing resource group. If set to `false, a resource group is created.",
+							"description": "The prefix to add to all resources created by this solution. Used to make sure that names are unique when you deploy the solution more than one time.",
 							"required": true
 						},
 						{
@@ -182,16 +175,47 @@
 							]
 						},
 						{
-							"key": "resource_group_name",
+							"key": "existing_resource_group_name",
 							"type": "string",
-							"default_value": "__NOT_SET__",
-							"required": true
+							"default_value": "Default",
+							"description": "The name of an existing resource group to provision all resources to.",
+							"display_name": "Existing resource group name",
+							"required": true,
+							"custom_config": {
+								"type": "resource_group",
+								"grouping": "deployment",
+								"original_grouping": "deployment",
+								"config_constraints": {
+									"identifier": "rg_name"
+								}
+							}
+						},
+						{
+							"key": "enable_platform_logs_metrics",
+							"type": "boolean",
+							"default_value": true,
+							"description": "Whether to provision logging and monitoring instances are configured to receive all platform logs and metrics in the target region. There can only be one instance per region provisioned for platform logs/metrics.",
+							"required": false
+						},
+						{
+							"key": "en_email_list",
+							"type": "array",
+							"default_value": [],
+							"description": "List of emails to configure event notifications.",
+							"required": false
+						},
+						{
+							"key": "existing_secrets_manager_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "The CRN of an existing Secrets Manager instance to use in this solution. If not set, a new Secrets Manager instance is provisioned.",
+							"required": false
 						},
 						{
 							"key": "sm_service_plan",
 							"type": "string",
 							"default_value": "standard",
-							"description": "The pricing plan to use for Secrets Manager.",
+							"description": "The pricing plan to use for Secrets Manager. Not used if `existing_secrets_manager_crn` is specified.",
 							"required": false,
 							"options": [
 								{
@@ -220,6 +244,40 @@
 									"value": "security-compliance-center-trial-plan"
 								}
 							]
+						}
+					],
+					"outputs": [
+						{
+							"key": "key_management_service_instance_crn",
+							"description": "The CRN of the Hyper Protect Crypto Service instance or Key Protect instance."
+						},
+						{
+							"key": "secrets_manager_crn",
+							"description": "The CRN of the Secrets Manager instance."
+						},
+						{
+							"key": "scc_crn",
+							"description": "The CRN of the Security and Compliance Center instance."
+						},
+						{
+							"key": "monitoring_crn",
+							"description": "The crn of the IBM Cloud Monitoring instance."
+						},
+						{
+							"key": "cos_instance_crn",
+							"description": "The crn of the Cloud Object Storage instance."
+						},
+						{
+							"key": "en_crn",
+							"description": "The crn of the Event Notifications instance."
+						},
+						{
+							"key": "log_analysis_crn",
+							"description": "The id of the provisioned Log Analysis instance."
+						},
+						{
+							"key": "scc_workload_protection_crn",
+							"description": "SCC Workload Protection instance CRN."
 						}
 					],
 					"install_type": "fullstack"

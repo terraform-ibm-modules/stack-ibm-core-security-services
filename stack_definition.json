@@ -95,6 +95,10 @@
 					"value": "ref:../../inputs/use_existing_resource_group"
 				},
 				{
+					"name": "existing_kms_instance_crn",
+					"value": "ref:../../inputs/existing_kms_instance_crn"
+				},
+				{
 					"name": "region",
 					"value": "ref:../../inputs/region"
 				},

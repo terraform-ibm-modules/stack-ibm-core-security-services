@@ -118,8 +118,8 @@
 								"description": "Creates and configures an IBM Security Compliance Center instance."
 							},
               {
-                "title": "Creates an Security and Compliance Center Workload Protection instance",
-                "description": "Creates and configures an Security and Compliance Center Workload Protection instance."
+                "title": "Creates a Security and Compliance Center Workload Protection instance",
+                "description": "Creates and configures a Security and Compliance Center Workload Protection instance."
               },
 							{
 								"title": "Creates an IBM Event Notification instance",

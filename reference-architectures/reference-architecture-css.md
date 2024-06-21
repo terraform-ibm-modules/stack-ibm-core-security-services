@@ -4,7 +4,7 @@ copyright:
   years: 2024
 lastupdated: "2024-06-21"
 
-subcollection: security-services
+subcollection: deployable-reference-architectures
 
 authors:
 - name: Dharmesh Bhakta

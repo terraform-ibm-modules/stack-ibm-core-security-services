@@ -1,7 +1,9 @@
 {
   "ibmcloud_api_key": $VALIDATION_APIKEY,
   "prefix": $PREFIX,
-  "resource_group_name": $PREFIX,
+  "audit_resource_group_name": "{{PREFIX}}-audit",
+  "observability_resource_group_name": "{{PREFIX}}-observability",
+  "security_resource_group_name": "{{PREFIX}}-security",
   "sm_service_plan": "trial",
   "enable_platform_logs_metrics": false
 }

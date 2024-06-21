@@ -147,13 +147,6 @@
 							"required": true
 						},
 						{
-							"key": "use_existing_resource_group",
-							"type": "boolean",
-							"default_value": false,
-							"description": "Whether to use an existing resource group. If set to `false, a resource group is created.",
-							"required": true
-						},
-						{
 							"key": "region",
 							"type": "string",
 							"default_value": "us-south",
@@ -175,7 +168,19 @@
 							]
 						},
 						{
-							"key": "resource_group_name",
+							"key": "audit_resource_group_name",
+							"type": "string",
+							"default_value": "__NULL__",
+							"required": true
+						},
+						{
+							"key": "observability_resource_group_name",
+							"type": "string",
+							"default_value": "__NULL__",
+							"required": true
+						},
+						{
+							"key": "security_resource_group_name",
 							"type": "string",
 							"default_value": "__NULL__",
 							"required": true
@@ -244,6 +249,18 @@
 						}
 					],
 					"outputs": [
+            {
+              "key": "audit_resource_group_name",
+              "description": "The Name of the audit Resource Group."
+            },
+            {
+              "key": "observability_resource_group_name",
+              "description": "The Name of the observability Resource Group."
+            },
+            {
+              "key": "security_resource_group_name",
+              "description": "The Name of the security Resource Group."
+            },
 						{
 							"key": "key_management_service_instance_crn",
 							"description": "The CRN of the Hyper Protect Crypto Service instance or Key Protect instance."

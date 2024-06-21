@@ -26,8 +26,8 @@
 				"key protect",
 				"compliance"
 			],
-			"short_description": "Deploys core security services and some related services.",
-			"long_description": "This architecture deploys the following core security services: Key Protect, Secrets Manager, Security and Compliance Center, and Security and Compliance Center Workload Protection. It also deploys Event Notifications and Observability.",
+			"short_description": "Deploy core security and other supporting services to get set up to manage the security compliance of the resources in your account.",
+			"long_description": "Get IBM Cloud’s suite of core security services with a single deployment enabling you to securely manage keys and secrets and run security and compliance scans so that you always know the posture of the resources in your account. You can also take advantage of an event notification routing service that notifies you to critical events that occur in your IBM Cloud account and observability services that provide enterprise-grade monitoring and logging giving you operational visibility into the performance and health of your apps, services, and infrastructure.",
 			"provider_name": "IBM",
 			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/light-theme.svg",
 			"features": [

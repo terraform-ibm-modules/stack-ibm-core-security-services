@@ -96,6 +96,14 @@
 								"crn:v1:bluemix:public:iam::::role:Operator",
 								"crn:v1:bluemix:public:iam::::role:Editor"
 							]
+						},
+						{
+							"service_name": "event-notifications",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
+								"crn:v1:bluemix:public:iam::::role:Operator",
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							]
 						}
 					],
 					"architecture": {

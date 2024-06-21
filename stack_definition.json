@@ -6,7 +6,6 @@
 			"type": "string",
 			"hidden": false,
 			"default": "core-security",
-			"description": "The prefix to use for all resources deployed.",
 			"custom_config": {}
 		},
 		{
@@ -15,7 +14,6 @@
 			"type": "string",
 			"hidden": false,
 			"default": "us-south",
-			"description": "The region to deploy the Deployable Architecture",
 			"custom_config": {}
 		},
 		{
@@ -49,13 +47,6 @@
 			"hidden": false,
 			"default": "__NULL__",
 			"custom_config": {}
-		},
-		{
-			"name": "existing_kms_instance_crn",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "__NULL__"
 		},
 		{
 			"name": "enable_platform_logs_metrics",
@@ -134,20 +125,20 @@
 					"value": "ref:../../inputs/region"
 				},
 				{
-					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+					"name": "prefix",
+					"value": "ref:../../inputs/prefix"
 				},
 				{
-					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+					"name": "existing_kms_instance_crn",
+					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "kms_endpoint_type",
 					"value": "private"
 				},
 				{
-					"name": "prefix",
-					"value": "ref:../../inputs/prefix"
+					"name": "existing_cos_instance_crn",
+					"value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
 				},
 				{
 					"name": "enable_platform_logs",
@@ -230,6 +221,10 @@
 					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
 				},
 				{
+					"name": "kms_endpoint_type",
+					"value": "private"
+				},
+				{
 					"name": "existing_monitoring_crn",
 					"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
 				},
@@ -238,16 +233,12 @@
 					"value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
 				},
 				{
-					"name": "existing_en_crn",
-					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
-				},
-				{
-					"name": "kms_endpoint_type",
-					"value": "private"
-				},
-				{
 					"name": "skip_cos_kms_auth_policy",
 					"value": true
+				},
+				{
+					"name": "existing_en_crn",
+					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
 				},
 				{
 					"name": "scc_service_plan",
@@ -314,10 +305,6 @@
 			"value": "ref:../../members/4b - Secrets Manager/outputs/secrets_manager_crn"
 		},
 		{
-			"name": "scc_crn",
-			"value": "ref:../../members/4a - Security and Compliance Center/outputs/scc_crn"
-		},
-		{
 			"name": "monitoring_crn",
 			"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
 		},
@@ -332,6 +319,10 @@
 		{
 			"name": "log_analysis_crn",
 			"value": "ref:../../members/2 - Observability/outputs/log_analysis_crn"
+		},
+		{
+			"name": "scc_crn",
+			"value": "ref:../../members/4a - Security and Compliance Center/outputs/scc_crn"
 		},
 		{
 			"name": "scc_workload_protection_crn",

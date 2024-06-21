@@ -147,13 +147,6 @@
 							"required": true
 						},
 						{
-							"key": "use_existing_resource_group",
-							"type": "boolean",
-							"default_value": false,
-							"description": "Whether to use an existing resource group. If set to `false, a resource group is created.",
-							"required": true
-						},
-						{
 							"key": "region",
 							"type": "string",
 							"default_value": "us-south",
@@ -175,10 +168,20 @@
 							]
 						},
 						{
-							"key": "resource_group_name",
+							"key": "existing_resource_group_name",
 							"type": "string",
-							"default_value": "__NULL__",
-							"required": true
+							"default_value": "Default",
+							"description": "The name of an existing resource group to provision all resources to.",
+							"display_name": "Existing resource group name",
+							"required": true,
+							"custom_config": {
+								"type": "resource_group",
+								"grouping": "deployment",
+								"original_grouping": "deployment",
+								"config_constraints": {
+									"identifier": "rg_name"
+								}
+							}
 						},
 						{
 							"key": "sm_service_plan",
@@ -234,6 +237,47 @@
 							"default_value": true,
 							"description": "Whether to provision logging and monitoring instances are configured to receive all platform logs and metrics in the target region. There can only be one instance per region provisioned for platform logs/metrics.",
 							"required": false
+						},
+						{
+							"key": "en_email_list",
+							"type": "array",
+							"default_value": [],
+							"description": "List of emails to configure event notifications.",
+							"required": false
+						}
+					],
+					"outputs": [
+						{
+							"key": "key_management_service_instance_crn",
+							"description": "The CRN of the Hyper Protect Crypto Service instance or Key Protect instance."
+						},
+						{
+							"key": "secrets_manager_crn",
+							"description": "The CRN of the Secrets Manager instance."
+						},
+						{
+							"key": "scc_crn",
+							"description": "The CRN of the Security and Compliance Center instance."
+						},
+						{
+							"key": "monitoring_crn",
+							"description": "The crn of the IBM Cloud Monitoring instance."
+						},
+						{
+							"key": "cos_instance_crn",
+							"description": "The crn of the Cloud Object Storage instance."
+						},
+						{
+							"key": "en_crn",
+							"description": "The crn of the Event Notifications instance."
+						},
+						{
+							"key": "log_analysis_crn",
+							"description": "The id of the provisioned Log Analysis instance."
+						},
+						{
+							"key": "scc_workload_protection_crn",
+							"description": "SCC Workload Protection instance CRN."
 						}
 					],
 					"install_type": "fullstack"

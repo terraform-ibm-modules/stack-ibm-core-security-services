@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-06-21"
 
 subcollection: security-services
 
@@ -11,12 +11,12 @@ authors:
   email: bhakta@ibm.com
 
 # The release that the reference architecture describes
-version: 1.0
+version: 1.0.0
 
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
 # See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
-deployment-url: <url>
+deployment-url: https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-core-security-svcs-0294f96e-7314-48d1-a710-c08a541b2119-global
 
 use-case:
   - CloudSecurity
@@ -52,7 +52,7 @@ https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-g
 # Core security services
 {: #core-security-services-pattern}
 {: toc-content-type="reference-architecture"}
-{: toc-version="1.0"}
+{: toc-version="1.0.0"}
 
 <!--
 The IDs, such as {: #title-id} are required for publishing this reference architecture in IBM Cloud Docs. Set unique IDs for each heading. Also include
@@ -121,7 +121,6 @@ The following table outlines the requirements that are addressed in this archite
 | Service Management | Monitor system and application health metrics and logs to detect issues that might impact the availability of the application. \n Generate alerts/notifications about issues that might impact the availability of applications to trigger appropriate responses to minimize downtime. \n Monitor audit logs to track changes and detect potential security problems. \n Provide a mechanism to identify and send notifications about issues that are found in audit logs. |
 {: caption="Table 1. Requirements" caption-side="bottom"}
 
-
 ## Components
 {: #components}
 
@@ -141,16 +140,10 @@ The following table outlines the products or services used in the architecture f
 |  | [{{site.data.keyword.atracker_short}}](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-getting-started) | Audit logs |
 {: caption="Table 2. Components" caption-side="bottom"}
 
-
 ## Compliance
 {: #compliance}
 
-- Ensure {{site.data.keyword.objectstorageshort}} encryption is enabled with BYOK
-- Ensure {{site.data.keyword.cloudaccesstraillong_notm}} data is encrypted at rest
-- Ensure {{site.data.keyword.cloudaccesstraillong_notm}} events are integrated with {{site.data.keyword.loganalysislong_notm}}
-- Ensure {{site.data.keyword.keymanagementservicelong_notm}} has automated rotation enabled for customer-managed keys
-- Ensure that the {{site.data.keyword.keymanagementserviceshort}} service instance is highly available
+Ensures compliance with some of the controls in the CIS IBM Cloud Foundations Benchmark profile. To view the list of added controls, follow these steps:
 
-**{{site.data.keyword.compliance_long}}**
-
-This reference architecture uses {{site.data.keyword.compliance_long}}, which defines policy as code, implements controls for secure data and workload deployments, and assesses security and compliance posture. For this reference architecture, the CIS IBM Cloud Foundations Benchmark profile is used. A profile is a grouping of controls that can be evaluated for compliance.
+1.  Go the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external} and search for the Core Security Services deployable architecture.
+1.  Click the tile for the deployable architecture to open the details. The Security & compliance tab lists all of the controls that are included in the deployable architecture.

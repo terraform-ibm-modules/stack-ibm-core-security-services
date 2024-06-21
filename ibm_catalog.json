@@ -117,10 +117,10 @@
 								"title": "Creates an IBM Security and Compliance Center instance",
 								"description": "Creates and configures an IBM Security Compliance Center instance."
 							},
-              {
-                "title": "Creates an Security and Compliance Center Workload Protection instance",
-                "description": "Creates and configures an Security and Compliance Center Workload Protection instance."
-              },
+              				{
+                				"title": "Creates an Security and Compliance Center Workload Protection instance",
+                				"description": "Creates and configures an Security and Compliance Center Workload Protection instance."
+              				},
 							{
 								"title": "Creates an IBM Event Notification instance",
 								"description": "Creates and configures an Event Notifications instance."
@@ -143,7 +143,7 @@
 							"key": "prefix",
 							"type": "string",
 							"default_value": "",
-							"description": "An identifier prepended to resources that are provisioned. Must begin with a lowercase letter and end with a lowercase letter or number.",
+							"description": "The prefix to add to all resources created by this solution. Used to make sure that names are unique when you deploy the solution more than one time.",
 							"required": true
 						},
 						{
@@ -184,10 +184,31 @@
 							}
 						},
 						{
+							"key": "enable_platform_logs_metrics",
+							"type": "boolean",
+							"default_value": true,
+							"description": "Whether to provision logging and monitoring instances are configured to receive all platform logs and metrics in the target region. There can only be one instance per region provisioned for platform logs/metrics.",
+							"required": false
+						},
+						{
+							"key": "en_email_list",
+							"type": "array",
+							"default_value": [],
+							"description": "List of emails to configure event notifications.",
+							"required": false
+						},
+						{
+							"key": "existing_secrets_manager_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "The CRN of an existing Secrets Manager instance to use in this solution. If not set, a new Secrets Manager instance is provisioned.",
+							"required": false
+						},
+						{
 							"key": "sm_service_plan",
 							"type": "string",
 							"default_value": "standard",
-							"description": "The pricing plan to use for Secrets Manager.",
+							"description": "The pricing plan to use for Secrets Manager. Not used if `existing_secrets_manager_crn` is specified.",
 							"required": false,
 							"options": [
 								{
@@ -216,34 +237,6 @@
 									"value": "security-compliance-center-trial-plan"
 								}
 							]
-						},
-						{
-							"key": "existing_secrets_manager_crn",
-							"type": "string",
-							"default_value": "__NULL__",
-							"description": "The CRN of an existing Secrets Manager instance to use in this solution. If not set, a new Secrets Manager instance is provisioned.",
-							"required": false
-						},
-						{
-							"key": "existing_kms_instance_crn",
-							"type": "string",
-							"default_value": "__NULL__",
-							"description": "The CRN of an existing KMS instance to use in this solution. If not set, a new Key Protect instance is provisioned.",
-							"required": false
-						},
-						{
-							"key": "enable_platform_logs_metrics",
-							"type": "boolean",
-							"default_value": true,
-							"description": "Whether to provision logging and monitoring instances are configured to receive all platform logs and metrics in the target region. There can only be one instance per region provisioned for platform logs/metrics.",
-							"required": false
-						},
-						{
-							"key": "en_email_list",
-							"type": "array",
-							"default_value": [],
-							"description": "List of emails to configure event notifications.",
-							"required": false
 						}
 					],
 					"outputs": [

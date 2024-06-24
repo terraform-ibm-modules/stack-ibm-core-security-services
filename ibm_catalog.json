@@ -8,7 +8,6 @@
 				"solution",
 				"support_ibm",
 				"target_terraform",
-				"ibm_beta",
 				"security"
 			],
 			"keywords": [
@@ -52,6 +51,10 @@
 					"description": "Creates and configures an IBM Cloud Object Storage instance and multiple Object Storage buckets that is encrypted by Key Protect."
 				},
 				{
+					"title": "Creates an IBM Cloud Event Notifications instance",
+					"description": "Creates and configures an IBM Cloud Event Notifications instance with topics for Secrets Manager and Security and Compliance Center events."
+				},
+				{
 					"title": "Creates service-to-service authorizations",
 					"description": "Creates and configures service-to-service authorizations for the following services: KMS, Event Notifications, Object Storage, Secrets Manager, and Security and Compliance Center."
 				}
@@ -92,6 +95,14 @@
 						},
 						{
 							"service_name": "compliance",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
+								"crn:v1:bluemix:public:iam::::role:Operator",
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							]
+						},
+						{
+							"service_name": "event-notifications",
 							"role_crns": [
 								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
 								"crn:v1:bluemix:public:iam::::role:Operator",

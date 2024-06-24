@@ -115,7 +115,7 @@
 						"features": [
 							{
 								"title": "Creates IBM Cloud core security services in a resource group.",
-								"description": "Creates a resource group called `core-security-services` or uses an existing group."
+								"description": "Creates IBM Cloud core security services in an existing resource group."
 							},
 							{
 								"title": "Creates an IBM Key Protect instance",

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-21"
+lastupdated: "2024-06-24"
 
 subcollection: deployable-reference-architectures
 
@@ -34,7 +34,7 @@ docs: https://cloud.ibm.com/docs/security-services
 
 content-type: reference-architecture
 
-production: false
+production: true
 
 ---
 <!--

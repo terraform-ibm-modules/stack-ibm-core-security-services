@@ -64,7 +64,6 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 	options.StackInputs = map[string]interface{}{
 		"prefix":                       options.Prefix,
 		"existing_resource_group_name": resourceGroup,
-		"sm_service_plan":              "trial",
 		"ibmcloud_api_key":             options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
 		"enable_platform_logs_metrics": false,
 		"existing_secrets_manager_crn": permanentResources["secretsManagerCRN"],

@@ -57,6 +57,13 @@
 			"custom_config": {}
 		},
 		{
+			"name": "iam_engine_enabled",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": false
+		},
+		{
 			"name": "scc_service_plan",
 			"required": false,
 			"type": "string",
@@ -286,6 +293,10 @@
 					"name": "existing_secrets_manager_crn",
 					"value": "ref:../../inputs/existing_secrets_manager_crn"
 				},
+				{
+					"name": "iam_engine_enabled",
+					"value": "ref:../../inputs/iam_engine_enabled"
+				  },
 				{
 					"name": "service_plan",
 					"value": "ref:../../inputs/sm_service_plan"

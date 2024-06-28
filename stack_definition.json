@@ -259,7 +259,7 @@
 				},
 				{
 					"name": "profile_attachments",
-					"value": ["CIS IBM Cloud Foundations Benchmark"]
+					"value": ["CIS IBM Cloud Foundations Benchmark v1.1.0"]
 				},
 				{
 					"name": "scc_en_email_list",

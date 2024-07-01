@@ -253,7 +253,7 @@
 				},
 				{
 					"name": "profile_attachments",
-					"value": ["CIS IBM Cloud Foundations Benchmark"]
+					"value": ["CIS IBM Cloud Foundations Benchmark v1.1.0"]
 				},
 				{
 					"name": "scc_en_email_list",
@@ -303,7 +303,7 @@
 				}
 			],
 			"name": "4b - Secrets Manager",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.506429ee-7013-4070-aa27-9e8ce8aa6b78-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.a1b20041-cb82-44c3-a0d9-f0478ae87f05-global"
 		}
 	],
 	"outputs": [

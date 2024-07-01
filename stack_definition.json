@@ -33,12 +33,21 @@
 			"custom_config": {}
 		},
 		{
+			"name": "existing_kms_instance_crn",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "__NULL__",
+			"custom_config": {}
+		},
+		{
 			"name": "en_email_list",
 			"required": false,
 			"type": "array",
 			"hidden": false,
 			"default": [],
 			"custom_config": {}
+
 		},
 		{
 			"name": "existing_secrets_manager_crn",
@@ -77,6 +86,10 @@
 					"value": true
 				},
 				{
+					"name": "existing_kms_instance_crn",
+					"value": "ref:../../inputs/existing_kms_instance_crn"
+				},
+				{
 					"name": "region",
 					"value": "ref:../../inputs/region"
 				},
@@ -86,7 +99,7 @@
 				}
 			],
 			"name": "1a - Key management",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e7f105c4-8af4-4238-a98d-e89999ff14c8-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.4a3affda-ffc6-4d14-a4f7-aeeb2b80908c-global"
 		},
 		{
 			"inputs": [
@@ -164,7 +177,7 @@
 				},
 				{
 					"name": "kms_endpoint_url",
-					"value": "ref:../../members/1a - Key management/outputs/kp_private_endpoint"
+					"value": "ref:../../members/1a - Key management/outputs/kms_private_endpoint"
 				},
 				{
 					"name": "existing_kms_instance_crn",

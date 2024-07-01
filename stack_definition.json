@@ -322,11 +322,11 @@
 		},
 		{
 			"name": "scc_crn",
-			"value": "ref:../../members/4a%20-%20Security%20and%20Compliance Center/outputs/scc_crn"
+			"value": "ref:../../members/4a%20-%20Security%20and%20Compliance%20Center/outputs/scc_crn"
 		},
 		{
 			"name": "scc_workload_protection_crn",
-			"value": "ref:../../members/4a%20-%20Security%20and%20Compliance Center/outputs/crn"
+			"value": "ref:../../members/4a%20-%20Security%20and%20Compliance%20Center/outputs/crn"
 		}
 	  ]
 

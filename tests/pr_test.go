@@ -1,9 +1,10 @@
 package tests
 
 import (
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/testprojects"
-	"testing"
 )
 
 // Use existing resource group
@@ -18,12 +19,13 @@ func TestProjectsFullTest(t *testing.T) {
 	})
 
 	options.StackInputs = map[string]interface{}{
-		"prefix":                       options.Prefix,
-		"existing_resource_group_name": resourceGroup,
-		"sm_service_plan":              "trial",
-		"use_existing_resource_group":  false,
-		"ibmcloud_api_key":             options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
-		"enable_platform_logs_metrics": false,
+		"prefix":                            options.Prefix,
+		"existing_resource_group_name":      resourceGroup,
+		"sm_service_plan":                   "trial",
+		"use_existing_resource_group":       false,
+		"secret_manager_iam_engine_enabled": true,
+		"ibmcloud_api_key":                  options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
+		"enable_platform_logs_metrics":      false,
 	}
 
 	err := options.RunProjectsTest()

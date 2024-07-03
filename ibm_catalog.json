@@ -31,6 +31,7 @@
 			"provider_name": "IBM",
 			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/light-theme.svg",
 			"offering_docs_url": "https://cloud.ibm.com/docs/security-services?topic=security-services-overview",
+			"support_details": "If you’re experiencing issues with this product, review the troubleshooting information available from the “Docs” link in the Related links section. If you can’t resolve your problem, click “Get help” in the related links and create a case.",
 			"features": [
 				{
 					"title": "Creates an IBM Key Protect instance",
@@ -69,8 +70,8 @@
 						"authority": "scc-v3",
 						"profiles": [
 							{
-								"profile_name": "CIS IBM Cloud Foundations Benchmark",
-								"profile_version": "1.0.0"
+								"profile_name": "CIS IBM Cloud Foundations Benchmark v1.1.0",
+								"profile_version": "1.1.0"
 							}
 						]
 					},

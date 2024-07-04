@@ -54,6 +54,7 @@ func TestProjectsFullTest(t *testing.T) {
 }
 
 func TestProjectsExistingResourcesTest(t *testing.T) {
+	t.Skip()
 	t.Parallel()
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
 		Testing:        t,

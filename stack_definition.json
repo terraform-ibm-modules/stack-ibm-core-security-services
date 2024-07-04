@@ -294,7 +294,7 @@
 					"value": "ref:../../inputs/existing_secrets_manager_crn"
 				},
 				{
-					"name": "secret_manager_iam_engine_enabled",
+					"name": "iam_engine_enabled",
 					"value": "ref:../../inputs/secret_manager_iam_engine_enabled"
 				  },
 				{

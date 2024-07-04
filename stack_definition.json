@@ -177,7 +177,7 @@
 				},
 				{
 					"name": "kms_endpoint_url",
-					"value": "ref:../../members/1a - Key management/outputs/kms_private_endpoint"
+					"value": "ref:../../members/1a%20-%20Key%20management/outputs/kms_private_endpoint"
 				},
 				{
 					"name": "existing_kms_instance_crn",

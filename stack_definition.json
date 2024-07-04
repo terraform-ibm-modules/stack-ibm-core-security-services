@@ -143,7 +143,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+					"value": "ref:../../members/1a%20-%20Key%20management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "kms_endpoint_type",
@@ -151,7 +151,7 @@
 				},
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+					"value": "ref:../../members/1b%20-%20Object%20storage/outputs/cos_instance_id"
 				},
 				{
 					"name": "enable_platform_logs",
@@ -169,7 +169,7 @@
 			"inputs": [
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+					"value": "ref:../../members/1b%20-%20Object%20storage/outputs/cos_instance_id"
 				},
 				{
 					"name": "skip_cos_kms_auth_policy",
@@ -181,7 +181,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+					"value": "ref:../../members/1a%20-%20Key%20management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "kms_endpoint_type",
@@ -205,7 +205,7 @@
 				},
 				{
 					"name": "existing_monitoring_crn",
-					"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
+					"value": "ref:../../members/2%20-%20Observability/outputs/cloud_monitoring_crn"
 				}
 			],
 			"name": "3 - Event Notifications",
@@ -231,7 +231,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+					"value": "ref:../../members/1a%20-%20Key%20management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "kms_endpoint_type",
@@ -239,11 +239,11 @@
 				},
 				{
 					"name": "existing_monitoring_crn",
-					"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
+					"value": "ref:../../members/2%20-%20Observability/outputs/cloud_monitoring_crn"
 				},
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+					"value": "ref:../../members/1b%20-%20Object%20storage/outputs/cos_instance_id"
 				},
 				{
 					"name": "skip_cos_kms_auth_policy",
@@ -251,7 +251,7 @@
 				},
 				{
 					"name": "existing_en_crn",
-					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
+					"value": "ref:../../members/3%20-%20Event%20Notifications/outputs/crn"
 				},
 				{
 					"name": "scc_service_plan",
@@ -289,11 +289,11 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+					"value": "ref:../../members/1a%20-%20Key%20management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "existing_event_notification_instance_crn",
-					"value": "ref:../../members/3 - Event Notifications/outputs/crn"
+					"value": "ref:../../members/3%20-%20Event%20Notifications/outputs/crn"
 				},
 				{
 					"name": "existing_secrets_manager_crn",
@@ -311,35 +311,35 @@
 	"outputs": [
 		{
 			"name": "key_management_service_instance_crn",
-			"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+			"value": "ref:../../members/1a%20-%20Key%20management/outputs/kms_instance_crn"
 		},
 		{
 			"name": "secrets_manager_crn",
-			"value": "ref:../../members/4b - Secrets Manager/outputs/secrets_manager_crn"
+			"value": "ref:../../members/4b%20-%20Secrets%20Manager/outputs/secrets_manager_crn"
 		},
 		{
 			"name": "monitoring_crn",
-			"value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
+			"value": "ref:../../members/2%20-%20Observability/outputs/cloud_monitoring_crn"
 		},
 		{
 			"name": "cos_instance_crn",
-			"value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+			"value": "ref:../../members/1b%20-%20Object%20storage/outputs/cos_instance_id"
 		},
 		{
 			"name": "en_crn",
-			"value": "ref:../../members/3 - Event Notifications/outputs/crn"
+			"value": "ref:../../members/3%20-%20Event%20Notifications/outputs/crn"
 		},
 		{
 			"name": "log_analysis_crn",
-			"value": "ref:../../members/2 - Observability/outputs/log_analysis_crn"
+			"value": "ref:../../members/2%20-%20Observability/outputs/log_analysis_crn"
 		},
 		{
 			"name": "scc_crn",
-			"value": "ref:../../members/4a - Security and Compliance Center/outputs/scc_crn"
+			"value": "ref:../../members/4a%20-%20Security%20and%20Compliance%20Center/outputs/scc_crn"
 		},
 		{
 			"name": "scc_workload_protection_crn",
-			"value": "ref:../../members/4a - Security and Compliance Center/outputs/crn"
+			"value": "ref:../../members/4a%20-%20Security%20and%20Compliance%20Center/outputs/crn"
 		}
 	  ]
 

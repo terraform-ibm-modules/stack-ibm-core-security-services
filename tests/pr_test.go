@@ -54,7 +54,6 @@ func TestProjectsFullTest(t *testing.T) {
 }
 
 func TestProjectsExistingResourcesTest(t *testing.T) {
-	t.Skip()
 	t.Parallel()
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
 		Testing:        t,
@@ -67,8 +66,9 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 		"existing_resource_group_name": resourceGroup,
 		"ibmcloud_api_key":             options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
 		"enable_platform_logs_metrics": false,
-		"existing_secrets_manager_crn": permanentResources["secretsManagerCRN"],
-		"existing_kms_instance_crn":    permanentResources["hpcs_south_crn"],
+		// More info: https://github.ibm.com/GoldenEye/issues/issues/9709#issuecomment-83874969
+		// "existing_secrets_manager_crn": permanentResources["secretsManagerCRN"],
+		"existing_kms_instance_crn": permanentResources["hpcs_south_crn"],
 	}
 
 	err := options.RunProjectsTest()

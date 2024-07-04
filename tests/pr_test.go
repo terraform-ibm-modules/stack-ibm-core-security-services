@@ -68,6 +68,7 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 		"enable_platform_logs_metrics": false,
 		// More info: https://github.ibm.com/GoldenEye/issues/issues/9709#issuecomment-83874969
 		// "existing_secrets_manager_crn": permanentResources["secretsManagerCRN"],
+		"sm_service_plan":           "trial",
 		"existing_kms_instance_crn": permanentResources["hpcs_south_crn"],
 	}
 

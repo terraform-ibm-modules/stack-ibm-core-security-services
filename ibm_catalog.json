@@ -205,6 +205,13 @@
 							"required": false
 						},
 						{
+							"key": "existing_kms_instance_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "The CRN of an existing KMS instance to use in this solution. If not set, a new Key Protect instance is provisioned.",
+							"required": false
+						},
+						{
 							"key": "en_email_list",
 							"type": "array",
 							"default_value": [],

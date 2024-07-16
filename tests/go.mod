@@ -2,11 +2,11 @@ module github.com/terraform-ibm-modules/stack-ibm-core-security-services
 
 go 1.21
 
-toolchain go1.22.4
+toolchain go1.22.5
 
 require (
 	github.com/stretchr/testify v1.9.0
-	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.35.1
+	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.35.3
 )
 
 require (

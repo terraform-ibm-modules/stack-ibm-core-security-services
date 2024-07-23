@@ -33,6 +33,13 @@
 			"custom_config": {}
 		},
 		{
+			"name": "existing_scc_instance_crn",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": null
+		  },
+		{
 			"name": "existing_kms_instance_crn",
 			"required": false,
 			"type": "string",
@@ -230,6 +237,10 @@
 					"value": "ref:../../inputs/prefix"
 				},
 				{
+					"name": "existing_scc_instance_crn",
+					"value": "ref:../../inputs/existing_scc_instance_crn"
+				  },
+				{
 					"name": "existing_kms_instance_crn",
 					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
 				},
@@ -267,7 +278,7 @@
 				}
 			],
 			"name": "4a - Security and Compliance Center",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.55673fb4-336d-4ab9-90cd-2d6268df813b-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.63cfb113-9c65-4a5b-bef0-71f2856c6ff2-global"
 		},
 		{
 			"inputs": [

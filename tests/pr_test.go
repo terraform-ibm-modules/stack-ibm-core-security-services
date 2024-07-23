@@ -70,6 +70,7 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 		// "existing_secrets_manager_crn": permanentResources["secretsManagerCRN"],
 		"sm_service_plan":           "trial",
 		"existing_kms_instance_crn": permanentResources["hpcs_south_crn"],
+		"existing_scc_instance_crn": "crn:v1:bluemix:public:compliance:us-south:a/abac0df06b644a9cabc6e44f55b3880e:8d1c1f98-2026-432f-98ae-bcb77fce9f29::",
 	}
 
 	err := options.RunProjectsTest()

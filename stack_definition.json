@@ -71,7 +71,14 @@
       "hidden": false,
       "default": "security-compliance-center-standard-plan",
       "custom_config": {}
-    }
+    },
+	{
+		"name": "secret_manager_iam_engine_enabled",
+		"required": false,
+		"type": "boolean",
+		"hidden": false,
+		"default": false
+	}
   ],
   "members": [
     {
@@ -303,7 +310,11 @@
         {
           "name": "service_plan",
           "value": "ref:../../inputs/sm_service_plan"
-        }
+        },
+		{
+			"name": "iam_engine_enabled",
+			"value": "ref:../../inputs/secret_manager_iam_engine_enabled"
+		}
       ],
       "name": "4b - Secrets Manager",
       "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c93ef740-6249-47d0-b91a-c8e0fbd0ed99-global"

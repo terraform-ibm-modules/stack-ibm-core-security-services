@@ -38,12 +38,13 @@ func TestProjectsFullTest(t *testing.T) {
 	})
 
 	options.StackInputs = map[string]interface{}{
-		"prefix":                       options.Prefix,
-		"existing_resource_group_name": resourceGroup,
-		"sm_service_plan":              "trial",
-		"ibmcloud_api_key":             options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
-		"enable_platform_logs_metrics": false,
-		"en_email_list":                []string{"GoldenEye.Operations@ibm.com"},
+		"prefix":                            options.Prefix,
+		"existing_resource_group_name":      resourceGroup,
+		"sm_service_plan":                   "trial",
+		"secret_manager_iam_engine_enabled": true,
+		"ibmcloud_api_key":                  options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
+		"enable_platform_logs_metrics":      false,
+		"en_email_list":                     []string{"GoldenEye.Operations@ibm.com"},
 	}
 
 	err := options.RunProjectsTest()

@@ -45,6 +45,7 @@ func TestProjectsFullTest(t *testing.T) {
 		"secret_manager_iam_engine_enabled": true,
 		"ibmcloud_api_key":                  options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
 		"enable_platform_logs_metrics":      false,
+		"en_email_list":                     []string{"GoldenEye.Operations@ibm.com"},
 	}
 
 	err := options.RunProjectsTest()
@@ -72,6 +73,7 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 		// "existing_secrets_manager_crn": permanentResources["secretsManagerCRN"],
 		"sm_service_plan":           "trial",
 		"existing_kms_instance_crn": permanentResources["hpcs_south_crn"],
+		"en_email_list":             []string{"GoldenEye.Operations@ibm.com"},
 	}
 
 	err := options.RunProjectsTest()

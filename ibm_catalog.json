@@ -243,6 +243,13 @@
 							]
 						},
 						{
+							"key": "existing_scc_instance_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "The CRN of an existing Security and Compliance Center instance to use in this solution. If not set, a new Security and Compliance Center instance is provisioned.",
+							"required": false
+						},
+						{
 							"key": "scc_service_plan",
 							"type": "string",
 							"default_value": "security-compliance-center-standard-plan",

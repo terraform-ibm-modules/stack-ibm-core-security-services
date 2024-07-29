@@ -49,7 +49,7 @@ or tile in the IBM Cloud catalog, match the title to the catalog. See
 https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-guidance.
 -->
 
-# Core security services
+# IBM Cloud Essential Security and Observability Services
 {: #core-security-services-pattern}
 {: toc-content-type="reference-architecture"}
 {: toc-version="1.2.1"}
@@ -59,7 +59,7 @@ The IDs, such as {: #title-id} are required for publishing this reference archit
 the toc attributes on the H1, repeating the values from the YAML header.
  -->
 
-This reference architecture summarizes the deployment and best practices on {{site.data.keyword.cloud_notm}} for setting core security services and their associated dependencies. {{site.data.keyword.cloud_notm}}'s core security services are crucial for ensuring robust security and compliance for cloud-based applications and data. Their primary goal is to provide a framework for secure and compliant {{site.data.keyword.cloud_notm}} workloads.
+This reference architecture summarizes the deployment and best practices on {{site.data.keyword.cloud_notm}} for setting essential security services and their associated dependencies. {{site.data.keyword.cloud_notm}}'s essential security services are crucial for ensuring robust security and compliance for cloud-based applications and data. Their primary goal is to provide a framework for secure and compliant {{site.data.keyword.cloud_notm}} workloads.
 
 Here’s a brief overview of each service:
 
@@ -76,7 +76,7 @@ This reference architecture showcases how these services form a foundational sec
 ## Architecture diagram
 {: #architecture-diagram}
 
-The following diagram represents the architecture for the core security services deployable architecture on {{site.data.keyword.cloud_notm}} and reuses the [best practices](/docs/framework-financial-services?topic=framework-financial-services-about) for {{site.data.keyword.framework-fs_full}}.
+The following diagram represents the architecture for the IBM Cloud Essential Security and Observability Services deployable architecture on and reuses the [best practices](/docs/framework-financial-services?topic=framework-financial-services-about) for {{site.data.keyword.framework-fs_full}}.
 
 ![Architecture.](core-security-services-architecture.svg "Architecture"){: caption="Figure 1. Architecture diagram" caption-side="bottom"}{: external download="core-security-services-architecture.svg"}
 
@@ -145,5 +145,5 @@ The following table outlines the products or services used in the architecture f
 
 Ensures compliance with some of the controls in the CIS IBM Cloud Foundations Benchmark profile. To view the list of added controls, follow these steps:
 
-1.  Go the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external} and search for the Core Security Services deployable architecture.
+1.  Go the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external} and search for the IBM Cloud Essential Security and Observability Services deployable architecture.
 1.  Click the tile for the deployable architecture to open the details. The Security & compliance tab lists all of the controls that are included in the deployable architecture.

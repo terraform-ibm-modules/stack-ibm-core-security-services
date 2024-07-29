@@ -64,11 +64,10 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 	})
 
 	options.StackInputs = map[string]interface{}{
-		"prefix":                            options.Prefix,
-		"existing_resource_group_name":      resourceGroup,
-		"ibmcloud_api_key":                  options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
-		"enable_platform_logs_metrics":      false,
-		"secret_manager_iam_engine_enabled": true,
+		"prefix":                       options.Prefix,
+		"existing_resource_group_name": resourceGroup,
+		"ibmcloud_api_key":             options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
+		"enable_platform_logs_metrics": false,
 		// More info: https://github.ibm.com/GoldenEye/issues/issues/9709#issuecomment-83874969
 		// "existing_secrets_manager_crn": permanentResources["secretsManagerCRN"],
 		"sm_service_plan":           "trial",

@@ -254,6 +254,13 @@
 							"required": false
 						},
 						{
+							"key": "secret_manager_public_engine_enabled",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Set this to true to configure a Secrets Manager public certificate engine for an existing Secrets Manager instance. If set to false, no public certificate engine will be configured for your instance.",
+							"required": false
+						},
+						{
 							"key": "scc_service_plan",
 							"type": "string",
 							"default_value": "security-compliance-center-standard-plan",

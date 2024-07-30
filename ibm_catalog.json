@@ -148,11 +148,11 @@
 							{
 								"diagram": {
 									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/core-security-services-architecture.svg",
-									"caption": "Core Security Services Stack Architecture",
+									"caption": "IBM Cloud Essential Security and Observability Services Stack Architecture",
 									"type": "image/svg+xml",
 									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/core-security-services-architecture.svg"
 								},
-								"description": "The architecture of Core Security Service stack."
+								"description": "The architecture of IBM Cloud Essential Security and Observability Services stack."
 							}
 						]
 					},

@@ -64,15 +64,15 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 	})
 
 	options.StackInputs = map[string]interface{}{
-		"prefix":                       options.Prefix,
-		"existing_resource_group_name": resourceGroup,
-		"ibmcloud_api_key":             options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
-		"enable_platform_logs_metrics": false,
-		// More info: https://github.ibm.com/GoldenEye/issues/issues/9709#issuecomment-83874969
-		// "existing_secrets_manager_crn": permanentResources["secretsManagerCRN"],
-		"sm_service_plan":           "trial",
-		"existing_kms_instance_crn": permanentResources["hpcs_south_crn"],
-		"en_email_list":             []string{"GoldenEye.Operations@ibm.com"},
+		"prefix":                            options.Prefix,
+		"existing_resource_group_name":      resourceGroup,
+		"ibmcloud_api_key":                  options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
+		"enable_platform_logs_metrics":      false,
+		"existing_secrets_manager_crn":      permanentResources["secretsManagerCRN"],
+		"secret_manager_iam_engine_enabled": false, // this should never set set to true when we pass our permanent SM instance above
+		"sm_service_plan":                   "trial",
+		"existing_kms_instance_crn":         permanentResources["hpcs_south_crn"],
+		"en_email_list":                     []string{"GoldenEye.Operations@ibm.com"},
 	}
 
 	err := options.RunProjectsTest()

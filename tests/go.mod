@@ -22,6 +22,7 @@ require (
 	github.com/IBM/go-sdk-core/v5 v5.17.3 // indirect
 	github.com/IBM/platform-services-go-sdk v0.63.1 // indirect
 	github.com/IBM/project-go-sdk v0.3.0 // indirect
+	github.com/IBM/secrets-manager-go-sdk/v2 v2.0.4
 	github.com/IBM/vpc-go-sdk v0.51.0 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect

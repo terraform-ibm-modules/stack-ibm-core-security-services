@@ -77,14 +77,48 @@
 		"required": false,
 		"type": "boolean",
 		"hidden": false,
-		"default": false
+		"default": false,
+    "custom_config": {}
 	},
   {
     "name": "secret_manager_public_engine_enabled",
 		"required": false,
 		"type": "boolean",
 		"hidden": false,
-		"default": false
+		"default": false,
+    "custom_config": {}
+  },
+  {
+    "name": "cis_id",
+		"required": false,
+		"type": "string",
+		"hidden": false,
+		"default": "__NULL__",
+    "custom_config": {}
+  },
+  {
+    "name": "ca_name",
+		"required": false,
+		"type": "string",
+		"hidden": false,
+		"default": "__NULL__",
+    "custom_config": {}
+  },
+  {
+    "name": "dns_provider_name",
+		"required": false,
+		"type": "string",
+		"hidden": false,
+		"default": "__NULL__",
+    "custom_config": {}
+  },
+  {
+    "name": "acme_letsencrypt_private_key",
+		"required": false,
+		"type": "string",
+		"hidden": true,
+		"default": "__NULL__",
+    "custom_config": {}
   }
   ],
   "members": [
@@ -325,6 +359,22 @@
         {
           "name": "public_engine_enabled",
 			    "value": "ref:../../inputs/secret_manager_public_engine_enabled"
+        },
+        {
+          "name": "cis_id",
+          "value": "ref:../../inputs/cis_id"
+        },
+        {
+          "name": "ca_name",
+          "value": "ref:../../inputs/ca_name"
+        },
+        {
+          "name": "dns_provider_name",
+          "value": "ref:../../inputs/dns_provider_name"
+        },
+        {
+          "name": "acme_letsencrypt_private_key",
+          "value": "ref:../../inputs/acme_letsencrypt_private_key"
         }
       ],
       "name": "4b - Secrets Manager",

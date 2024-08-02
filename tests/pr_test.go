@@ -8,6 +8,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/IBM/go-sdk-core/v5/core"
+	"github.com/IBM/secrets-manager-go-sdk/v2/secretsmanagerv2"
 	"github.com/gruntwork-io/terratest/modules/files"
 	"github.com/gruntwork-io/terratest/modules/logger"
 	"github.com/gruntwork-io/terratest/modules/random"
@@ -46,6 +48,13 @@ func TestMain(m *testing.M) {
 
 func TestProjectsFullTest(t *testing.T) {
 	t.Parallel()
+
+	acme_letsencrypt_private_key := GetSecretsManagerKey( // pragma: allowlist secret
+		permanentResources["acme_letsencrypt_private_key_sm_id"].(string),
+		permanentResources["acme_letsencrypt_private_key_sm_region"].(string),
+		permanentResources["acme_letsencrypt_private_key_secret_id"].(string),
+	)
+
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
 		Testing:        t,
 		Prefix:         "cs", // setting prefix here gets a random string appended to it
@@ -59,6 +68,10 @@ func TestProjectsFullTest(t *testing.T) {
 		"sm_service_plan":                      "trial",
 		"secret_manager_iam_engine_enabled":    true,
 		"secret_manager_public_engine_enabled": true,
+		"cis_id":                               permanentResources["cisInstanceId"],
+		"ca_name":                              permanentResources["certificateAuthorityName"],
+		"dns_provider_name":                    permanentResources["dnsProviderName"],
+		"acme_letsencrypt_private_key":         *acme_letsencrypt_private_key,                              // pragma: allowlist secret
 		"ibmcloud_api_key":                     options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
 		"enable_platform_logs_metrics":         false,
 		"en_email_list":                        []string{"GoldenEye.Operations@ibm.com"},
@@ -70,6 +83,28 @@ func TestProjectsFullTest(t *testing.T) {
 	} else {
 		t.Error("TestProjectsFullTest Failed")
 	}
+}
+
+func GetSecretsManagerKey(sm_id string, sm_region string, sm_key_id string) *string {
+	secretsManagerService, err := secretsmanagerv2.NewSecretsManagerV2(&secretsmanagerv2.SecretsManagerV2Options{
+		URL: fmt.Sprintf("https://%s.%s.secrets-manager.appdomain.cloud", sm_id, sm_region),
+		Authenticator: &core.IamAuthenticator{
+			ApiKey: os.Getenv("TF_VAR_ibmcloud_api_key"),
+		},
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	getSecretOptions := secretsManagerService.NewGetSecretOptions(
+		sm_key_id,
+	)
+
+	secret, _, err := secretsManagerService.GetSecret(getSecretOptions)
+	if err != nil {
+		panic(err)
+	}
+	return secret.(*secretsmanagerv2.ArbitrarySecret).Payload
 }
 
 func TestProjectsExistingResourcesTest(t *testing.T) {

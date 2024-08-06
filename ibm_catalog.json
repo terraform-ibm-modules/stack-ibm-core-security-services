@@ -223,6 +223,13 @@
 							"required": false
 						},
 						{
+							"key" : "existing_en_instance_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "The CRN of existing event notification instance. If not supplied, a new instance is created.",
+							"required": false
+						},
+						{
 							"key": "existing_secrets_manager_crn",
 							"type": "string",
 							"default_value": "__NULL__",

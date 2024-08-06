@@ -49,6 +49,13 @@
       "custom_config": {}
     },
     {
+      "name": "existing_en_instance_crn",
+      "required": false,
+      "type": "string",
+      "default": "__NULL__",
+      "custom_config": {}
+    },
+    {
       "name": "existing_secrets_manager_crn",
       "required": false,
       "type": "string",
@@ -176,6 +183,10 @@
         {
           "name": "existing_cos_instance_crn",
           "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+        },
+        {
+          "name": "existing_en_instance_crn",
+          "value": "ref:../../inputs/existing_en_instance_crn"
         },
         {
           "name": "skip_cos_kms_auth_policy",

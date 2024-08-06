@@ -61,6 +61,8 @@ func TestProjectsFullTest(t *testing.T) {
 		ParallelDeploy: true,
 	})
 
+	options.SkipTestTearDown = true
+
 	options.StackInputs = map[string]interface{}{
 		"prefix":                               options.Prefix,
 		"region":                               validRegions[rand.Intn(len(validRegions))],

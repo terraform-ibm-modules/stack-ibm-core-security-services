@@ -230,6 +230,13 @@
 							"required": false
 						},
 						{
+							"key": "existing_scc_instance_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "The CRN of an existing Security and Compliance Center instance. If not supplied, a new instance will be created.",
+							"required": false
+						},
+						{
 							"key": "sm_service_plan",
 							"type": "string",
 							"default_value": "standard",

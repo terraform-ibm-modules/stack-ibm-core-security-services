@@ -89,6 +89,14 @@
     "custom_config": {}
   },
   {
+    "name": "existing_secrets_endpoint_type",
+		"required": false,
+		"type": "string",
+		"hidden": false,
+		"default": "__NULL__",
+    "custom_config": {}
+  },
+  {
     "name": "cis_id",
 		"required": false,
 		"type": "string",

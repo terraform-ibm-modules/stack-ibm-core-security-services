@@ -230,6 +230,13 @@
 							"required": false
 						},
 						{
+							"key": "existing_secrets_endpoint_type",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "The endpoint type to use if existing_secrets_manager_crn is specified.",
+							"required": false
+						},
+						{
 							"key": "sm_service_plan",
 							"type": "string",
 							"default_value": "standard",

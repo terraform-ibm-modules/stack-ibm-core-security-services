@@ -70,6 +70,7 @@ func TestProjectsFullTest(t *testing.T) {
 		"sm_service_plan":                      "standard",
 		"secret_manager_iam_engine_enabled":    true,
 		"secret_manager_public_engine_enabled": true,
+		"existing_secrets_endpoint_type":       "private",
 		"cis_id":                               permanentResources["cisInstanceId"],
 		"ca_name":                              permanentResources["certificateAuthorityName"],
 		"dns_provider_name":                    permanentResources["dnsProviderName"],

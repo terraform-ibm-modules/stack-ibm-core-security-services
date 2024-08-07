@@ -67,7 +67,7 @@ func TestProjectsFullTest(t *testing.T) {
 		"prefix":                               options.Prefix,
 		"region":                               validRegions[rand.Intn(len(validRegions))],
 		"existing_resource_group_name":         resourceGroup,
-		"sm_service_plan":                      "trial",
+		"sm_service_plan":                      "standard",
 		"secret_manager_iam_engine_enabled":    true,
 		"secret_manager_public_engine_enabled": true,
 		"cis_id":                               permanentResources["cisInstanceId"],

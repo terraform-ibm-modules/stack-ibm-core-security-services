@@ -111,6 +111,12 @@ func GetSecretsManagerKey(sm_id string, sm_region string, sm_key_id string) *str
 func TestProjectsExistingResourcesTest(t *testing.T) {
 	t.Parallel()
 
+	acme_letsencrypt_private_key := GetSecretsManagerKey( // pragma: allowlist secret
+		permanentResources["acme_letsencrypt_private_key_sm_id"].(string),
+		permanentResources["acme_letsencrypt_private_key_sm_region"].(string),
+		permanentResources["acme_letsencrypt_private_key_secret_id"].(string),
+	)
+
 	// ------------------------------------------------------------------------------------
 	// Provision RG, EN and SM
 	// ------------------------------------------------------------------------------------
@@ -153,15 +159,21 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 		})
 
 		options.StackInputs = map[string]interface{}{
-			"prefix":                            terraform.Output(t, existingTerraformOptions, "prefix"),
-			"region":                            terraform.Output(t, existingTerraformOptions, "region"),
-			"existing_resource_group_name":      terraform.Output(t, existingTerraformOptions, "resource_group_name"),
-			"ibmcloud_api_key":                  options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
-			"enable_platform_logs_metrics":      false,
-			"existing_secrets_manager_crn":      terraform.Output(t, existingTerraformOptions, "secrets_manager_instance_crn"),
-			"secret_manager_iam_engine_enabled": true,
-			"existing_kms_instance_crn":         permanentResources["hpcs_south_crn"],
-			"en_email_list":                     []string{"GoldenEye.Operations@ibm.com"},
+			"prefix":                               terraform.Output(t, existingTerraformOptions, "prefix"),
+			"region":                               terraform.Output(t, existingTerraformOptions, "region"),
+			"existing_resource_group_name":         terraform.Output(t, existingTerraformOptions, "resource_group_name"),
+			"ibmcloud_api_key":                     options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
+			"enable_platform_logs_metrics":         false,
+			"existing_secrets_manager_crn":         terraform.Output(t, existingTerraformOptions, "secrets_manager_instance_crn"),
+			"secret_manager_iam_engine_enabled":    true,
+			"secret_manager_public_engine_enabled": true,
+			"existing_secrets_endpoint_type":       "private",
+			"cis_id":                               permanentResources["cisInstanceId"],
+			"ca_name":                              permanentResources["certificateAuthorityName"],
+			"dns_provider_name":                    permanentResources["dnsProviderName"],
+			"acme_letsencrypt_private_key":         *acme_letsencrypt_private_key, // pragma: allowlist secret
+			"existing_kms_instance_crn":            permanentResources["hpcs_south_crn"],
+			"en_email_list":                        []string{"GoldenEye.Operations@ibm.com"},
 		}
 
 		err := options.RunProjectsTest()

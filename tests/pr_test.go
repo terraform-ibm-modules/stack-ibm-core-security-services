@@ -124,6 +124,7 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 			"existing_secrets_manager_crn":      terraform.Output(t, existingTerraformOptions, "secrets_manager_instance_crn"),
 			"secret_manager_iam_engine_enabled": true,
 			"existing_kms_instance_crn":         permanentResources["hpcs_south_crn"],
+			"existing_scc_instance_crn":         terraform.Output(t, existingTerraformOptions, "existing_scc_instance_crn"),
 			"en_email_list":                     []string{"GoldenEye.Operations@ibm.com"},
 		}
 

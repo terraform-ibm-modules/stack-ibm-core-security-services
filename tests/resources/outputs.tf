@@ -27,3 +27,8 @@ output "secrets_manager_instance_crn" {
   value       = module.secrets_manager.secrets_manager_crn
   description = "CRN of created secret manager instance"
 }
+
+output "existing_scc_instance_crn" {
+  value       = module.scc_instance.crn
+  description = "CRN of created scc instance"
+}

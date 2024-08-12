@@ -56,7 +56,7 @@ func TestProjectsFullTest(t *testing.T) {
 		"prefix":                            options.Prefix,
 		"region":                            validRegions[rand.Intn(len(validRegions))],
 		"existing_resource_group_name":      resourceGroup,
-		"sm_service_plan":                   "trial",
+		"sm_service_plan":                   "standard",
 		"secret_manager_iam_engine_enabled": true,
 		"ibmcloud_api_key":                  options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
 		"enable_platform_logs_metrics":      false,

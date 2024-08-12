@@ -1,0 +1,6 @@
+{
+  "ibmcloud_api_key": "temp_value",
+  "prefix": "temp_value",
+  "existing_resource_group_name": "temp_value",
+  "enable_platform_logs_metrics": false
+}

@@ -93,7 +93,7 @@
 		"required": false,
 		"type": "string",
 		"hidden": false,
-		"default": "__NULL__",
+		"default": "private",
     "custom_config": {}
   },
   {

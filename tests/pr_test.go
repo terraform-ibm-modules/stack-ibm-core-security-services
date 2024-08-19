@@ -28,6 +28,8 @@ const yamlLocation = "../common-dev-assets/common-go-assets/common-permanent-res
 
 var permanentResources map[string]interface{}
 
+var acme_letsencrypt_private_key *string
+
 // Current supported regions
 var validRegions = []string{
 	"us-south",
@@ -39,6 +41,13 @@ func TestMain(m *testing.M) {
 	// Read the YAML file contents
 	var err error
 	permanentResources, err = common.LoadMapFromYaml(yamlLocation)
+
+	acme_letsencrypt_private_key = GetSecretsManagerKey( // pragma: allowlist secret
+		permanentResources["acme_letsencrypt_private_key_sm_id"].(string),
+		permanentResources["acme_letsencrypt_private_key_sm_region"].(string),
+		permanentResources["acme_letsencrypt_private_key_secret_id"].(string),
+	)
+
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -48,12 +57,6 @@ func TestMain(m *testing.M) {
 
 func TestProjectsFullTest(t *testing.T) {
 	t.Parallel()
-
-	acme_letsencrypt_private_key := GetSecretsManagerKey( // pragma: allowlist secret
-		permanentResources["acme_letsencrypt_private_key_sm_id"].(string),
-		permanentResources["acme_letsencrypt_private_key_sm_region"].(string),
-		permanentResources["acme_letsencrypt_private_key_secret_id"].(string),
-	)
 
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
 		Testing:        t,
@@ -110,12 +113,6 @@ func GetSecretsManagerKey(sm_id string, sm_region string, sm_key_id string) *str
 
 func TestProjectsExistingResourcesTest(t *testing.T) {
 	t.Parallel()
-
-	acme_letsencrypt_private_key := GetSecretsManagerKey( // pragma: allowlist secret
-		permanentResources["acme_letsencrypt_private_key_sm_id"].(string),
-		permanentResources["acme_letsencrypt_private_key_sm_region"].(string),
-		permanentResources["acme_letsencrypt_private_key_secret_id"].(string),
-	)
 
 	// ------------------------------------------------------------------------------------
 	// Provision RG, EN and SM

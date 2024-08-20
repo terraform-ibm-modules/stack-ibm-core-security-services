@@ -244,7 +244,7 @@
 				}
 			],
 			"name": "4a - Security and Compliance Center",
-			"version_locator": "0fbd7aba-de09-43bf-b848-ade81f4ad0ff.805516d8-ed79-4896-9b4d-0a1c81450943-global"
+			"version_locator": "0fbd7aba-de09-43bf-b848-ade81f4ad0ff.422c032e-c8e9-4ef2-b6e6-ec013b18f969-global"
 		},
 		{
 			"inputs": [
@@ -286,7 +286,7 @@
 				}
 			],
 			"name": "4b - Secrets Manager",
-			"version_locator": "0fbd7aba-de09-43bf-b848-ade81f4ad0ff.fb0699ff-17d9-400e-b3c8-c181585711c4-global"
+			"version_locator": "0fbd7aba-de09-43bf-b848-ade81f4ad0ff.0dab4aac-a83e-4b20-a2d3-d4ead836d0d8-global"
 		}
 	],
 	"outputs": [

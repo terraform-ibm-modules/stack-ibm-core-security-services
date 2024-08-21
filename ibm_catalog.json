@@ -241,7 +241,18 @@
 							"type": "string",
 							"default_value": "private",
 							"description": "The endpoint type to use if `existing_secrets_manager_crn` is specified.",
-							"required": false
+							"required": false,
+							"options": [
+								{
+									"displayname": "public",
+									"value": "public"
+								},
+								{
+									"displayname": "private",
+									"value": "private"
+								}
+							]
+
 						},
 						{
 							"key": "sm_service_plan",
@@ -284,7 +295,7 @@
 						{
 							"key": "ca_name",
 							"type": "string",
-							"default_value": "cert-auth",
+							"default_value": "__NULL__",
 							"description": "The name of the certificate authority for Secrets Manager. Required if secret_manager_public_engine_enabled is set to true",
 							"required": false
 						},

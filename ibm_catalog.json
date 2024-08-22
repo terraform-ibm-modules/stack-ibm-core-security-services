@@ -162,36 +162,39 @@
 					},
 					"dependencies": [
 						{
-							"name": "deploy-arch-ibm-observability",
-							"id": "231fad60-b8ac-4540-bc34-ae1e4379d46f-global",
+							"catalog_id": "0fbd7aba-de09-43bf-b848-ade81f4ad0ff",
+							"flavors": [
+								"standard"
+							],
+							"id": "9fcd1945-8ebc-4072-85dc-6400653e7077-global",
+							"input_mapping": [
+								{
+									"dependency_output": "security_resource_group_name",
+									"version_input": "existing_resource_group_name"
+								}
+							],
+							"name": "deploy-arch-ibm-account-infra-base",
+							"optional": true,
+							"version": "^1.11.6"
+						},
+						{
+							"catalog_id": "0fbd7aba-de09-43bf-b848-ade81f4ad0ff",
 							"flavors": [
 								"instances"
 							],
-							"catalog_id": "0fbd7aba-de09-43bf-b848-ade81f4ad0ff",
-							"optional": true,
+							"id": "231fad60-b8ac-4540-bc34-ae1e4379d46f-global",
 							"input_mapping": [
 								{
 									"dependency_output": "cloud_monitoring_crn",
 									"version_input": "cloud_monitoring_crn"
 								}
-							]
-						},
-						{
-							"name": "deploy-arch-ibm-account-infra-base",
-							"id": "9fcd1945-8ebc-4072-85dc-6400653e7077-global",
-							"flavors": [
-								"standard"
 							],
-							"catalog_id": "0fbd7aba-de09-43bf-b848-ade81f4ad0ff",
+							"name": "deploy-arch-ibm-observability",
 							"optional": true,
-							"input_mapping": [
-								{
-									"dependency_output": "security_group_group_name",
-									"version_input": "existing_resource_group_name"
-								}
-							]
+							"version": "^2.1.0"
 						}
 					],
+					"dependency_version_2": true,
 					"release_notes_url": "https://cloud.ibm.com/docs/security-services?topic=security-services-css-relnotes",
 					"configuration": [
 						{

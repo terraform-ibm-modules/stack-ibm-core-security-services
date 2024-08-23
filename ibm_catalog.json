@@ -289,21 +289,21 @@
 							"key": "cis_id",
 							"type": "string",
 							"default_value": "__NULL__",
-							"description": "Cloud Internet Service ID. Required if secret_manager_public_engine_enabled is set to true",
+							"description": "Cloud Internet Service ID. Required if `secret_manager_public_engine_enabled` is set to true.",
 							"required": false
 						},
 						{
 							"key": "ca_name",
 							"type": "string",
 							"default_value": "__NULL__",
-							"description": "The name of the certificate authority for Secrets Manager. Required if secret_manager_public_engine_enabled is set to true",
+							"description": "The name of the certificate authority for Secrets Manager. Required if `secret_manager_public_engine_enabled` is set to true.",
 							"required": false
 						},
 						{
 							"key": "dns_provider_name",
 							"type": "string",
-							"default_value": "certificate-dns",
-							"description": "The name of the DNS provider for the public certificate secrets engine configuration.",
+							"default_value": "__NULL__",
+							"description": "The name of the DNS provider for the public certificate secrets engine configuration. Required if `secret_manager_public_engine_enabled` is set to true.",
 							"required": false
 						},
 						{

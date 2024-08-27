@@ -185,8 +185,8 @@
 							"id": "231fad60-b8ac-4540-bc34-ae1e4379d46f-global",
 							"input_mapping": [
 								{
-									"dependency_output": "cloud_monitoring_crn",
-									"version_input": "cloud_monitoring_crn"
+									"dependency_input": "region",
+									"version_input": "region"
 								}
 							],
 							"name": "deploy-arch-ibm-observability",

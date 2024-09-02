@@ -45,15 +45,12 @@ module "secrets_manager" {
 
 module "cos" {
   source                 = "terraform-ibm-modules/cos/ibm"
-  version                = "8.10.1"
+  version                = "8.11.3"
   resource_group_id      = module.resource_group.resource_group_id
-  region                 = var.region
-  cross_region_location  = null
-  cos_instance_name      = "${var.prefix}-vpc-logs-cos"
-  cos_tags               = var.resource_tags
-  bucket_name            = "${var.prefix}-vpc-logs-cos-bucket"
+  cos_instance_name      = "${var.prefix}-cos"
   kms_encryption_enabled = false
   retention_enabled      = false
+  bucket_name            = "${var.prefix}-cb"
 }
 
 ##############################################################################

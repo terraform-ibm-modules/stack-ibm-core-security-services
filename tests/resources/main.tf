@@ -60,7 +60,7 @@ module "cos" {
 # SCC
 ##############################################################################
 
-module "create_scc_instance" {
+module "scc_instance" {
   source                            = "terraform-ibm-modules/scc/ibm"
   version                           = "1.7.2"
   instance_name                     = "${var.prefix}-scc-instance"

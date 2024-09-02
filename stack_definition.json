@@ -41,7 +41,7 @@
       "custom_config": {}
     },
     {
-      "key": "existing_scc_instance_crn",
+      "name": "existing_scc_instance_crn",
       "required": false,
       "type": "string",
       "hidden": false,
@@ -338,10 +338,10 @@
           "name": "service_plan",
           "value": "ref:../../inputs/sm_service_plan"
         },
-		{
-			"name": "iam_engine_enabled",
-			"value": "ref:../../inputs/secret_manager_iam_engine_enabled"
-		}
+        {
+          "name": "iam_engine_enabled",
+          "value": "ref:../../inputs/secret_manager_iam_engine_enabled"
+        }
       ],
       "name": "4b - Secrets Manager",
       "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e806bb05-dfb9-40a8-99bf-1b9272cf8d82-global"

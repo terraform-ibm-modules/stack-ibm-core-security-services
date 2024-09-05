@@ -315,6 +315,10 @@
           "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         },
         {
+          "name": "existing_event_notification_instance_crn",
+          "value": "ref:../../members/3 - Event Notifications/outputs/crn"
+        },
+        {
           "name": "existing_secrets_manager_crn",
           "value": "ref:../../inputs/existing_secrets_manager_crn"
         },
@@ -325,6 +329,10 @@
         {
           "name": "iam_engine_enabled",
           "value": "ref:../../inputs/secret_manager_iam_engine_enabled"
+        },
+        {
+          "name": "enable_event_notification",
+          "value": true
         }
       ],
       "name": "4b - Secrets Manager",

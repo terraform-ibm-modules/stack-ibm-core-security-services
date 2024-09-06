@@ -27,8 +27,8 @@ const yamlLocation = "../common-dev-assets/common-go-assets/common-permanent-res
 var permanentResources map[string]interface{}
 
 // Current supported regions (NOTE: eu-es is not being used as we don't have extended trial plan quota in that region currently)
+// us-south is not being used as we have been asked to not run secrets manager tests in us-south, us-east
 var validRegions = []string{
-	"us-south",
 	"eu-de",
 }
 

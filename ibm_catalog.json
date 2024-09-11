@@ -1,8 +1,8 @@
 {
 	"products": [
 		{
-			"label": "IBM Cloud Essential Security and Observability Services",
-			"name": "Core_Security_Services",
+			"label": "Testing - IBM Cloud Essential Security and Observability Services",
+			"name": "Testing_Core_Security_Services",
 			"version": "1.3.4",
 			"product_kind": "solution",
 			"tags": [

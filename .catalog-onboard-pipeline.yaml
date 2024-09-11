@@ -1,9 +1,9 @@
 ---
 apiVersion: v1
 offerings:
-  - name: deploy-arch-ibm-core-security-svcs
+  - name: testing-deploy-arch-ibm-core-security-svcs
     kind: solution
-    catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
+    catalog_id: f64499c8-eb50-4985-bf91-29f9e605a433
     offering_id: 0294f96e-7314-48d1-a710-c08a541b2119
     variations:
       - name: standard

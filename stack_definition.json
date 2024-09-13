@@ -134,6 +134,7 @@
       "hidden": true,
       "default": "__NULL__",
       "custom_config": {}
+      "default": false
     }
   ],
   "members": [
@@ -161,7 +162,7 @@
         }
       ],
       "name": "1a - Key management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.650ff7c9-5a41-4d32-a0db-6720ff56a016-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.206bfa3d-3bbe-435e-adb9-dd244fdaad86-global"
     },
     {
       "inputs": [
@@ -183,7 +184,7 @@
         }
       ],
       "name": "1b - Object storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.75709d42-41a3-41ca-8f45-807652f0d1f7-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1db2434c-c55f-4a5e-9814-1b39f9580b86-global"
     },
     {
       "inputs": [
@@ -225,7 +226,7 @@
         }
       ],
       "name": "2 - Observability",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.9559b390-b310-4373-a61d-c4add658c3cf-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.9a4b4855-07a5-43a0-af1d-ef44e091821c-global"
     },
     {
       "inputs": [
@@ -275,7 +276,7 @@
         }
       ],
       "name": "3 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3910e11e-c90b-48b0-b271-ec5d5049ad84-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.ee7b0d6c-3603-40fb-953b-4bdbd43c3cbe-global"
     },
     {
       "inputs": [
@@ -335,7 +336,7 @@
         }
       ],
       "name": "4a - Security and Compliance Center",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1ac9df0e-d3d5-4ed8-abfc-043578670dbb-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c689955e-d4ad-4f9e-8bdc-c8929dd5991a-global"
     },
     {
       "inputs": [
@@ -358,6 +359,10 @@
         {
           "name": "existing_kms_instance_crn",
           "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+        },
+        {
+          "name": "existing_event_notification_instance_crn",
+          "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         },
         {
           "name": "existing_event_notification_instance_crn",
@@ -394,10 +399,14 @@
         {
           "name": "acme_letsencrypt_private_key",
           "value": "ref:../../inputs/acme_letsencrypt_private_key"
+        },
+        {
+          "name": "enable_event_notification",
+          "value": true
         }
       ],
       "name": "4b - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e806bb05-dfb9-40a8-99bf-1b9272cf8d82-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f98df044-b1c7-4f38-86db-6438e76a35bf-global"
     }
   ],
   "outputs": [

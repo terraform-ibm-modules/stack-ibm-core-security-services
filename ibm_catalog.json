@@ -178,20 +178,20 @@
 							"version": "^1.11.6"
 						},
 						{
-							"catalog_id": "0fbd7aba-de09-43bf-b848-ade81f4ad0ff",
+							"catalog_id": "f64499c8-eb50-4985-bf91-29f9e605a433",
 							"flavors": [
 								"instances"
 							],
-							"id": "231fad60-b8ac-4540-bc34-ae1e4379d46f-global",
+							"id": "daf2cf91-2384-4205-b7f4-621299a4896d",
 							"input_mapping": [
 								{
 									"dependency_input": "region",
 									"version_input": "region"
 								}
 							],
-							"name": "deploy-arch-ibm-observability",
+							"name": "testing-deploy-arch-ibm-observability",
 							"optional": true,
-							"version": "^2.1.0"
+							"version": "^1.0.5"
 						}
 					],
 					"dependency_version_2": true,

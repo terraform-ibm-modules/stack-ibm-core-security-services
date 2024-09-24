@@ -162,14 +162,14 @@
 					},
 					"dependencies": [
 						{
-							"catalog_id": "0fbd7aba-de09-43bf-b848-ade81f4ad0ff",
+							"catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
 							"flavors": [
 								"standard"
 							],
-							"id": "9fcd1945-8ebc-4072-85dc-6400653e7077-global",
+							"id": "63641cec-6093-4b4f-b7b0-98d2f4185cd6-global",
 							"input_mapping": [
 								{
-									"dependency_output": "security_resource_group_name",
+									"dependency_output": "workload_resource_group_name",
 									"version_input": "existing_resource_group_name"
 								}
 							],

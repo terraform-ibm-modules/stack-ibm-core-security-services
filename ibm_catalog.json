@@ -315,6 +315,10 @@
 							"description": "The id of the provisioned Log Analysis instance."
 						},
 						{
+							"key": "cloud_logs_crn",
+							"description": "The id of the provisioned Cloud Logs instance."
+						},
+						{
 							"key": "scc_workload_protection_crn",
 							"description": "SCC Workload Protection instance CRN."
 						}

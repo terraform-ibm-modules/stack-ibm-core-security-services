@@ -169,8 +169,8 @@
 							"id": "63641cec-6093-4b4f-b7b0-98d2f4185cd6-global",
 							"input_mapping": [
 								{
-									"dependency_output": "workload_resource_group_name",
-									"version_input": "existing_resource_group_name"
+									"dependency_input": "prefix",
+									"version_input": "prefix"
 								}
 							],
 							"name": "deploy-arch-ibm-account-infra-base",

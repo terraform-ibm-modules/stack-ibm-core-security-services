@@ -2,5 +2,5 @@
   "ibmcloud_api_key": $VALIDATION_APIKEY,
   "prefix": $PREFIX,
   "existing_resource_group_name": $RG_NAME,
-  "enable_platform_logs_metrics": false
+  "enable_platform_metrics": false
 }

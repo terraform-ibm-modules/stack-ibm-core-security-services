@@ -25,7 +25,7 @@
       "custom_config": {}
     },
     {
-      "name": "enable_platform_logs_metrics",
+      "name": "enable_platform_metrics",
       "required": false,
       "type": "boolean",
       "hidden": false,
@@ -175,15 +175,15 @@
         },
         {
           "name": "enable_platform_logs",
-          "value": "ref:../../inputs/enable_platform_logs_metrics"
+          "value": "ref:../../inputs/enable_platform_metrics"
         },
         {
           "name": "enable_platform_metrics",
-          "value": "ref:../../inputs/enable_platform_logs_metrics"
+          "value": "ref:../../inputs/enable_platform_metrics"
         },
         {
           "name": "existing_en_instance_crn",
-          "value": "ref:../../inputs/existing_en_instance_crn"
+          "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         },
         {
           "name": "logs_routing_tenant_regions",
@@ -234,10 +234,6 @@
         {
           "name": "prefix",
           "value": "ref:../../inputs/prefix"
-        },
-        {
-          "name": "existing_monitoring_crn",
-          "value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
         }
       ],
       "name": "3 - Event Notifications",

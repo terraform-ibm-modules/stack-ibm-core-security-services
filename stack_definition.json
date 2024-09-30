@@ -85,13 +85,6 @@
       "type": "boolean",
       "hidden": false,
       "default": false
-    },
-    {
-      "name": "logs_routing_tenant_regions",
-      "required": false,
-      "type": "array",
-      "hidden": false,
-      "default": []
     }
   ],
   "members": [
@@ -184,10 +177,6 @@
         {
           "name": "existing_en_instance_crn",
           "value": "ref:../../members/3 - Event Notifications/outputs/crn"
-        },
-        {
-          "name": "logs_routing_tenant_regions",
-          "value": "ref:../../inputs/logs_routing_tenant_regions"
         }
       ],
       "name": "2 - Observability",

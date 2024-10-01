@@ -202,17 +202,10 @@
 							}
 						},
 						{
-							"key": "enable_platform_metrics",
+							"key": "enable_platform_logs_metrics",
 							"type": "boolean",
 							"default_value": true,
-							"description": "Setting this to true will enable the IBM Cloud Monitoring instance to collect the platform metrics.",
-							"required": false
-						},
-						{
-							"key": "enable_platform_logs",
-							"type": "boolean",
-							"default_value": true,
-							"description": "Setting this to true will create a tenant in the same region that the Cloud Logs instance is provisioned to enable platform logs for that region. To send platform logs from other regions, you can explicitially specify a list of regions using the `logs_routing_tenant_regions` input. NOTE: You can only have 1 tenant per region in an account. If `log_analysis_provision` is set to true, this variable will also enable platform logs for the Log analysis instance.",
+							"description": "Setting this to true will create a tenant in the same region where the Cloud Logs instance is provisioned, enabling platform logs for that region. To send platform logs from other regions, you can explicitly specify a list of regions using the `logs_routing_tenant_regions` input. Note: You can have only one tenant per region in an account. If `log_analysis_provision` or `cloud_monitoring_provision` is set to true, this variable will also enable platform logs for the Log Analysis instance and platform metrics for Cloud Monitoring instance.",
 							"required": false
 						},
 						{

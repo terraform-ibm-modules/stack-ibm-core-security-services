@@ -25,15 +25,7 @@
       "custom_config": {}
     },
     {
-      "name": "enable_platform_metrics",
-      "required": false,
-      "type": "boolean",
-      "hidden": false,
-      "default": true,
-      "custom_config": {}
-    },
-    {
-      "name": "enable_platform_logs",
+      "name": "enable_platform_logs_metrics",
       "required": false,
       "type": "boolean",
       "hidden": false,
@@ -176,11 +168,11 @@
         },
         {
           "name": "enable_platform_logs",
-          "value": "ref:../../inputs/enable_platform_logs"
+          "value": "ref:../../inputs/enable_platform_logs_metrics"
         },
         {
           "name": "enable_platform_metrics",
-          "value": "ref:../../inputs/enable_platform_metrics"
+          "value": "ref:../../inputs/enable_platform_logs_metrics"
         },
         {
           "name": "existing_en_instance_crn",

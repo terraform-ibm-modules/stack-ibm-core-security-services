@@ -33,6 +33,14 @@
       "custom_config": {}
     },
     {
+      "name": "enable_platform_logs",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": true,
+      "custom_config": {}
+    },
+    {
       "name": "existing_kms_instance_crn",
       "required": false,
       "type": "string",
@@ -168,7 +176,7 @@
         },
         {
           "name": "enable_platform_logs",
-          "value": "ref:../../inputs/enable_platform_metrics"
+          "value": "ref:../../inputs/enable_platform_logs"
         },
         {
           "name": "enable_platform_metrics",
@@ -180,7 +188,7 @@
         }
       ],
       "name": "2 - Observability",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.eaf90e32-42b4-4cd6-a4c3-ea720f6ea9f7-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.157744e4-5ef1-4e0f-9b8b-8b49b2ee8bb2-global"
     },
     {
       "inputs": [

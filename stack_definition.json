@@ -147,6 +147,10 @@
           "value": true
         },
         {
+          "name": "skip_cos_kms_auth_policy",
+          "value": true
+        },
+        {
           "name": "region",
           "value": "ref:../../inputs/region"
         },
@@ -194,7 +198,7 @@
         },
         {
           "name": "skip_cos_kms_auth_policy",
-          "value": true
+          "value": false
         },
         {
           "name": "kms_endpoint_url",

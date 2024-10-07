@@ -52,7 +52,7 @@
       "name": "existing_en_instance_crn",
       "required": false,
       "type": "string",
-      "default": "__NULL__",
+      "default": "____",
       "custom_config": {}
     },
     {
@@ -60,7 +60,7 @@
       "required": false,
       "type": "string",
       "hidden": false,
-      "default": "__NULL__",
+      "default": "____",
       "custom_config": {}
     },
     {
@@ -227,6 +227,10 @@
         {
           "name": "prefix",
           "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "existing_monitoring_crn",
+          "value": "__NULL__"
         }
       ],
       "name": "3 - Event Notifications",

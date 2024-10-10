@@ -41,6 +41,14 @@
       "custom_config": {}
     },
     {
+      "name": "existing_scc_instance_crn",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "__NULL__",
+      "custom_config": {}
+    },
+    {
       "name": "en_email_list",
       "required": false,
       "type": "array",
@@ -243,6 +251,14 @@
           "value": "ref:../../inputs/region"
         },
         {
+          "name": "existing_scc_instance_crn",
+          "value": "ref:../../inputs/existing_scc_instance_crn"
+        },
+        {
+          "name": "provision_scc_workload_protection",
+          "value": false
+        },
+        {
           "name": "prefix",
           "value": "ref:../../inputs/prefix"
         },
@@ -286,7 +302,7 @@
         }
       ],
       "name": "4a - Security and Compliance Center",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c689955e-d4ad-4f9e-8bdc-c8929dd5991a-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.6c8efc89-1b33-4ba4-bc32-24c53780e5d8-global"
     },
     {
       "inputs": [

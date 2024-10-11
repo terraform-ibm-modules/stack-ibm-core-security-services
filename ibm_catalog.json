@@ -205,7 +205,7 @@
 							"key": "enable_platform_logs_metrics",
 							"type": "boolean",
 							"default_value": true,
-							"description": "Setting this to true will create a tenant in the same region where the Cloud Logs instance is provisioned, enabling platform logs for that region. To send platform logs from other regions, you can explicitly specify a list of regions using the `logs_routing_tenant_regions` input. Note: You can have only one tenant per region in an account. If `log_analysis_provision` or `cloud_monitoring_provision` is set to true, this variable will also enable platform logs for the Log Analysis instance and platform metrics for Cloud Monitoring instance.",
+							"description": "Setting this to true will create a tenant in the same region where the Cloud Logs instance is provisioned, enabling platform logs for that region. Note: You can have only one tenant per region in an account. This variable will also enable platform logs for the Log Analysis instance and platform metrics for Cloud Monitoring instance.",
 							"required": false
 						},
 						{
@@ -293,23 +293,23 @@
 						},
 						{
 							"key": "monitoring_crn",
-							"description": "The crn of the IBM Cloud Monitoring instance."
+							"description": "The CRN of the IBM Cloud Monitoring instance."
 						},
 						{
 							"key": "cos_instance_crn",
-							"description": "The crn of the Cloud Object Storage instance."
+							"description": "The CRN of the Cloud Object Storage instance."
 						},
 						{
 							"key": "en_crn",
-							"description": "The crn of the Event Notifications instance."
+							"description": "The CRN of the Event Notifications instance."
 						},
 						{
 							"key": "log_analysis_crn",
-							"description": "The id of the provisioned Log Analysis instance."
+							"description": "The CRN of the provisioned Log Analysis instance."
 						},
 						{
 							"key": "cloud_logs_crn",
-							"description": "The id of the provisioned Cloud Logs instance."
+							"description": "The CRN of the provisioned Cloud Logs instance."
 						},
 						{
 							"key": "scc_workload_protection_crn",

@@ -291,6 +291,10 @@
         {
           "name": "scc_en_email_list",
           "value": "ref:../../inputs/en_email_list"
+        },
+        {
+          "name": "attachment_schedule",
+          "value": "daily"
         }
       ],
       "name": "4a - Security and Compliance Center",

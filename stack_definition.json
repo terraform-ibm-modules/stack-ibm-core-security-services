@@ -173,6 +173,14 @@
         {
           "name": "enable_platform_metrics",
           "value": "ref:../../inputs/enable_platform_logs_metrics"
+        },
+        {
+          "name": "log_analysis_enable_archive",
+          "value": false
+        },
+        {
+          "name": "log_analysis_provision",
+          "value": true
         }
       ],
       "name": "2 - Observability",
@@ -223,14 +231,6 @@
         {
           "name": "existing_monitoring_crn",
           "value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
-        },
-        {
-          "name": "log_analysis_enable_archive",
-          "value": false
-        },
-        {
-          "name": "log_analysis_provision",
-          "value": true
         }
       ],
       "name": "3 - Event Notifications",

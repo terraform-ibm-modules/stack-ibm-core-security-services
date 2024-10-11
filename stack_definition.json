@@ -112,7 +112,7 @@
         }
       ],
       "name": "1a - Key management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.206bfa3d-3bbe-435e-adb9-dd244fdaad86-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.7f57ef48-2bb2-4641-8f6e-db27a7eacc38-global"
     },
     {
       "inputs": [
@@ -134,7 +134,7 @@
         }
       ],
       "name": "1b - Object storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1db2434c-c55f-4a5e-9814-1b39f9580b86-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.54ae4d96-9c0d-430c-a5d1-51785ffe4cd0-global"
     },
     {
       "inputs": [
@@ -176,7 +176,7 @@
         }
       ],
       "name": "2 - Observability",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.9a4b4855-07a5-43a0-af1d-ef44e091821c-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.2515f999-c6c3-4fa3-81eb-03b26d019bb2-global"
     },
     {
       "inputs": [
@@ -223,10 +223,18 @@
         {
           "name": "existing_monitoring_crn",
           "value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
+        },
+        {
+          "name": "log_analysis_enable_archive",
+          "value": false
+        },
+        {
+          "name": "log_analysis_provision",
+          "value": true
         }
       ],
       "name": "3 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.ee7b0d6c-3603-40fb-953b-4bdbd43c3cbe-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b5b38d6e-441e-4915-ac00-9a75b442a9f0-global"
     },
     {
       "inputs": [
@@ -286,7 +294,7 @@
         }
       ],
       "name": "4a - Security and Compliance Center",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c689955e-d4ad-4f9e-8bdc-c8929dd5991a-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b27fc8c7-f6ec-4f98-890d-4f7ccfd37aaf-global"
     },
     {
       "inputs": [
@@ -315,10 +323,6 @@
           "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         },
         {
-          "name": "existing_event_notification_instance_crn",
-          "value": "ref:../../members/3 - Event Notifications/outputs/crn"
-        },
-        {
           "name": "existing_secrets_manager_crn",
           "value": "ref:../../inputs/existing_secrets_manager_crn"
         },
@@ -336,7 +340,7 @@
         }
       ],
       "name": "4b - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f98df044-b1c7-4f38-86db-6438e76a35bf-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.03587d2d-38bd-42c3-983b-72469702e038-global"
     }
   ],
   "outputs": [

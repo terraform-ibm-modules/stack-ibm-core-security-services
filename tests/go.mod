@@ -1,13 +1,13 @@
 module github.com/terraform-ibm-modules/stack-ibm-core-security-services
 
-go 1.22
+go 1.22.0
 
 toolchain go1.23.1
 
 require (
-	github.com/gruntwork-io/terratest v0.47.1
+	github.com/gruntwork-io/terratest v0.47.2
 	github.com/stretchr/testify v1.9.0
-	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.38.2
+	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.40.2
 )
 
 require (
@@ -17,12 +17,13 @@ require (
 	cloud.google.com/go/iam v1.1.1 // indirect
 	cloud.google.com/go/storage v1.30.1 // indirect
 	github.com/IBM-Cloud/bluemix-go v0.0.0-20240719075425-078fcb3a55be // indirect
-	github.com/IBM-Cloud/power-go-client v1.7.1 // indirect
+	github.com/IBM-Cloud/power-go-client v1.8.1 // indirect
 	github.com/IBM/cloud-databases-go-sdk v0.7.0 // indirect
 	github.com/IBM/go-sdk-core/v5 v5.17.5 // indirect
-	github.com/IBM/platform-services-go-sdk v0.69.0 // indirect
-	github.com/IBM/project-go-sdk v0.3.0 // indirect
-	github.com/IBM/vpc-go-sdk v0.57.0 // indirect
+	github.com/IBM/platform-services-go-sdk v0.69.1 // indirect
+	github.com/IBM/project-go-sdk v0.3.6 // indirect
+	github.com/IBM/schematics-go-sdk v0.3.0 // indirect
+	github.com/IBM/vpc-go-sdk v0.59.0 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
@@ -95,13 +96,13 @@ require (
 	go.opentelemetry.io/otel v1.16.0 // indirect
 	go.opentelemetry.io/otel/metric v1.16.0 // indirect
 	go.opentelemetry.io/otel/trace v1.16.0 // indirect
-	golang.org/x/crypto v0.27.0 // indirect
+	golang.org/x/crypto v0.28.0 // indirect
 	golang.org/x/mod v0.17.0 // indirect
 	golang.org/x/net v0.25.0 // indirect
 	golang.org/x/oauth2 v0.10.0 // indirect
 	golang.org/x/sync v0.8.0 // indirect
-	golang.org/x/sys v0.25.0 // indirect
-	golang.org/x/text v0.18.0 // indirect
+	golang.org/x/sys v0.26.0 // indirect
+	golang.org/x/text v0.19.0 // indirect
 	golang.org/x/tools v0.21.1-0.20240508182429-e35e4ccd0d2d // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	google.golang.org/api v0.127.0 // indirect

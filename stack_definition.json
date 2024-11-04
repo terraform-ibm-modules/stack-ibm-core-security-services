@@ -223,6 +223,10 @@
         {
           "name": "prefix",
           "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "existing_monitoring_crn",
+          "value": "__NULL__"
         }
       ],
       "name": "3 - Event Notifications",

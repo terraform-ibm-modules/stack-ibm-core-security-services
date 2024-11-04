@@ -194,7 +194,7 @@
         },
         {
           "name": "skip_cos_kms_auth_policy",
-          "value": true
+          "value": false
         },
         {
           "name": "kms_endpoint_url",

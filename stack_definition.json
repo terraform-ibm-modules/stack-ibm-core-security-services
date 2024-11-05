@@ -120,7 +120,7 @@
         }
       ],
       "name": "1a - Key management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.7f57ef48-2bb2-4641-8f6e-db27a7eacc38-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3b5c0ef5-6438-4e7b-8a88-88636bc590c6-global"
     },
     {
       "inputs": [
@@ -142,7 +142,7 @@
         }
       ],
       "name": "1b - Object storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.54ae4d96-9c0d-430c-a5d1-51785ffe4cd0-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f039fa0e-24f7-4c12-a617-1dee12997859-global"
     },
     {
       "inputs": [
@@ -183,16 +183,12 @@
           "value": "ref:../../inputs/enable_platform_logs_metrics"
         },
         {
-          "name": "log_analysis_enable_archive",
-          "value": false
-        },
-        {
-          "name": "log_analysis_provision",
-          "value": true
+          "name": "existing_en_instance_crn",
+          "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         }
       ],
       "name": "2 - Observability",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.2515f999-c6c3-4fa3-81eb-03b26d019bb2-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.489dde17-2578-499a-8c3a-781b5248a3da-global"
     },
     {
       "inputs": [
@@ -206,7 +202,7 @@
         },
         {
           "name": "skip_cos_kms_auth_policy",
-          "value": true
+          "value": false
         },
         {
           "name": "kms_endpoint_url",
@@ -238,11 +234,11 @@
         },
         {
           "name": "existing_monitoring_crn",
-          "value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
+          "value": "__NULL__"
         }
       ],
       "name": "3 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b5b38d6e-441e-4915-ac00-9a75b442a9f0-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dfffe742-c7a1-452e-90b1-3080f1f57f78-global"
     },
     {
       "inputs": [
@@ -288,7 +284,7 @@
         },
         {
           "name": "skip_cos_kms_auth_policy",
-          "value": true
+          "value": false
         },
         {
           "name": "existing_en_crn",
@@ -314,7 +310,7 @@
         }
       ],
       "name": "4a - Security and Compliance Center",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.6c8efc89-1b33-4ba4-bc32-24c53780e5d8-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.29b5ef2b-a3c1-4798-9595-ed1263945f82-global"
     },
     {
       "inputs": [
@@ -360,7 +356,7 @@
         }
       ],
       "name": "4b - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.03587d2d-38bd-42c3-983b-72469702e038-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e314e905-ca89-4947-aa94-23d270516f0e-global"
     }
   ],
   "outputs": [

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-06"
+lastupdated: "2024-11-19"
 
 subcollection: deployable-reference-architectures
 
@@ -30,7 +30,7 @@ industry: SoftwareAndPlatformApplications, Technology, Banking, FinancialSector
 
 compliance: CIS Benchmarks
 
-docs: https://cloud.ibm.com/docs/security-services
+docs: https://cloud.ibm.com/docs/security-hub
 
 content-type: reference-architecture
 
@@ -80,20 +80,19 @@ The following diagram represents the architecture for the IBM Cloud Essential Se
 
 ![Architecture.](core-security-services-architecture.svg "Architecture"){: caption="Figure 1. Architecture diagram" caption-side="bottom"}{: external download="core-security-services-architecture.svg"}
 
-The architecture is anchored by three fundamental services: {{site.data.keyword.keymanagementserviceshort}}, {{site.data.keyword.secrets-manager_short}}, and IBM Cloud Security Services and {{site.data.keyword.sysdigsecure_full_notm}}. These services provide integration endpoints for any customer workload that is hosted on {{site.data.keyword.cloud_notm}}.
+The architecture is anchored by three fundamental services: {{site.data.keyword.keymanagementserviceshort}}, {{site.data.keyword.secrets-manager_short}}, and {{site.data.keyword.compliance_short}}. These services provide integration endpoints for any customer workload that is hosted on {{site.data.keyword.cloud_notm}}.
 
 1. {{site.data.keyword.keymanagementserviceshort}}
 
-{{site.data.keyword.keymanagementserviceshort}} is responsible for centrally managing the lifecycle of encryption keys that are used by {{site.data.keyword.cos_full_notm}} buckets, {{site.data.keyword.secrets-manager_short}}, and event notification resources. Additionally, it can manage encryption keys for any customer workload that requires protection.
+  {{site.data.keyword.keymanagementserviceshort}} is responsible for centrally managing the lifecycle of encryption keys that are used by {{site.data.keyword.cos_full_notm}} buckets, {{site.data.keyword.secrets-manager_short}}, and event notification resources. Additionally, it can manage encryption keys for any customer workload that requires protection.
 
 2. {{site.data.keyword.secrets-manager_short}}
 
-{{site.data.keyword.secrets-manager_short}} securely stores and manages sensitive information, including API keys, credentials, and certificates. It uses encryption keys from {{site.data.keyword.keymanagementserviceshort}} to encrypt sensitive data and to seal and unseal vaults that hold the secrets. It is preconfigured to send events to the {{site.data.keyword.en_short}} service, allowing customers to set up email or SMS notifications. Moreover, it is automatically configured to forward all API logs to the customer's logging instance.
+  {{site.data.keyword.secrets-manager_short}} securely stores and manages sensitive information, including API keys, credentials, and certificates. It uses encryption keys from {{site.data.keyword.keymanagementserviceshort}} to encrypt sensitive data and to seal and unseal vaults that hold the secrets. It is preconfigured to send events to the {{site.data.keyword.en_short}} service, allowing customers to set up email or SMS notifications. Moreover, it is automatically configured to forward all API logs to the customer's logging instance.
 
-3. Security Compliance Center
+3. {{site.data.keyword.compliance_short}}
 
-The Security Compliance Center instance is preconfigured to scan all resources provisioned by the reference architecture. It can be expanded to accommodate the unique workloads of customers.
-
+  The Security Compliance Center instance is preconfigured to scan all resources provisioned by the reference architecture. It can be expanded to include {{site.data.keyword.sysdigsecure_full_notm}} to accomodate the unique workloads of customers.
 
 {{site.data.keyword.cos_full_notm}} buckets are set up to receive logs from logging and alerting services. Each bucket is configured to encrypt data at rest by using encryption keys managed by {{site.data.keyword.keymanagementserviceshort}}.
 

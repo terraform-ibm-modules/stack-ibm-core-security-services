@@ -30,7 +30,7 @@
 			"long_description": "Get IBM Cloud’s suite of core security services with a single deployment enabling you to securely manage keys and secrets and run security and compliance scans so that you always know the posture of the resources in your account. You can also take advantage of an event notification routing service that notifies you to critical events that occur in your IBM Cloud account and observability services that provide enterprise-grade monitoring and logging giving you operational visibility into the performance and health of your apps, services, and infrastructure.",
 			"provider_name": "IBM",
 			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/light-theme.svg",
-			"offering_docs_url": "https://cloud.ibm.com/docs/security-services?topic=security-services-overview",
+			"offering_docs_url": "https://cloud.ibm.com/docs/security-hub?topic=security-hub-cloud-security",
 			"support_details": "If you’re experiencing issues with this product, review the troubleshooting information available from the “Docs” link in the Related links section. If you can’t resolve your problem, click “Get help” in the related links and create a case.",
 			"features": [
 				{
@@ -313,11 +313,11 @@
 						},
 						{
 							"key": "scc_workload_protection_crn",
-							"description": "SCC Workload Protection instance CRN."
+							"description": "Security and Compliance Center Workload Protection instance CRN."
 						}
 					],
 					"install_type": "fullstack",
-					"release_notes_url": "https://cloud.ibm.com/docs/security-services?topic=security-services-css-relnotes"
+					"release_notes_url": "https://cloud.ibm.com/docs/security-hub?topic=security-hub-release-notes"
 				}
 			]
 		}

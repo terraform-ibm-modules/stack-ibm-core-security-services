@@ -275,6 +275,10 @@
           "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         },
         {
+          "name": "en_source_name",
+          "value": "ref:../../members/3 - Event Notifications/outputs/event_notification_instance_name"
+        },
+        {
           "name": "scc_service_plan",
           "value": "ref:../../inputs/scc_service_plan"
         },
@@ -294,7 +298,7 @@
         }
       ],
       "name": "4a - Security and Compliance Center",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.a54c2019-6cb4-4cb8-8ea5-9eb877cbbe13-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3a6cf04c-ee74-465e-ad7e-15e27a99af1c-global"
     },
     {
       "inputs": [

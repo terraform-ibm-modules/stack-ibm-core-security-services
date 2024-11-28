@@ -180,7 +180,7 @@
         }
       ],
       "name": "2 - Observability",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b209d1d3-08ab-4b63-99ce-8b6bedbb0c5e-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.783586a0-5c8c-465f-bee2-891c2ed630fd-global"
     },
     {
       "inputs": [
@@ -275,10 +275,6 @@
           "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         },
         {
-          "name": "en_source_name",
-          "value": "ref:../../members/3 - Event Notifications/outputs/event_notification_instance_name"
-        },
-        {
           "name": "scc_service_plan",
           "value": "ref:../../inputs/scc_service_plan"
         },
@@ -298,7 +294,7 @@
         }
       ],
       "name": "4a - Security and Compliance Center",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3a6cf04c-ee74-465e-ad7e-15e27a99af1c-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.0e4e8fc9-8953-4456-a51c-6ed6a3ca1bd7-global"
     },
     {
       "inputs": [

@@ -2,12 +2,12 @@ module github.com/terraform-ibm-modules/stack-ibm-core-security-services
 
 go 1.22.4
 
-toolchain go1.23.1
+toolchain go1.23.3
 
 require (
 	github.com/gruntwork-io/terratest v0.47.2
 	github.com/stretchr/testify v1.10.0
-	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.42.2
+	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.42.3
 )
 
 require (
@@ -20,7 +20,7 @@ require (
 	github.com/IBM-Cloud/power-go-client v1.8.3 // indirect
 	github.com/IBM/cloud-databases-go-sdk v0.7.1 // indirect
 	github.com/IBM/go-sdk-core/v5 v5.18.1 // indirect
-	github.com/IBM/platform-services-go-sdk v0.71.1 // indirect
+	github.com/IBM/platform-services-go-sdk v0.72.0 // indirect
 	github.com/IBM/project-go-sdk v0.3.6 // indirect
 	github.com/IBM/schematics-go-sdk v0.4.0 // indirect
 	github.com/IBM/vpc-go-sdk v0.63.1 // indirect

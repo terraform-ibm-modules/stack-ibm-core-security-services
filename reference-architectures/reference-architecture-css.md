@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-19"
+lastupdated: "2024-12-05"
 
 subcollection: deployable-reference-architectures
 
@@ -11,7 +11,7 @@ authors:
   email: bhakta@ibm.com
 
 # The release that the reference architecture describes
-version: 1.4.1
+version: 2.1.0
 
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
@@ -52,7 +52,7 @@ https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-g
 # IBM Cloud Essential Security and Observability Services
 {: #core-security-services-pattern}
 {: toc-content-type="reference-architecture"}
-{: toc-version="1.4.1"}
+{: toc-version="2.1.0"}
 
 <!--
 The IDs, such as {: #title-id} are required for publishing this reference architecture in IBM Cloud Docs. Set unique IDs for each heading. Also include
@@ -136,7 +136,7 @@ The following table outlines the products or services used in the architecture f
 |  | [{{site.data.keyword.sysdigsecure_full_notm}}](https://cloud.ibm.com/docs/workload-protection?topic=workload-protection-getting-started) | |
 | Service Management | [{{site.data.keyword.monitoringlong_notm}}](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor) | Apps and operational monitoring |
 |  | [{{site.data.keyword.loganalysislong_notm}}](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-getting-started) | Apps and operational logs |
-|  | [{{site.data.keyword.atracker_short}}](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-getting-started) | Audit logs |
+|  | [{{site.data.keyword.atracker_short}}](https://cloud.ibm.com/docs/atracker?topic=atracker-getting-started) | Audit logs |
 {: caption="Table 2. Components" caption-side="bottom"}
 
 ## Compliance

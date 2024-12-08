@@ -41,6 +41,14 @@
       "custom_config": {}
     },
     {
+      "name": "existing_scc_instance_crn",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "__NULL__",
+      "custom_config": {}
+    },
+    {
       "name": "en_email_list",
       "required": false,
       "type": "array",
@@ -245,6 +253,14 @@
         {
           "name": "scc_region",
           "value": "ref:../../inputs/region"
+        },
+        {
+          "name": "existing_scc_instance_crn",
+          "value": "ref:../../inputs/existing_scc_instance_crn"
+        },
+        {
+          "name": "provision_scc_workload_protection",
+          "value": false
         },
         {
           "name": "prefix",

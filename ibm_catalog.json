@@ -161,7 +161,7 @@
 							"key": "prefix",
 							"type": "string",
 							"default_value": "",
-							"description": "The prefix to add to all resources created by this solution. Used to make sure that names are unique when you deploy the solution more than one time.",
+							"description": "The prefix to add to all resources created by this solution. Used to make sure that names are unique when you deploy the solution more than one time. This should start with a lower case letter and not include '--' or end in '-'.",
 							"required": true
 						},
 						{

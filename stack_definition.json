@@ -120,7 +120,7 @@
         }
       ],
       "name": "1a - Key management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3b5c0ef5-6438-4e7b-8a88-88636bc590c6-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.00f91756-7287-4786-9ab0-fd12d30d8919-global"
     },
     {
       "inputs": [
@@ -142,7 +142,7 @@
         }
       ],
       "name": "1b - Object storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f039fa0e-24f7-4c12-a617-1dee12997859-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.855893e4-62db-4f00-a867-0795231053fe-global"
     },
     {
       "inputs": [
@@ -188,7 +188,7 @@
         }
       ],
       "name": "2 - Observability",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.489dde17-2578-499a-8c3a-781b5248a3da-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.783586a0-5c8c-465f-bee2-891c2ed630fd-global"
     },
     {
       "inputs": [
@@ -238,7 +238,7 @@
         }
       ],
       "name": "3 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dfffe742-c7a1-452e-90b1-3080f1f57f78-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.88d7308d-c2c8-4977-92cf-f85d99e27d00-global"
     },
     {
       "inputs": [
@@ -310,7 +310,7 @@
         }
       ],
       "name": "4a - Security and Compliance Center",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.29b5ef2b-a3c1-4798-9595-ed1263945f82-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.0e4e8fc9-8953-4456-a51c-6ed6a3ca1bd7-global"
     },
     {
       "inputs": [
@@ -356,7 +356,7 @@
         }
       ],
       "name": "4b - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e314e905-ca89-4947-aa94-23d270516f0e-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.4e7a383f-6295-4edc-b29f-858d28862e6d-global"
     }
   ],
   "outputs": [

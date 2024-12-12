@@ -260,7 +260,7 @@
         },
         {
           "name": "provision_scc_workload_protection",
-          "value": false
+          "value": true
         },
         {
           "name": "prefix",

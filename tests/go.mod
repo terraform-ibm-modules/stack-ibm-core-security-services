@@ -5,9 +5,9 @@ go 1.22.4
 toolchain go1.23.4
 
 require (
-	github.com/gruntwork-io/terratest v0.48.0
+	github.com/gruntwork-io/terratest v0.48.1
 	github.com/stretchr/testify v1.10.0
-	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.42.5
+	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.42.7
 )
 
 require (
@@ -18,7 +18,7 @@ require (
 	github.com/IBM/platform-services-go-sdk v0.72.0 // indirect
 	github.com/IBM/project-go-sdk v0.3.6 // indirect
 	github.com/IBM/schematics-go-sdk v0.4.0 // indirect
-	github.com/IBM/vpc-go-sdk v0.63.1 // indirect
+	github.com/IBM/vpc-go-sdk v0.64.0 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect

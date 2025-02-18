@@ -38,3 +38,35 @@ module "secrets_manager" {
   sm_service_plan      = "trial"
   sm_tags              = var.resource_tags
 }
+
+#############################################################################
+# Provision cloud object storage and bucket
+#############################################################################
+
+module "cos" {
+  source                 = "terraform-ibm-modules/cos/ibm"
+  version                = "8.11.3"
+  resource_group_id      = module.resource_group.resource_group_id
+  cos_instance_name      = "${var.prefix}-cos"
+  kms_encryption_enabled = false
+  retention_enabled      = false
+  bucket_name            = "${var.prefix}-cb"
+}
+
+##############################################################################
+# SCC
+##############################################################################
+
+module "scc_instance" {
+  source                            = "terraform-ibm-modules/scc/ibm"
+  version                           = "1.7.2"
+  instance_name                     = "${var.prefix}-scc-instance"
+  region                            = var.region
+  resource_group_id                 = module.resource_group.resource_group_id
+  resource_tags                     = var.resource_tags
+  access_tags                       = []
+  cos_bucket                        = module.cos.bucket_name
+  cos_instance_crn                  = module.cos.cos_instance_id
+  attach_wp_to_scc_instance         = false
+  skip_cos_iam_authorization_policy = false
+}

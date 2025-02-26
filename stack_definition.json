@@ -25,7 +25,7 @@
       "custom_config": {}
     },
     {
-      "name": "enable_platform_logs_metrics",
+      "name": "enable_platform_metrics",
       "required": false,
       "type": "boolean",
       "hidden": false,
@@ -167,12 +167,8 @@
           "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
         },
         {
-          "name": "enable_platform_logs",
-          "value": "ref:../../inputs/enable_platform_logs_metrics"
-        },
-        {
           "name": "enable_platform_metrics",
-          "value": "ref:../../inputs/enable_platform_logs_metrics"
+          "value": "ref:../../inputs/enable_platform_metrics"
         },
         {
           "name": "existing_en_instance_crn",

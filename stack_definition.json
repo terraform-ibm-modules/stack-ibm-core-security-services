@@ -13,7 +13,7 @@
       "required": true,
       "type": "string",
       "hidden": false,
-      "default": "us-south",
+      "default": "eu-de",
       "custom_config": {}
     },
     {

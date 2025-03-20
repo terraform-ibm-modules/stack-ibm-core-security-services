@@ -28,7 +28,7 @@ var permanentResources map[string]interface{}
 
 // Current supported regions (NOTE: eu-es is not being used as we don't have extended trial plan quota in that region currently)
 var validRegions = []string{
-	"us-south",
+	// "us-south", // restricting tests to all be in the same region for: https://github.ibm.com/GoldenEye/issues/issues/12725
 	"eu-de",
 }
 

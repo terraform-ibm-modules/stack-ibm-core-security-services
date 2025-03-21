@@ -202,7 +202,7 @@
 							}
 						},
 						{
-							"key": "enable_platform_logs_metrics",
+							"key": "enable_platform_metrics",
 							"type": "boolean",
 							"default_value": true,
 							"description": "Setting this to true will create a tenant in the same region where the Cloud Logs instance is provisioned, enabling platform logs for that region. Note: You can have only one tenant per region in an account. This variable will also enable platform logs for the Log Analysis instance and platform metrics for Cloud Monitoring instance.",

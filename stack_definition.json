@@ -25,11 +25,19 @@
       "custom_config": {}
     },
     {
-      "name": "enable_platform_logs_metrics",
+      "name": "enable_platform_metrics",
       "required": false,
       "type": "boolean",
       "hidden": false,
       "default": true,
+      "custom_config": {}
+    },
+    {
+      "name": "logs_routing_tenant_regions",
+      "required": false,
+      "type": "array",
+      "hidden": false,
+      "default": [],
       "custom_config": {}
     },
     {
@@ -164,12 +172,12 @@
           "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
         },
         {
-          "name": "enable_platform_logs",
-          "value": "ref:../../inputs/enable_platform_logs_metrics"
+          "name": "logs_routing_tenant_regions",
+          "value": "ref:../../inputs/logs_routing_tenant_regions"
         },
         {
           "name": "enable_platform_metrics",
-          "value": "ref:../../inputs/enable_platform_logs_metrics"
+          "value": "ref:../../inputs/enable_platform_metrics"
         },
         {
           "name": "existing_en_instance_crn",

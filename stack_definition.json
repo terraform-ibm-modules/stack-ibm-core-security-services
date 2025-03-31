@@ -78,13 +78,6 @@
       "hidden": false,
       "default": "security-compliance-center-standard-plan",
       "custom_config": {}
-    },
-    {
-      "name": "secret_manager_iam_engine_enabled",
-      "required": false,
-      "type": "boolean",
-      "hidden": false,
-      "default": false
     }
   ],
   "members": [
@@ -109,6 +102,10 @@
         {
           "name": "prefix",
           "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "key_protect_instance_name",
+          "value": "base-security-services-kms"
         }
       ],
       "name": "1a - Key management",
@@ -121,7 +118,7 @@
           "value": "ref:../../inputs/existing_resource_group_name"
         },
         {
-          "name": "existing_resource_group",
+          "name": "use_existing_resource_group",
           "value": true
         },
         {
@@ -180,7 +177,7 @@
         }
       ],
       "name": "2 - Observability",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.7f41c2cd-2427-478b-923e-52491d2c871e-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.68148a25-2996-4a8c-b188-8453a06b8986-global"
     },
     {
       "inputs": [
@@ -271,7 +268,7 @@
           "value": false
         },
         {
-          "name": "existing_en_crn",
+          "name": "existing_event_notifications_crn",
           "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         },
         {
@@ -319,7 +316,7 @@
           "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
         },
         {
-          "name": "existing_event_notification_instance_crn",
+          "name": "existing_event_notifications_instance_crn",
           "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         },
         {
@@ -331,16 +328,28 @@
           "value": "ref:../../inputs/sm_service_plan"
         },
         {
-          "name": "iam_engine_enabled",
-          "value": "ref:../../inputs/secret_manager_iam_engine_enabled"
+          "name": "enable_event_notifications",
+          "value": true
         },
         {
-          "name": "enable_event_notification",
-          "value": true
+          "name": "kms_key_ring_name",
+          "value": "sm-cos-key-ring"
+        },
+        {
+          "name": "kms_key_name",
+          "value": "sm-cos-key"
+        },
+        {
+          "name": "secrets_manager_instance_name",
+          "value": "base-security-services-sm"
+        },
+        {
+          "name": "iam_engine_enabled",
+          "value": false
         }
       ],
       "name": "4b - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.ac883936-6a22-4882-aa2b-fca61ccda723-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.2433dddb-672b-4749-bdbe-6b8651848d7c-global"
     }
   ],
   "outputs": [

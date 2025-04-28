@@ -28,7 +28,7 @@ var permanentResources map[string]interface{}
 
 // Current supported regions (NOTE: eu-es is not being used as we don't have extended trial plan quota in that region currently)
 var validRegions = []string{
-	"us-south",
+	// "us-south", // restricting tests to all be in the same region for: https://github.ibm.com/GoldenEye/issues/issues/12725
 	"eu-de",
 }
 
@@ -52,14 +52,13 @@ func TestProjectsFullTest(t *testing.T) {
 	})
 
 	options.StackInputs = map[string]interface{}{
-		"prefix":                            options.Prefix,
-		"region":                            validRegions[rand.Intn(len(validRegions))],
-		"existing_resource_group_name":      resourceGroup,
-		"sm_service_plan":                   "trial",
-		"secret_manager_iam_engine_enabled": true,
-		"ibmcloud_api_key":                  options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
-		"enable_platform_logs_metrics":      false,
-		"en_email_list":                     []string{"GoldenEye.Operations@ibm.com"},
+		"prefix":                       options.Prefix,
+		"region":                       validRegions[rand.Intn(len(validRegions))],
+		"existing_resource_group_name": resourceGroup,
+		"sm_service_plan":              "trial",
+		"ibmcloud_api_key":             options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
+		"enable_platform_metrics":      false,
+		"en_email_list":                []string{"GoldenEye.Operations@ibm.com"},
 	}
 
 	err := options.RunProjectsTest()
@@ -121,7 +120,7 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 			"ibmcloud_api_key":                  options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
 			"enable_platform_logs_metrics":      false,
 			"existing_secrets_manager_crn":      terraform.Output(t, existingTerraformOptions, "secrets_manager_instance_crn"),
-			"secret_manager_iam_engine_enabled": true,
+      "skip_iam_authorization_policy": true, // skip as s2s auth policy was already created for existing instance
 			"existing_kms_instance_crn":         permanentResources["hpcs_south_crn"],
 			"existing_scc_instance_crn":         terraform.Output(t, existingTerraformOptions, "existing_scc_instance_crn"),
 			"existing_cos_instance_crn":         terraform.Output(t, existingTerraformOptions, "existing_cos_instance_crn"),

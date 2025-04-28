@@ -25,11 +25,19 @@
       "custom_config": {}
     },
     {
-      "name": "enable_platform_logs_metrics",
+      "name": "enable_platform_metrics",
       "required": false,
       "type": "boolean",
       "hidden": false,
       "default": true,
+      "custom_config": {}
+    },
+    {
+      "name": "logs_routing_tenant_regions",
+      "required": false,
+      "type": "array",
+      "hidden": false,
+      "default": [],
       "custom_config": {}
     },
     {
@@ -80,19 +88,19 @@
       "custom_config": {}
     },
     {
+      "name": "skip_iam_authorization_policy",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": false
+    },
+    {
       "name": "scc_service_plan",
       "required": false,
       "type": "string",
       "hidden": false,
       "default": "security-compliance-center-standard-plan",
       "custom_config": {}
-    },
-    {
-      "name": "secret_manager_iam_engine_enabled",
-      "required": false,
-      "type": "boolean",
-      "hidden": false,
-      "default": false
     }
   ],
   "members": [
@@ -117,10 +125,14 @@
         {
           "name": "prefix",
           "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "key_protect_instance_name",
+          "value": "base-security-services-kms"
         }
       ],
       "name": "1a - Key management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.00f91756-7287-4786-9ab0-fd12d30d8919-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.efaad0d0-9028-4d39-90e7-7e0f9d6e7569-global"
     },
     {
       "inputs": [
@@ -129,7 +141,7 @@
           "value": "ref:../../inputs/existing_resource_group_name"
         },
         {
-          "name": "existing_resource_group",
+          "name": "use_existing_resource_group",
           "value": true
         },
         {
@@ -142,7 +154,7 @@
         }
       ],
       "name": "1b - Object storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.855893e4-62db-4f00-a867-0795231053fe-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.321f6c6a-7511-47d1-830a-72506ea72190-global"
     },
     {
       "inputs": [
@@ -175,12 +187,12 @@
           "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
         },
         {
-          "name": "enable_platform_logs",
-          "value": "ref:../../inputs/enable_platform_logs_metrics"
+          "name": "logs_routing_tenant_regions",
+          "value": "ref:../../inputs/logs_routing_tenant_regions"
         },
         {
           "name": "enable_platform_metrics",
-          "value": "ref:../../inputs/enable_platform_logs_metrics"
+          "value": "ref:../../inputs/enable_platform_metrics"
         },
         {
           "name": "existing_en_instance_crn",
@@ -188,7 +200,7 @@
         }
       ],
       "name": "2 - Observability",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.783586a0-5c8c-465f-bee2-891c2ed630fd-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.42643524-2f7e-4c59-a9bf-83c5f502f526-global"
     },
     {
       "inputs": [
@@ -238,7 +250,7 @@
         }
       ],
       "name": "3 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.88d7308d-c2c8-4977-92cf-f85d99e27d00-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1c3a9873-77b2-4ab4-89c7-26d9899b1edb-global"
     },
     {
       "inputs": [
@@ -287,7 +299,7 @@
           "value": false
         },
         {
-          "name": "existing_en_crn",
+          "name": "existing_event_notifications_crn",
           "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         },
         {
@@ -310,7 +322,7 @@
         }
       ],
       "name": "4a - Security and Compliance Center",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.0e4e8fc9-8953-4456-a51c-6ed6a3ca1bd7-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.03c63154-2430-4154-9033-9f8e6f80d93b-global"
     },
     {
       "inputs": [
@@ -335,7 +347,7 @@
           "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
         },
         {
-          "name": "existing_event_notification_instance_crn",
+          "name": "existing_event_notifications_instance_crn",
           "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         },
         {
@@ -347,16 +359,32 @@
           "value": "ref:../../inputs/sm_service_plan"
         },
         {
-          "name": "iam_engine_enabled",
-          "value": "ref:../../inputs/secret_manager_iam_engine_enabled"
+          "name": "enable_event_notifications",
+          "value": true
         },
         {
-          "name": "enable_event_notification",
-          "value": true
+          "name": "kms_key_ring_name",
+          "value": "sm-cos-key-ring"
+        },
+        {
+          "name": "kms_key_name",
+          "value": "sm-cos-key"
+        },
+        {
+          "name": "secrets_manager_instance_name",
+          "value": "base-security-services-sm"
+        },
+        {
+          "name": "skip_iam_authorization_policy",
+          "value": "ref:../../inputs/skip_iam_authorization_policy"
+        },
+        {
+          "name": "iam_engine_enabled",
+          "value": false
         }
       ],
       "name": "4b - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.4e7a383f-6295-4edc-b29f-858d28862e6d-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.db823650-3010-4482-b807-45145f273553-global"
     }
   ],
   "outputs": [

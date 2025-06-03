@@ -183,18 +183,38 @@
 							"description": "The region where the resources are created.",
 							"required": true,
 							"options": [
-								{
-									"displayname": "us-south",
-									"value": "us-south"
-								},
-								{
-									"displayname": "eu-de",
-									"value": "eu-de"
-								},
-								{
-									"displayname": "eu-es",
-									"value": "eu-es"
-								}
+							  {
+								"displayname": "Osaka (jp-osa)",
+								"value": "jp-osa"
+							  },
+							  {
+								"displayname": "Tokyo (jp-tok)",
+								"value": "jp-tok"
+							  },
+							  {
+								"displayname": "Frankfurt (eu-de)",
+								"value": "eu-de"
+							  },
+							  {
+								"displayname": "London (eu-gb)",
+								"value": "eu-gb"
+							  },
+							  {
+								"displayname": "Madrid (eu-es)",
+								"value": "eu-es"
+							  },
+							  {
+								"displayname": "Dallas (us-south)",
+								"value": "us-south"
+							  },
+							  {
+								"displayname": "Toronto (ca-tor)",
+								"value": "ca-tor"
+							  },
+							  {
+								"displayname": "Sao Paulo (br-sao)",
+								"value": "br-sao"
+							  }
 							]
 						},
 						{
@@ -331,14 +351,14 @@
 						{
 							"key": "enterprise_account_group_ids_to_assign",
 							"type": "array",
-							"default_value": "[\"all\"]",
+							"default_value": ["all"],
 							"description": "A list of enterprise account group IDs to assign the trusted profile template to in order for the accounts to be scanned for compliance. Supports passing the string 'all' in the list to assign to all account groups. Only applies if a value is being passed for `enterprise_id`.",
 							"required": false
 						},
 						{
 							"key": "enterprise_account_ids_to_assign",
 							"type": "array",
-							"default_value": "[\"all\"]",
+							"default_value": ["all"],
 							"description": "A list of enterprise account IDs to assign the trusted profile template to in order for the accounts to be scanned. Supports passing the string 'all' in the list to assign to all accounts. Only applies if a value is being passed for `enterprise_id`.",
 							"required": false
 						}

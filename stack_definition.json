@@ -5,7 +5,6 @@
       "required": true,
       "type": "string",
       "hidden": false,
-      "default": "core-security",
       "custom_config": {}
     },
     {
@@ -13,7 +12,6 @@
       "required": true,
       "type": "string",
       "hidden": false,
-      "default": "us-south",
       "custom_config": {}
     },
     {
@@ -21,7 +19,6 @@
       "required": true,
       "type": "string",
       "hidden": false,
-      "default": "Default",
       "custom_config": {}
     },
     {
@@ -29,7 +26,6 @@
       "required": false,
       "type": "boolean",
       "hidden": false,
-      "default": true,
       "custom_config": {}
     },
     {
@@ -37,7 +33,6 @@
       "required": false,
       "type": "array",
       "hidden": false,
-      "default": [],
       "custom_config": {}
     },
     {
@@ -45,7 +40,6 @@
       "required": false,
       "type": "string",
       "hidden": false,
-      "default": "__NULL__",
       "custom_config": {}
     },
     {
@@ -53,14 +47,12 @@
       "required": false,
       "type": "array",
       "hidden": false,
-      "default": [],
       "custom_config": {}
     },
     {
       "name": "existing_en_instance_crn",
       "required": false,
       "type": "string",
-      "default": "__NULL__",
       "custom_config": {}
     },
     {
@@ -68,7 +60,6 @@
       "required": false,
       "type": "string",
       "hidden": false,
-      "default": "__NULL__",
       "custom_config": {}
     },
     {
@@ -76,22 +67,47 @@
       "required": false,
       "type": "string",
       "hidden": false,
-      "default": "standard",
       "custom_config": {}
     },
     {
       "name": "skip_iam_authorization_policy",
       "required": false,
       "type": "boolean",
-      "hidden": false,
-      "default": false
+      "hidden": false
     },
     {
-      "name": "scc_service_plan",
+      "name": "app_config_service_plan",
       "required": false,
       "type": "string",
       "hidden": false,
-      "default": "security-compliance-center-standard-plan",
+      "custom_config": {}
+    },
+    {
+      "name": "scc_workload_protection_service_plan",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "custom_config": {}
+    },
+    {
+      "name": "enterprise_id",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "custom_config": {}
+    },
+    {
+      "name": "enterprise_account_group_ids_to_assign",
+      "required": false,
+      "type": "array",
+      "hidden": false,
+      "custom_config": {}
+    },
+    {
+      "name": "enterprise_account_ids_to_assign",
+      "required": false,
+      "type": "array",
+      "hidden": false,
       "custom_config": {}
     }
   ],
@@ -124,7 +140,7 @@
         }
       ],
       "name": "1a - Key management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.efaad0d0-9028-4d39-90e7-7e0f9d6e7569-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.93bf5d12-a435-4510-8888-1c32db20b82b-global"
     },
     {
       "inputs": [
@@ -146,7 +162,45 @@
         }
       ],
       "name": "1b - Object storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.321f6c6a-7511-47d1-830a-72506ea72190-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.fef2dae0-dc1a-4e7f-a663-dba29dfbc01a-global"
+    },
+    {
+      "inputs": [
+        {
+          "name": "existing_resource_group_name",
+          "value": "ref:../../inputs/existing_resource_group_name"
+        },
+        {
+          "name": "region",
+          "value": "ref:../../inputs/region"
+        },
+        {
+          "name": "prefix",
+          "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "app_config_plan",
+          "value": "ref:../../inputs/app_config_service_plan"
+        },
+        {
+          "name": "enable_config_aggregator",
+          "value": true
+        },
+        {
+          "name": "config_aggregator_enterprise_id",
+          "value": "ref:../../inputs/enterprise_id"
+        },
+        {
+          "name": "config_aggregator_enterprise_account_group_ids_to_assign",
+          "value": "ref:../../inputs/enterprise_account_group_ids_to_assign"
+        },
+        {
+          "name": "config_aggregator_enterprise_account_ids_to_assign",
+          "value": "ref:../../inputs/enterprise_account_ids_to_assign"
+        }
+      ],
+      "name": "1c - App Configuration",
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c160fa36-fd40-42de-8553-1233e0c5e971-global"
     },
     {
       "inputs": [
@@ -192,7 +246,7 @@
         }
       ],
       "name": "2 - Observability",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.42643524-2f7e-4c59-a9bf-83c5f502f526-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.39562a8a-1b92-4342-b990-1944ae583df9-global"
     },
     {
       "inputs": [
@@ -242,20 +296,16 @@
         }
       ],
       "name": "3 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1c3a9873-77b2-4ab4-89c7-26d9899b1edb-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b02f9aa4-b40f-41d5-8039-8e87742d756e-global"
     },
     {
       "inputs": [
         {
-          "name": "resource_group_name",
+          "name": "existing_resource_group_name",
           "value": "ref:../../inputs/existing_resource_group_name"
         },
         {
-          "name": "use_existing_resource_group",
-          "value": true
-        },
-        {
-          "name": "scc_region",
+          "name": "region",
           "value": "ref:../../inputs/region"
         },
         {
@@ -263,50 +313,24 @@
           "value": "ref:../../inputs/prefix"
         },
         {
-          "name": "existing_kms_instance_crn",
-          "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+          "name": "scc_workload_protection_service_plan",
+          "value": "ref:../../inputs/scc_workload_protection_service_plan"
         },
         {
-          "name": "kms_endpoint_type",
-          "value": "private"
+          "name": "cspm_enabled",
+          "value": true
+        },
+        {
+          "name": "app_config_crn",
+          "value": "ref:../../members/1c - App Configuration/outputs/app_config_crn"
         },
         {
           "name": "existing_monitoring_crn",
           "value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
-        },
-        {
-          "name": "existing_cos_instance_crn",
-          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
-        },
-        {
-          "name": "skip_cos_kms_auth_policy",
-          "value": false
-        },
-        {
-          "name": "existing_event_notifications_crn",
-          "value": "ref:../../members/3 - Event Notifications/outputs/crn"
-        },
-        {
-          "name": "scc_service_plan",
-          "value": "ref:../../inputs/scc_service_plan"
-        },
-        {
-          "name": "profile_attachments",
-          "value": [
-            "CIS IBM Cloud Foundations Benchmark v1.1.0"
-          ]
-        },
-        {
-          "name": "scc_en_email_list",
-          "value": "ref:../../inputs/en_email_list"
-        },
-        {
-          "name": "attachment_schedule",
-          "value": "daily"
         }
       ],
-      "name": "4a - Security and Compliance Center",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.03c63154-2430-4154-9033-9f8e6f80d93b-global"
+      "name": "4a - Security and Compliance Center Workload Protection",
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e436bb10-8b6c-4b3b-b4c5-523929d13686-global"
     },
     {
       "inputs": [
@@ -393,16 +417,12 @@
       "value": "ref:../../members/3 - Event Notifications/outputs/crn"
     },
     {
-      "name": "log_analysis_crn",
-      "value": "ref:../../members/2 - Observability/outputs/log_analysis_crn"
-    },
-    {
-      "name": "scc_crn",
-      "value": "ref:../../members/4a - Security and Compliance Center/outputs/scc_crn"
+      "name": "app_config_crn",
+      "value": "ref:../../members/1c - App Configuration/outputs/app_config_crn"
     },
     {
       "name": "scc_workload_protection_crn",
-      "value": "ref:../../members/4a - Security and Compliance Center/outputs/crn"
+      "value": "ref:../../members/4a - Security and Compliance Center Workload Protection/outputs/crn"
     }
   ]
 }

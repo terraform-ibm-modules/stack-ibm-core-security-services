@@ -9,22 +9,27 @@
 				"support_ibm",
 				"target_terraform",
 				"security",
-				"ibm_created"
+				"logging_monitoring",
+				"ibm_created",
+				"terraform"
 			],
 			"keywords": [
 				"kms",
 				"scc",
 				"secrets manager",
-				"security-compliance-center",
 				"keyprotect",
 				"IaC",
 				"infrastructure as code",
-				"security and compliance center",
+				"security and compliance center workload protection",
 				"terraform",
 				"solution",
 				"secrets",
 				"key protect",
-				"compliance"
+				"compliance",
+				"cspm",
+				"cloud security posture management",
+				"config aggregator",
+				"app config"
 			],
 			"short_description": "Deploy core security and other supporting services to get set up to manage the security compliance of the resources in your account.",
 			"long_description": "Get IBM Cloud’s suite of core security services with a single deployment enabling you to securely manage keys and secrets and run security and compliance scans so that you always know the posture of the resources in your account. You can also take advantage of an event notification routing service that notifies you to critical events that occur in your IBM Cloud account and observability services that provide enterprise-grade monitoring and logging giving you operational visibility into the performance and health of your apps, services, and infrastructure.",
@@ -42,12 +47,12 @@
 					"description": "Creates and configures an IBM Secrets Manager instance."
 				},
 				{
-					"title": "Creates an IBM Security and Compliance Center instance",
-					"description": "Creates and configures an IBM Security Compliance Center instance."
+					"title": "Creates an App Configuration instance",
+					"description": "Creates and configures an IBM Cloud App Configuration instance with the config aggregator feature enabled."
 				},
 				{
 					"title": "Creates an Security and Compliance Center Workload Protection instance",
-					"description": "Creates and configures an Security and Compliance Center Workload Protection instance."
+					"description": "Creates and configures an Security and Compliance Center Workload Protection instance with Cloud Security Posture Management (CSPM) enabled."
 				},
 				{
 					"title": "Creates an IBM Cloud Object Storage instance",
@@ -97,7 +102,15 @@
 							]
 						},
 						{
-							"service_name": "compliance",
+							"service_name": "sysdig-secure",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
+								"crn:v1:bluemix:public:iam::::role:Operator",
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							]
+						},
+						{
+							"service_name": "apprapp",
 							"role_crns": [
 								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
 								"crn:v1:bluemix:public:iam::::role:Operator",
@@ -128,12 +141,12 @@
 								"description": "Create, lease, and centrally manage secrets that are used in your apps and services using IBM Secrets Manager instance."
 							},
 							{
-								"title": "Optionally configure an IBM Cloud Secrets Manager IAM credentials engine to an IBM Cloud Secrets Manager instance",
-								"description": "Optionally configure an IBM Secrets Manager IAM credentials engine to an IBM Cloud Secrets Manager instance."
+								"title": "Configures an IBM Cloud Secrets Manager IAM credentials engine to an IBM Cloud Secrets Manager instance",
+								"description": "Configures an IBM Secrets Manager IAM credentials engine to an IBM Cloud Secrets Manager instance."
 							  },
 							{
-								"title": "Creates an IBM Cloud Security and Compliance Center instance",
-								"description": "Manage your continuous compliance monitoring needs using IBM Security Compliance Center instance."
+								"title": "Creates an IBM Cloud App Configuration instance with Configuration Aggregator",
+								"description": "Facilitate a Cloud Governance SME with up-to-date configuration data of IBM Cloud resources in one place so that comprehensive information is available for goverance and compliance initiatives."
 							},
 							{
 								"title": "Creates a IBM Cloud Security and Compliance Center Workload Protection instance",
@@ -160,7 +173,6 @@
 						{
 							"key": "prefix",
 							"type": "string",
-							"default_value": "",
 							"description": "The prefix to add to all resources created by this solution. Used to make sure that names are unique when you deploy the solution more than one time. This should start with a lower case letter and not include '--' or end in '-'.",
 							"required": true
 						},
@@ -171,26 +183,46 @@
 							"description": "The region where the resources are created.",
 							"required": true,
 							"options": [
-								{
-									"displayname": "us-south",
-									"value": "us-south"
-								},
-								{
-									"displayname": "eu-de",
-									"value": "eu-de"
-								},
-								{
-									"displayname": "eu-es",
-									"value": "eu-es"
-								}
+							  {
+								"displayname": "Osaka (jp-osa)",
+								"value": "jp-osa"
+							  },
+							  {
+								"displayname": "Tokyo (jp-tok)",
+								"value": "jp-tok"
+							  },
+							  {
+								"displayname": "Frankfurt (eu-de)",
+								"value": "eu-de"
+							  },
+							  {
+								"displayname": "London (eu-gb)",
+								"value": "eu-gb"
+							  },
+							  {
+								"displayname": "Madrid (eu-es)",
+								"value": "eu-es"
+							  },
+							  {
+								"displayname": "Dallas (us-south)",
+								"value": "us-south"
+							  },
+							  {
+								"displayname": "Toronto (ca-tor)",
+								"value": "ca-tor"
+							  },
+							  {
+								"displayname": "Sao Paulo (br-sao)",
+								"value": "br-sao"
+							  }
 							]
 						},
 						{
+							"display_name": "resource_group",
 							"key": "existing_resource_group_name",
 							"type": "string",
 							"default_value": "Default",
 							"description": "The name of an existing resource group to provision all resources to.",
-							"display_name": "Existing resource group name",
 							"required": true,
 							"custom_config": {
 								"type": "resource_group",
@@ -223,6 +255,7 @@
 							"required": false
 						},
 						{
+							"display_name": "event_notifications_email_list",
 							"key": "en_email_list",
 							"type": "array",
 							"default_value": [],
@@ -230,6 +263,7 @@
 							"required": false
 						},
 						{
+							"display_name": "existing_event_notifications_instance_crn",
 							"key": "existing_en_instance_crn",
 							"type": "string",
 							"default_value": "__NULL__",
@@ -244,6 +278,7 @@
 							"required": false
 						},
 						{
+							"display_name": "secrets_manager_service_plan",
 							"key": "sm_service_plan",
 							"type": "string",
 							"default_value": "standard",
@@ -251,39 +286,81 @@
 							"required": false,
 							"options": [
 								{
-									"displayname": "standard",
+									"displayname": "Standard",
 									"value": "standard"
 								},
 								{
-									"displayname": "trial",
+									"displayname": "Trial",
 									"value": "trial"
 								}
 							]
 						},
 						{
+							"display_name": "disable_secrets_manager_iam_credentials_engine",
 							"key": "skip_iam_authorization_policy",
-							"display_name": "Disable Secrets Manager IAM credentials engine auth policy creation?",
 							"type": "boolean",
 							"default_value": false,
 							"description": "Whether to skip the creation of the IAM authorization policies required to enable the Secrets Manager IAM credentials engine. If set to false, policies will be created that grants the Secrets Manager instance 'Operator' access to the IAM identity service, and 'Groups Service Member Manage' access to the IAM groups service.",
 							"required": false
 						},
 						{
-							"key": "scc_service_plan",
+							"key": "app_config_service_plan",
 							"type": "string",
-							"default_value": "security-compliance-center-standard-plan",
-							"description": "The pricing plan to use for the IBM Cloud Security and Compliance Center.",
+							"default_value": "basic",
+							"description": "The pricing plan to use for the IBM Cloud App Configuration instance.",
 							"required": false,
 							"options": [
 								{
-									"displayname": "standard",
-									"value": "security-compliance-center-standard-plan"
+									"displayname": "Basic",
+									"value": "basic"
 								},
 								{
-									"displayname": "trial",
-									"value": "security-compliance-center-trial-plan"
+									"displayname": "Standard",
+									"value": "standardv2"
+								},
+								{
+									"displayname": "Enterprise",
+									"value": "enterprise"
 								}
 							]
+						},
+						{
+							"key": "scc_workload_protection_service_plan",
+							"type": "string",
+							"default_value": "graduated-tier",
+							"description": "The pricing plan to use for the IBM Cloud Security and Compliance Center Workload Protection instance.",
+							"required": false,
+							"options": [
+								{
+									"displayname": "Graduated Tier",
+									"value": "graduated-tier"
+								},
+								{
+									"displayname": "Free Trial",
+									"value": "free-trial"
+								}
+							]
+						},
+						{
+							"key": "enterprise_id",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "If the account is an enterprise account and you want to scan sub-accounts for compliance, this value should be set to the enterprise ID (this is different to the account ID).",
+							"required": false
+						},
+						{
+							"key": "enterprise_account_group_ids_to_assign",
+							"type": "array",
+							"default_value": ["all"],
+							"description": "A list of enterprise account group IDs to assign the trusted profile template to in order for the accounts to be scanned for compliance. Supports passing the string 'all' in the list to assign to all account groups. Only applies if a value is being passed for `enterprise_id`.",
+							"required": false
+						},
+						{
+							"key": "enterprise_account_ids_to_assign",
+							"type": "array",
+							"default_value": ["all"],
+							"description": "A list of enterprise account IDs to assign the trusted profile template to in order for the accounts to be scanned. Supports passing the string 'all' in the list to assign to all accounts. Only applies if a value is being passed for `enterprise_id`.",
+							"required": false
 						}
 					],
 					"outputs": [
@@ -296,8 +373,8 @@
 							"description": "The CRN of the Secrets Manager instance."
 						},
 						{
-							"key": "scc_crn",
-							"description": "The CRN of the Security and Compliance Center instance."
+							"key": "app_config_crn",
+							"description": "The CRN of the App Configuration instance."
 						},
 						{
 							"key": "monitoring_crn",
@@ -310,10 +387,6 @@
 						{
 							"key": "en_crn",
 							"description": "The CRN of the Event Notifications instance."
-						},
-						{
-							"key": "log_analysis_crn",
-							"description": "The CRN of the provisioned Log Analysis instance."
 						},
 						{
 							"key": "cloud_logs_crn",

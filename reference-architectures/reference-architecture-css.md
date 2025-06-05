@@ -11,7 +11,7 @@ authors:
   email: bhakta@ibm.com
 
 # The release that the reference architecture describes
-version: 2.1.0
+version: 3.0.0
 
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
@@ -52,7 +52,7 @@ https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-g
 # IBM Cloud Essential Security and Observability Services
 {: #core-security-services-pattern}
 {: toc-content-type="reference-architecture"}
-{: toc-version="2.1.0"}
+{: toc-version="3.0.0"}
 
 <!--
 The IDs, such as {: #title-id} are required for publishing this reference architecture in IBM Cloud Docs. Set unique IDs for each heading. Also include
@@ -66,8 +66,6 @@ Here’s a brief overview of each service:
 {{site.data.keyword.keymanagementserviceshort}}: This service provides a secure and scalable way to manage encryption keys for your cloud applications. It ensures that sensitive data is protected by managing and safeguarding cryptographic keys, facilitating compliance with industry standards and regulatory requirements.
 
 {{site.data.keyword.secrets-manager_short}}: This service helps in securely storing and managing sensitive information such as API keys, credentials, and certificates. By centralizing secret management, it reduces the risk of exposure and simplifies the process of accessing and rotating secrets, thereby enhancing the security posture.
-
-{{site.data.keyword.compliance_short}}: This platform offers a comprehensive suite of tools to assess, monitor, and maintain the security and compliance of your cloud environment. It provides insights and controls to help organizations meet regulatory requirements, adhere to best practices, and protect against threats.
 
 {{site.data.keyword.sysdigsecure_full_notm}}: This service offers features to protect workloads, get deep cloud and container visibility, posture management (compliance, benchmarks, CIEM), vulnerability scanning, forensics, and threat detection and blocking.
 
@@ -90,9 +88,9 @@ The architecture is anchored by three fundamental services: {{site.data.keyword.
 
   {{site.data.keyword.secrets-manager_short}} securely stores and manages sensitive information, including API keys, credentials, and certificates. It uses encryption keys from {{site.data.keyword.keymanagementserviceshort}} to encrypt sensitive data and to seal and unseal vaults that hold the secrets. It is preconfigured to send events to the {{site.data.keyword.en_short}} service, allowing customers to set up email or SMS notifications. Moreover, it is automatically configured to forward all API logs to the customer's logging instance.
 
-3. {{site.data.keyword.compliance_short}}
+3. {{site.data.keyword.sysdigsecure_full_notm}}
 
-  The Security Compliance Center instance is preconfigured to scan all resources provisioned by the reference architecture. It can be expanded to include {{site.data.keyword.sysdigsecure_full_notm}} to accomodate the unique workloads of customers.
+  The {{site.data.keyword.sysdigsecure_full_notm}} instance is pre-configured with Cloud Security Posture Management (CSPM) enabled using the Configuration Aggregator features from the App Configuration instance that is also provisioned as part of this solution.
 
 {{site.data.keyword.cos_full_notm}} buckets are set up to receive logs from logging and alerting services. Each bucket is configured to encrypt data at rest by using encryption keys managed by {{site.data.keyword.keymanagementserviceshort}}.
 
@@ -128,14 +126,13 @@ The following table outlines the products or services used in the architecture f
 | Aspects | Architecture components | How the component is used |
 | -------------- | -------------- | -------------- |
 | Storage | [{{site.data.keyword.cos_full_notm}}](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage) | Web app static content, backups, logs (application, operational, and audit logs) |
-| Networking | [Virtual Private Endpoint (VPE)](https://cloud.ibm.com/docs/vpc?topic=vpc-about-vpe) | For private network access to {{site.data.keyword.cloud_notm}} services, for example, {{site.data.keyword.keymanagementserviceshort}}, {{site.data.keyword.keymanagementserviceshort}}, {{site.data.keyword.compliance_short}}. |
+| Networking | [Virtual Private Endpoint (VPE)](https://cloud.ibm.com/docs/vpc?topic=vpc-about-vpe) | For private network access to {{site.data.keyword.cloud_notm}} services, for example, {{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.secrets-manager_short}}. |
 | Security | [IAM](https://cloud.ibm.com/docs/account?topic=account-cloudaccess) | {{site.data.keyword.iamshort}} |
 |  | [{{site.data.keyword.keymanagementserviceshort}}](https://cloud.ibm.com/docs/key-protect?topic=key-protect-about) | A full-service encryption solution that allows data to be secured and stored in {{site.data.keyword.cloud_notm}} |
 |  | [{{site.data.keyword.secrets-manager_short}}](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started) | Certificate and Secrets Management |
-|  | [{{site.data.keyword.compliance_short}}](https://cloud.ibm.com/docs/security-compliance?topic=security-compliance-getting-started) | Implement controls for secure data and workload deployments, and assess security and compliance posture |
-|  | [{{site.data.keyword.sysdigsecure_full_notm}}](https://cloud.ibm.com/docs/workload-protection?topic=workload-protection-getting-started) | |
+|  | [{{site.data.keyword.sysdigsecure_full_notm}}](https://cloud.ibm.com/docs/workload-protection?topic=workload-protection-getting-started) | Implement controls for secure data and workload deployments, and assess security and compliance posture |
 | Service Management | [{{site.data.keyword.monitoringlong_notm}}](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor) | Apps and operational monitoring |
-|  | [{{site.data.keyword.loganalysislong_notm}}](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-getting-started) | Apps and operational logs |
+|  | [{{site.data.keyword.logslong_notm}}](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-getting-started) | Apps and operational logs |
 |  | [{{site.data.keyword.atracker_short}}](https://cloud.ibm.com/docs/atracker?topic=atracker-getting-started) | Audit logs |
 {: caption="Table 2. Components" caption-side="bottom"}
 

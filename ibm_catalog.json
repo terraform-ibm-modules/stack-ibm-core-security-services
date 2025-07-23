@@ -1,406 +1,411 @@
 {
-	"products": [
-		{
-			"label": "IBM Cloud Essential Security and Observability Services",
-			"name": "deploy-arch-ibm-core-security-svcs",
-			"product_kind": "solution",
-			"tags": [
-				"solution",
-				"support_ibm",
-				"target_terraform",
-				"security",
-				"logging_monitoring",
-				"ibm_created",
-				"terraform"
-			],
-			"keywords": [
-				"kms",
-				"scc",
-				"secrets manager",
-				"keyprotect",
-				"IaC",
-				"infrastructure as code",
-				"security and compliance center workload protection",
-				"terraform",
-				"solution",
-				"secrets",
-				"key protect",
-				"compliance",
-				"cspm",
-				"cloud security posture management",
-				"config aggregator",
-				"app config"
-			],
-			"short_description": "Deploy core security and other supporting services to get set up to manage the security compliance of the resources in your account.",
-			"long_description": "Get IBM Cloud’s suite of core security services with a single deployment enabling you to securely manage keys and secrets and run security and compliance scans so that you always know the posture of the resources in your account. You can also take advantage of an event notification routing service that notifies you to critical events that occur in your IBM Cloud account and observability services that provide enterprise-grade monitoring and logging giving you operational visibility into the performance and health of your apps, services, and infrastructure.",
-			"provider_name": "IBM",
-			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/light-theme.svg",
-			"offering_docs_url": "https://cloud.ibm.com/docs/security-hub?topic=security-hub-cloud-security",
-			"support_details": "If you’re experiencing issues with this product, review the troubleshooting information available from the “Docs” link in the Related links section. If you can’t resolve your problem, click “Get help” in the related links and create a case.",
-			"features": [
-				{
-					"title": "Creates an IBM Key Protect instance",
-					"description": "Creates and configures an IBM Key Protect instance and creates root keys for IBM Cloud Object Storage, Event Notifications, and Secrets Manager."
-				},
-				{
-					"title": "Creates an IBM Cloud Secrets Manager instance",
-					"description": "Creates and configures an IBM Secrets Manager instance."
-				},
-				{
-					"title": "Creates an App Configuration instance",
-					"description": "Creates and configures an IBM Cloud App Configuration instance with the config aggregator feature enabled."
-				},
-				{
-					"title": "Creates an Security and Compliance Center Workload Protection instance",
-					"description": "Creates and configures an Security and Compliance Center Workload Protection instance with Cloud Security Posture Management (CSPM) enabled."
-				},
-				{
-					"title": "Creates an IBM Cloud Object Storage instance",
-					"description": "Creates and configures an IBM Cloud Object Storage instance and multiple Object Storage buckets that are encrypted by IBM Key Protect."
-				},
-				{
-					"title": "Creates an IBM Cloud Event Notifications instance",
-					"description": "Creates and configures an IBM Cloud Event Notifications instance with topics for Secrets Manager and Security and Compliance Center events."
-				},
-				{
-					"title": "Creates service-to-service authorizations",
-					"description": "Creates and configures service-to-service authorizations for the following IBM Cloud services: Key Protect, Event Notifications, Object Storage, Security and Compliance Center, and Secrets Manager."
-				}
-			],
-			"flavors": [
-				{
-					"label": "Standard",
-					"name": "standard",
-					"compliance": {
-						"authority": "scc-v3",
-						"profiles": [
-							{
-								"profile_name": "CIS IBM Cloud Foundations Benchmark v1.1.0",
-								"profile_version": "1.1.0"
-							}
-						]
-					},
-					"iam_permissions": [
-						{
-							"service_name": "cloud-object-storage",
-							"role_crns": [
-								"crn:v1:bluemix:public:iam::::serviceRole:Manager"
-							]
-						},
-						{
-							"service_name": "secrets-manager",
-							"role_crns": [
-								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
-								"crn:v1:bluemix:public:iam::::role:Editor",
-								"crn:v1:bluemix:public:iam::::role:Operator"
-							]
-						},
-						{
-							"service_name": "kms",
-							"role_crns": [
-								"crn:v1:bluemix:public:iam::::serviceRole:Manager"
-							]
-						},
-						{
-							"service_name": "sysdig-secure",
-							"role_crns": [
-								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
-								"crn:v1:bluemix:public:iam::::role:Operator",
-								"crn:v1:bluemix:public:iam::::role:Editor"
-							]
-						},
-						{
-							"service_name": "apprapp",
-							"role_crns": [
-								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
-								"crn:v1:bluemix:public:iam::::role:Operator",
-								"crn:v1:bluemix:public:iam::::role:Editor"
-							]
-						},
-						{
-							"service_name": "event-notifications",
-							"role_crns": [
-								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
-								"crn:v1:bluemix:public:iam::::role:Operator",
-								"crn:v1:bluemix:public:iam::::role:Editor"
-							]
-						}
-					],
-					"architecture": {
-						"features": [
-							{
-								"title": "Creates IBM Cloud core security services in a resource group",
-								"description": "Creates IBM Cloud core security services in an existing resource group."
-							},
-							{
-								"title": "Creates an IBM Key Protect instance",
-								"description": "Creates and configures an IBM Key Protect instance and creates root keys for IBM Cloud Object Storage, Event Notifications, and Secrets Manager."
-							},
-							{
-								"title": "Creates an IBM Cloud Secrets Manager instance",
-								"description": "Create, lease, and centrally manage secrets that are used in your apps and services using IBM Secrets Manager instance."
-							},
-							{
-								"title": "Configures an IBM Cloud Secrets Manager IAM credentials engine to an IBM Cloud Secrets Manager instance",
-								"description": "Configures an IBM Secrets Manager IAM credentials engine to an IBM Cloud Secrets Manager instance."
-							  },
-							{
-								"title": "Creates an IBM Cloud App Configuration instance with Configuration Aggregator",
-								"description": "Facilitate a Cloud Governance SME with up-to-date configuration data of IBM Cloud resources in one place so that comprehensive information is available for goverance and compliance initiatives."
-							},
-							{
-								"title": "Creates a IBM Cloud Security and Compliance Center Workload Protection instance",
-								"description": "Creates a Cloud-Native Application Protection Platform solution to manage your security and compliance posture, allowing you to monitor misconfigurations and detect and respond to vulnerabilities and threats in real-time."
-							},
-							{
-								"title": "Creates an IBM Cloud Event Notifications instance",
-								"description": "Deliver Email, SMS, Webhooks and Push Notifications for your IBM Cloud service events using IBM Event Notifications instance."
-							}
-						],
-						"diagrams": [
-							{
-								"diagram": {
-									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/core-security-services-architecture.svg",
-									"caption": "IBM Cloud Essential Security and Observability Services Stack Architecture",
-									"type": "image/svg+xml",
-									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/core-security-services-architecture.svg"
-								},
-								"description": "The architecture of IBM Cloud Essential Security and Observability Services stack."
-							}
-						]
-					},
-					"configuration": [
-						{
-							"key": "prefix",
-							"type": "string",
-							"description": "The prefix to add to all resources created by this solution. Used to make sure that names are unique when you deploy the solution more than one time. This should start with a lower case letter and not include '--' or end in '-'.",
-							"required": true
-						},
-						{
-							"key": "region",
-							"type": "string",
-							"default_value": "us-south",
-							"description": "The region where the resources are created.",
-							"required": true,
-							"options": [
-							  {
-								"displayname": "Osaka (jp-osa)",
-								"value": "jp-osa"
-							  },
-							  {
-								"displayname": "Tokyo (jp-tok)",
-								"value": "jp-tok"
-							  },
-							  {
-								"displayname": "Frankfurt (eu-de)",
-								"value": "eu-de"
-							  },
-							  {
-								"displayname": "London (eu-gb)",
-								"value": "eu-gb"
-							  },
-							  {
-								"displayname": "Madrid (eu-es)",
-								"value": "eu-es"
-							  },
-							  {
-								"displayname": "Dallas (us-south)",
-								"value": "us-south"
-							  },
-							  {
-								"displayname": "Toronto (ca-tor)",
-								"value": "ca-tor"
-							  },
-							  {
-								"displayname": "Sao Paulo (br-sao)",
-								"value": "br-sao"
-							  }
-							]
-						},
-						{
-							"display_name": "resource_group",
-							"key": "existing_resource_group_name",
-							"type": "string",
-							"default_value": "Default",
-							"description": "The name of an existing resource group to provision all resources to.",
-							"required": true,
-							"custom_config": {
-								"type": "resource_group",
-								"grouping": "deployment",
-								"original_grouping": "deployment",
-								"config_constraints": {
-									"identifier": "rg_name"
-								}
-							}
-						},
-						{
-							"key": "enable_platform_metrics",
-							"type": "boolean",
-							"default_value": true,
-							"description": "Setting this to true will enable platform metrics for the Cloud Monitoring instance. NOTE: You can configure 1 instance only of the IBM Cloud Monitoring service per region to collect platform metrics in that location.",
-							"required": false
-						},
-						{
-							"key": "logs_routing_tenant_regions",
-							"type": "array",
-							"default_value": [],
-							"description": "Pass a list of regions to create a tenant that is targeted to the Cloud Logs instance created by this solution. To manage platform logs that are generated by IBM Cloud® services in a region of IBM Cloud, you must create a tenant in each region that you operate. Leave the list empty if you don't want to create any tenants.",
-							"required": false
-						},
-						{
-							"key": "existing_kms_instance_crn",
-							"type": "string",
-							"default_value": "__NULL__",
-							"description": "The CRN of an existing KMS instance to use in this solution. If not set, a new Key Protect instance is provisioned.",
-							"required": false
-						},
-						{
-							"display_name": "event_notifications_email_list",
-							"key": "en_email_list",
-							"type": "array",
-							"default_value": [],
-							"description": "List of emails to configure event notifications.",
-							"required": false
-						},
-						{
-							"display_name": "existing_event_notifications_instance_crn",
-							"key": "existing_en_instance_crn",
-							"type": "string",
-							"default_value": "__NULL__",
-							"description": "The CRN of existing event notification instance. If not supplied, a new instance is created.",
-							"required": false
-						},
-						{
-							"key": "existing_secrets_manager_crn",
-							"type": "string",
-							"default_value": "__NULL__",
-							"description": "The CRN of an existing IBM Cloud Secrets Manager instance to use in this solution. If not set, a new Secrets Manager instance is provisioned.",
-							"required": false
-						},
-						{
-							"display_name": "secrets_manager_service_plan",
-							"key": "sm_service_plan",
-							"type": "string",
-							"default_value": "standard",
-							"description": "The pricing plan to use for IBM Cloud Secrets Manager. Not used if `existing_secrets_manager_crn` is specified.",
-							"required": false,
-							"options": [
-								{
-									"displayname": "Standard",
-									"value": "standard"
-								},
-								{
-									"displayname": "Trial",
-									"value": "trial"
-								}
-							]
-						},
-						{
-							"display_name": "disable_secrets_manager_iam_credentials_engine",
-							"key": "skip_iam_authorization_policy",
-							"type": "boolean",
-							"default_value": false,
-							"description": "Whether to skip the creation of the IAM authorization policies required to enable the Secrets Manager IAM credentials engine. If set to false, policies will be created that grants the Secrets Manager instance 'Operator' access to the IAM identity service, and 'Groups Service Member Manage' access to the IAM groups service.",
-							"required": false
-						},
-						{
-							"key": "app_config_service_plan",
-							"type": "string",
-							"default_value": "basic",
-							"description": "The pricing plan to use for the IBM Cloud App Configuration instance.",
-							"required": false,
-							"options": [
-								{
-									"displayname": "Basic",
-									"value": "basic"
-								},
-								{
-									"displayname": "Standard",
-									"value": "standardv2"
-								},
-								{
-									"displayname": "Enterprise",
-									"value": "enterprise"
-								}
-							]
-						},
-						{
-							"key": "scc_workload_protection_service_plan",
-							"type": "string",
-							"default_value": "graduated-tier",
-							"description": "The pricing plan to use for the IBM Cloud Security and Compliance Center Workload Protection instance.",
-							"required": false,
-							"options": [
-								{
-									"displayname": "Graduated Tier",
-									"value": "graduated-tier"
-								},
-								{
-									"displayname": "Free Trial",
-									"value": "free-trial"
-								}
-							]
-						},
-						{
-							"key": "enterprise_id",
-							"type": "string",
-							"default_value": "__NULL__",
-							"description": "If the account is an enterprise account and you want to scan sub-accounts for compliance, this value should be set to the enterprise ID (this is different to the account ID).",
-							"required": false
-						},
-						{
-							"key": "enterprise_account_group_ids_to_assign",
-							"type": "array",
-							"default_value": ["all"],
-							"description": "A list of enterprise account group IDs to assign the trusted profile template to in order for the accounts to be scanned for compliance. Supports passing the string 'all' in the list to assign to all account groups. Only applies if a value is being passed for `enterprise_id`.",
-							"required": false
-						},
-						{
-							"key": "enterprise_account_ids_to_assign",
-							"type": "array",
-							"default_value": ["all"],
-							"description": "A list of enterprise account IDs to assign the trusted profile template to in order for the accounts to be scanned. Supports passing the string 'all' in the list to assign to all accounts. Only applies if a value is being passed for `enterprise_id`.",
-							"required": false
-						}
-					],
-					"outputs": [
-						{
-							"key": "key_management_service_instance_crn",
-							"description": "The CRN of the Hyper Protect Crypto Service instance or Key Protect instance."
-						},
-						{
-							"key": "secrets_manager_crn",
-							"description": "The CRN of the Secrets Manager instance."
-						},
-						{
-							"key": "app_config_crn",
-							"description": "The CRN of the App Configuration instance."
-						},
-						{
-							"key": "monitoring_crn",
-							"description": "The CRN of the IBM Cloud Monitoring instance."
-						},
-						{
-							"key": "cos_instance_crn",
-							"description": "The CRN of the Cloud Object Storage instance."
-						},
-						{
-							"key": "en_crn",
-							"description": "The CRN of the Event Notifications instance."
-						},
-						{
-							"key": "cloud_logs_crn",
-							"description": "The CRN of the provisioned Cloud Logs instance."
-						},
-						{
-							"key": "scc_workload_protection_crn",
-							"description": "Security and Compliance Center Workload Protection instance CRN."
-						}
-					],
-					"install_type": "fullstack",
-					"release_notes_url": "https://cloud.ibm.com/docs/security-hub?topic=security-hub-release-notes"
-				}
-			]
-		}
-	]
+  "products": [
+    {
+      "label": "IBM Cloud Essential Security and Observability Services",
+      "name": "deploy-arch-ibm-core-security-svcs",
+      "product_kind": "solution",
+      "tags": [
+        "ibm_created",
+        "target_terraform",
+        "terraform",
+        "solution",
+        "support_ibm",
+        "security",
+        "logging_monitoring",
+        "converged_infra"
+      ],
+      "keywords": [
+        "kms",
+        "scc",
+        "secrets manager",
+        "keyprotect",
+        "IaC",
+        "infrastructure as code",
+        "security and compliance center workload protection",
+        "terraform",
+        "solution",
+        "secrets",
+        "key protect",
+        "compliance",
+        "cspm",
+        "cloud security posture management",
+        "config aggregator",
+        "app config"
+      ],
+      "short_description": "Deploy core security and other supporting services to get set up to manage the security compliance of the resources in your account.",
+      "long_description": "Get IBM Cloud’s suite of core security services with a single deployment enabling you to securely manage keys and secrets and run security and compliance scans so that you always know the posture of the resources in your account. You can also take advantage of an event notification routing service that notifies you to critical events that occur in your IBM Cloud account and observability services that provide enterprise-grade monitoring and logging giving you operational visibility into the performance and health of your apps, services, and infrastructure.",
+      "provider_name": "IBM",
+      "offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/light-theme.svg",
+      "offering_docs_url": "https://cloud.ibm.com/docs/security-hub?topic=security-hub-cloud-security",
+      "support_details": "If you’re experiencing issues with this product, review the troubleshooting information available from the “Docs” link in the Related links section. If you can’t resolve your problem, click “Get help” in the related links and create a case.",
+      "features": [
+        {
+          "title": "Creates an IBM Key Protect instance",
+          "description": "Creates and configures an IBM Key Protect instance and creates root keys for IBM Cloud Object Storage, Event Notifications, and Secrets Manager."
+        },
+        {
+          "title": "Creates an IBM Cloud Secrets Manager instance",
+          "description": "Creates and configures an IBM Secrets Manager instance."
+        },
+        {
+          "title": "Creates an App Configuration instance",
+          "description": "Creates and configures an IBM Cloud App Configuration instance with the config aggregator feature enabled."
+        },
+        {
+          "title": "Creates an Security and Compliance Center Workload Protection instance",
+          "description": "Creates and configures an Security and Compliance Center Workload Protection instance with Cloud Security Posture Management (CSPM) enabled."
+        },
+        {
+          "title": "Creates an IBM Cloud Object Storage instance",
+          "description": "Creates and configures an IBM Cloud Object Storage instance and multiple Object Storage buckets that are encrypted by IBM Key Protect."
+        },
+        {
+          "title": "Creates an IBM Cloud Event Notifications instance",
+          "description": "Creates and configures an IBM Cloud Event Notifications instance with topics for Secrets Manager and Security and Compliance Center events."
+        },
+        {
+          "title": "Creates service-to-service authorizations",
+          "description": "Creates and configures service-to-service authorizations for the following IBM Cloud services: Key Protect, Event Notifications, Object Storage, Security and Compliance Center, and Secrets Manager."
+        }
+      ],
+      "flavors": [
+        {
+          "label": "Standard",
+          "name": "standard",
+          "compliance": {
+            "authority": "scc-v3",
+            "profiles": [
+              {
+                "profile_name": "CIS IBM Cloud Foundations Benchmark v1.1.0",
+                "profile_version": "1.1.0"
+              }
+            ]
+          },
+          "iam_permissions": [
+            {
+              "service_name": "cloud-object-storage",
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Manager"
+              ]
+            },
+            {
+              "service_name": "secrets-manager",
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+                "crn:v1:bluemix:public:iam::::role:Editor",
+                "crn:v1:bluemix:public:iam::::role:Operator"
+              ]
+            },
+            {
+              "service_name": "kms",
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Manager"
+              ]
+            },
+            {
+              "service_name": "sysdig-secure",
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+                "crn:v1:bluemix:public:iam::::role:Operator",
+                "crn:v1:bluemix:public:iam::::role:Editor"
+              ]
+            },
+            {
+              "service_name": "apprapp",
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+                "crn:v1:bluemix:public:iam::::role:Operator",
+                "crn:v1:bluemix:public:iam::::role:Editor"
+              ]
+            },
+            {
+              "service_name": "event-notifications",
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+                "crn:v1:bluemix:public:iam::::role:Operator",
+                "crn:v1:bluemix:public:iam::::role:Editor"
+              ]
+            }
+          ],
+          "architecture": {
+            "features": [
+              {
+                "title": "Creates IBM Cloud core security services in a resource group",
+                "description": "Creates IBM Cloud core security services in an existing resource group."
+              },
+              {
+                "title": "Creates an IBM Key Protect instance",
+                "description": "Creates and configures an IBM Key Protect instance and creates root keys for IBM Cloud Object Storage, Event Notifications, and Secrets Manager."
+              },
+              {
+                "title": "Creates an IBM Cloud Secrets Manager instance",
+                "description": "Create, lease, and centrally manage secrets that are used in your apps and services using IBM Secrets Manager instance."
+              },
+              {
+                "title": "Configures an IBM Cloud Secrets Manager IAM credentials engine to an IBM Cloud Secrets Manager instance",
+                "description": "Configures an IBM Secrets Manager IAM credentials engine to an IBM Cloud Secrets Manager instance."
+              },
+              {
+                "title": "Creates an IBM Cloud App Configuration instance with Configuration Aggregator",
+                "description": "Facilitate a Cloud Governance SME with up-to-date configuration data of IBM Cloud resources in one place so that comprehensive information is available for goverance and compliance initiatives."
+              },
+              {
+                "title": "Creates a IBM Cloud Security and Compliance Center Workload Protection instance",
+                "description": "Creates a Cloud-Native Application Protection Platform solution to manage your security and compliance posture, allowing you to monitor misconfigurations and detect and respond to vulnerabilities and threats in real-time."
+              },
+              {
+                "title": "Creates an IBM Cloud Event Notifications instance",
+                "description": "Deliver Email, SMS, Webhooks and Push Notifications for your IBM Cloud service events using IBM Event Notifications instance."
+              }
+            ],
+            "diagrams": [
+              {
+                "diagram": {
+                  "url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/core-security-services-architecture.svg",
+                  "caption": "IBM Cloud Essential Security and Observability Services Stack Architecture",
+                  "type": "image/svg+xml",
+                  "thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/core-security-services-architecture.svg"
+                },
+                "description": "The architecture of IBM Cloud Essential Security and Observability Services stack."
+              }
+            ]
+          },
+          "configuration": [
+            {
+              "key": "prefix",
+              "type": "string",
+              "description": "The prefix to add to all resources created by this solution. Used to make sure that names are unique when you deploy the solution more than one time. This should start with a lower case letter and not include '--' or end in '-'.",
+              "required": true
+            },
+            {
+              "key": "region",
+              "type": "string",
+              "default_value": "us-south",
+              "description": "The region where the resources are created.",
+              "required": true,
+              "options": [
+                {
+                  "displayname": "Osaka (jp-osa)",
+                  "value": "jp-osa"
+                },
+                {
+                  "displayname": "Tokyo (jp-tok)",
+                  "value": "jp-tok"
+                },
+                {
+                  "displayname": "Frankfurt (eu-de)",
+                  "value": "eu-de"
+                },
+                {
+                  "displayname": "London (eu-gb)",
+                  "value": "eu-gb"
+                },
+                {
+                  "displayname": "Madrid (eu-es)",
+                  "value": "eu-es"
+                },
+                {
+                  "displayname": "Dallas (us-south)",
+                  "value": "us-south"
+                },
+                {
+                  "displayname": "Toronto (ca-tor)",
+                  "value": "ca-tor"
+                },
+                {
+                  "displayname": "Sao Paulo (br-sao)",
+                  "value": "br-sao"
+                }
+              ]
+            },
+            {
+              "display_name": "resource_group",
+              "key": "existing_resource_group_name",
+              "type": "string",
+              "default_value": "Default",
+              "description": "The name of an existing resource group to provision all resources to.",
+              "required": true,
+              "custom_config": {
+                "type": "resource_group",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "identifier": "rg_name"
+                }
+              }
+            },
+            {
+              "key": "enable_platform_metrics",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Setting this to true will enable platform metrics for the Cloud Monitoring instance. NOTE: You can configure 1 instance only of the IBM Cloud Monitoring service per region to collect platform metrics in that location.",
+              "required": false
+            },
+            {
+              "key": "logs_routing_tenant_regions",
+              "type": "array",
+              "default_value": [],
+              "description": "Pass a list of regions to create a tenant that is targeted to the Cloud Logs instance created by this solution. To manage platform logs that are generated by IBM Cloud® services in a region of IBM Cloud, you must create a tenant in each region that you operate. Leave the list empty if you don't want to create any tenants.",
+              "required": false
+            },
+            {
+              "key": "existing_kms_instance_crn",
+              "type": "string",
+              "default_value": "__NULL__",
+              "description": "The CRN of an existing KMS instance to use in this solution. If not set, a new Key Protect instance is provisioned.",
+              "required": false
+            },
+            {
+              "display_name": "event_notifications_email_list",
+              "key": "en_email_list",
+              "type": "array",
+              "default_value": [],
+              "description": "List of emails to configure event notifications.",
+              "required": false
+            },
+            {
+              "display_name": "existing_event_notifications_instance_crn",
+              "key": "existing_en_instance_crn",
+              "type": "string",
+              "default_value": "__NULL__",
+              "description": "The CRN of existing event notification instance. If not supplied, a new instance is created.",
+              "required": false
+            },
+            {
+              "key": "existing_secrets_manager_crn",
+              "type": "string",
+              "default_value": "__NULL__",
+              "description": "The CRN of an existing IBM Cloud Secrets Manager instance to use in this solution. If not set, a new Secrets Manager instance is provisioned.",
+              "required": false
+            },
+            {
+              "display_name": "secrets_manager_service_plan",
+              "key": "sm_service_plan",
+              "type": "string",
+              "default_value": "standard",
+              "description": "The pricing plan to use for IBM Cloud Secrets Manager. Not used if `existing_secrets_manager_crn` is specified.",
+              "required": false,
+              "options": [
+                {
+                  "displayname": "Standard",
+                  "value": "standard"
+                },
+                {
+                  "displayname": "Trial",
+                  "value": "trial"
+                }
+              ]
+            },
+            {
+              "display_name": "disable_secrets_manager_iam_credentials_engine",
+              "key": "skip_iam_authorization_policy",
+              "type": "boolean",
+              "default_value": false,
+              "description": "Whether to skip the creation of the IAM authorization policies required to enable the Secrets Manager IAM credentials engine. If set to false, policies will be created that grants the Secrets Manager instance 'Operator' access to the IAM identity service, and 'Groups Service Member Manage' access to the IAM groups service.",
+              "required": false
+            },
+            {
+              "key": "app_config_service_plan",
+              "type": "string",
+              "default_value": "basic",
+              "description": "The pricing plan to use for the IBM Cloud App Configuration instance.",
+              "required": false,
+              "options": [
+                {
+                  "displayname": "Basic",
+                  "value": "basic"
+                },
+                {
+                  "displayname": "Standard",
+                  "value": "standardv2"
+                },
+                {
+                  "displayname": "Enterprise",
+                  "value": "enterprise"
+                }
+              ]
+            },
+            {
+              "key": "scc_workload_protection_service_plan",
+              "type": "string",
+              "default_value": "graduated-tier",
+              "description": "The pricing plan to use for the IBM Cloud Security and Compliance Center Workload Protection instance.",
+              "required": false,
+              "options": [
+                {
+                  "displayname": "Graduated Tier",
+                  "value": "graduated-tier"
+                },
+                {
+                  "displayname": "Free Trial",
+                  "value": "free-trial"
+                }
+              ]
+            },
+            {
+              "key": "enterprise_id",
+              "type": "string",
+              "default_value": "__NULL__",
+              "description": "If the account is an enterprise account and you want to scan sub-accounts for compliance, this value should be set to the enterprise ID (this is different to the account ID).",
+              "required": false
+            },
+            {
+              "key": "enterprise_account_group_ids_to_assign",
+              "type": "array",
+              "default_value": [
+                "all"
+              ],
+              "description": "A list of enterprise account group IDs to assign the trusted profile template to in order for the accounts to be scanned for compliance. Supports passing the string 'all' in the list to assign to all account groups. Only applies if a value is being passed for `enterprise_id`.",
+              "required": false
+            },
+            {
+              "key": "enterprise_account_ids_to_assign",
+              "type": "array",
+              "default_value": [
+                "all"
+              ],
+              "description": "A list of enterprise account IDs to assign the trusted profile template to in order for the accounts to be scanned. Supports passing the string 'all' in the list to assign to all accounts. Only applies if a value is being passed for `enterprise_id`.",
+              "required": false
+            }
+          ],
+          "outputs": [
+            {
+              "key": "key_management_service_instance_crn",
+              "description": "The CRN of the Hyper Protect Crypto Service instance or Key Protect instance."
+            },
+            {
+              "key": "secrets_manager_crn",
+              "description": "The CRN of the Secrets Manager instance."
+            },
+            {
+              "key": "app_config_crn",
+              "description": "The CRN of the App Configuration instance."
+            },
+            {
+              "key": "monitoring_crn",
+              "description": "The CRN of the IBM Cloud Monitoring instance."
+            },
+            {
+              "key": "cos_instance_crn",
+              "description": "The CRN of the Cloud Object Storage instance."
+            },
+            {
+              "key": "en_crn",
+              "description": "The CRN of the Event Notifications instance."
+            },
+            {
+              "key": "cloud_logs_crn",
+              "description": "The CRN of the provisioned Cloud Logs instance."
+            },
+            {
+              "key": "scc_workload_protection_crn",
+              "description": "Security and Compliance Center Workload Protection instance CRN."
+            }
+          ],
+          "install_type": "fullstack",
+          "release_notes_url": "https://cloud.ibm.com/docs/security-hub?topic=security-hub-release-notes"
+        }
+      ]
+    }
+  ]
 }

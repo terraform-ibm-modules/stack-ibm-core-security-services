@@ -132,7 +132,7 @@ The following table outlines the products or services used in the architecture f
 |  | [{{site.data.keyword.secrets-manager_short}}](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started) | Certificate and Secrets Management |
 |  | [{{site.data.keyword.sysdigsecure_full_notm}}](https://cloud.ibm.com/docs/workload-protection?topic=workload-protection-getting-started) | Implement controls for secure data and workload deployments, and assess security and compliance posture |
 | Service Management | [{{site.data.keyword.monitoringlong_notm}}](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor) | Apps and operational monitoring |
-|  | [{{site.data.keyword.logslong_notm}}](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-getting-started) | Apps and operational logs |
+|  | [{{site.data.keyword.logs_full_notm}}](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-getting-started) | Apps and operational logs |
 |  | [{{site.data.keyword.atracker_short}}](https://cloud.ibm.com/docs/atracker?topic=atracker-getting-started) | Audit logs |
 {: caption="Table 2. Components" caption-side="bottom"}
 

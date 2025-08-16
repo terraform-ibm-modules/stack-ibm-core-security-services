@@ -237,7 +237,7 @@
             {
               "key": "enable_platform_metrics",
               "type": "boolean",
-              "default_value": true,
+              "default_value": false,
               "description": "Setting this to true will enable platform metrics for the Cloud Monitoring instance. NOTE: You can configure 1 instance only of the IBM Cloud Monitoring service per region to collect platform metrics in that location.",
               "required": false
             },

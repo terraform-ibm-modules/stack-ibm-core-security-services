@@ -140,7 +140,7 @@
         }
       ],
       "name": "1a - Key management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.93bf5d12-a435-4510-8888-1c32db20b82b-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.466c0738-68d1-4b8d-8854-f85e01853f10-global"
     },
     {
       "inputs": [
@@ -162,7 +162,7 @@
         }
       ],
       "name": "1b - Object storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.fef2dae0-dc1a-4e7f-a663-dba29dfbc01a-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.79a61ce0-d4fa-4f1a-b6c5-5ca23b13ff06-global"
     },
     {
       "inputs": [
@@ -200,17 +200,13 @@
         }
       ],
       "name": "1c - App Configuration",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c160fa36-fd40-42de-8553-1233e0c5e971-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dfa78503-d833-49dd-9140-dbde8124d734-global"
     },
     {
       "inputs": [
         {
-          "name": "resource_group_name",
+          "name": "existing_resource_group_name",
           "value": "ref:../../inputs/existing_resource_group_name"
-        },
-        {
-          "name": "use_existing_resource_group",
-          "value": true
         },
         {
           "name": "region",
@@ -219,6 +215,10 @@
         {
           "name": "prefix",
           "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "existing_cos_instance_crn",
+          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_crn"
         },
         {
           "name": "existing_kms_instance_crn",
@@ -239,14 +239,62 @@
         {
           "name": "enable_platform_metrics",
           "value": "ref:../../inputs/enable_platform_metrics"
-        },
-        {
-          "name": "existing_en_instance_crn",
-          "value": "ref:../../members/3 - Event Notifications/outputs/crn"
         }
       ],
-      "name": "2 - Observability",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.39562a8a-1b92-4342-b990-1944ae583df9-global"
+      "name": "2a - Cloud Logs",
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.643fbe72-a630-43f3-8cc2-77bccb15f604-global"
+    },
+    {
+      "inputs": [
+        {
+          "name": "existing_resource_group_name",
+          "value": "ref:../../inputs/existing_resource_group_name"
+        },
+        {
+          "name": "region",
+          "value": "ref:../../inputs/region"
+        },
+        {
+          "name": "prefix",
+          "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "enable_platform_metrics",
+          "value": "ref:../../inputs/enable_platform_metrics"
+        }
+      ],
+      "name": "2b - Cloud Monitoring",
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e8444cee-432d-4af3-9211-d19cb739f4a3-global"
+    },
+    {
+      "inputs": [
+        {
+          "name": "existing_resource_group_name",
+          "value": "ref:../../inputs/existing_resource_group_name"
+        },
+        {
+          "name": "region",
+          "value": "ref:../../inputs/region"
+        },
+        {
+          "name": "prefix",
+          "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "existing_kms_instance_crn",
+          "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+        },
+        {
+          "name": "kms_endpoint_type",
+          "value": "private"
+        },
+        {
+          "name": "existing_cos_instance_crn",
+          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+        }
+      ],
+      "name": "2c - Activity Tracker Event Routing",
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f5984196-27e2-418d-a0d3-2b6cbcda537c-global"
     },
     {
       "inputs": [
@@ -296,7 +344,7 @@
         }
       ],
       "name": "3 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b02f9aa4-b40f-41d5-8039-8e87742d756e-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.7a066de3-c8bd-4068-9044-6132e95cad6f-global"
     },
     {
       "inputs": [
@@ -330,7 +378,7 @@
         }
       ],
       "name": "4a - Security and Compliance Center Workload Protection",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e436bb10-8b6c-4b3b-b4c5-523929d13686-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.66462c31-0922-43f6-9b26-4f9fb1b69c83-global"
     },
     {
       "inputs": [
@@ -392,7 +440,7 @@
         }
       ],
       "name": "4b - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.db823650-3010-4482-b807-45145f273553-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e204ceb9-6339-4c6f-b627-c648ae45cd97-global"
     }
   ],
   "outputs": [

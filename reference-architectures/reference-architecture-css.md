@@ -49,7 +49,7 @@ or tile in the IBM Cloud catalog, match the title to the catalog. See
 https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-guidance.
 -->
 
-# IBM Cloud Essential Security and Observability Services
+# Cloud foundation for security and observability
 {: #core-security-services-pattern}
 {: toc-content-type="reference-architecture"}
 {: toc-version="3.0.0"}
@@ -141,5 +141,5 @@ The following table outlines the products or services used in the architecture f
 
 Ensures compliance with some of the controls in the CIS IBM Cloud Foundations Benchmark profile. To view the list of added controls, follow these steps:
 
-1.  Go the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external} and search for the IBM Cloud Essential Security and Observability Services deployable architecture.
+1.  Go the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external} and search for the Cloud foundation for security and observability deployable architecture.
 1.  Click the tile for the deployable architecture to open the details. The Security & compliance tab lists all of the controls that are included in the deployable architecture.

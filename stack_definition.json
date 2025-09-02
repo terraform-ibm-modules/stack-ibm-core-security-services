@@ -281,6 +281,10 @@
           "value": "ref:../../inputs/prefix"
         },
         {
+          "name": "existing_cos_instance_crn",
+          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_crn"
+        },
+        {
           "name": "existing_kms_instance_crn",
           "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
         },
@@ -291,9 +295,51 @@
         {
           "name": "existing_cos_instance_crn",
           "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+        },
+        {
+          "name": "logs_routing_tenant_regions",
+          "value": "ref:../../inputs/logs_routing_tenant_regions"
+        },
+        {
+          "name": "enable_platform_metrics",
+          "value": "ref:../../inputs/enable_platform_metrics"
         }
       ],
-      "name": "2c - Activity Tracker Event Routing",
+      "name": "2c - Cloud Logs for Activity Tracker Event Routing",
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.643fbe72-a630-43f3-8cc2-77bccb15f604-global"
+    },
+    {
+      "inputs": [
+        {
+          "name": "existing_resource_group_name",
+          "value": "ref:../../inputs/existing_resource_group_name"
+        },
+        {
+          "name": "region",
+          "value": "ref:../../inputs/region"
+        },
+        {
+          "name": "prefix",
+          "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "existing_kms_instance_crn",
+          "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+        },
+        {
+          "name": "kms_endpoint_type",
+          "value": "private"
+        },
+        {
+          "name": "existing_cos_instance_crn",
+          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+        },
+        {
+          "name": "existing_cloud_logs_instance_crn",
+          "value": "ref:../../members/2c - Cloud Logs for Activity Tracker Event Routing/outputs/cloud_logs_crn"
+        }
+      ],
+      "name": "2d - Activity Tracker Event Routing",
       "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f5984196-27e2-418d-a0d3-2b6cbcda537c-global"
     },
     {

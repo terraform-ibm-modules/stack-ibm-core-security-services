@@ -411,10 +411,6 @@
         {
           "name": "skip_iam_authorization_policy",
           "value": "ref:../../inputs/skip_iam_authorization_policy"
-        },
-        {
-          "name": "iam_engine_enabled",
-          "value": false
         }
       ],
       "name": "3d - Secrets Manager",

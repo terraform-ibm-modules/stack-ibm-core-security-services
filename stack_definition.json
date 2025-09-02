@@ -179,168 +179,12 @@
           "value": "ref:../../inputs/prefix"
         },
         {
-          "name": "app_config_plan",
-          "value": "ref:../../inputs/app_config_service_plan"
-        },
-        {
-          "name": "enable_config_aggregator",
-          "value": true
-        },
-        {
-          "name": "config_aggregator_enterprise_id",
-          "value": "ref:../../inputs/enterprise_id"
-        },
-        {
-          "name": "config_aggregator_enterprise_account_group_ids_to_assign",
-          "value": "ref:../../inputs/enterprise_account_group_ids_to_assign"
-        },
-        {
-          "name": "config_aggregator_enterprise_account_ids_to_assign",
-          "value": "ref:../../inputs/enterprise_account_ids_to_assign"
-        }
-      ],
-      "name": "1c - App Configuration",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dfa78503-d833-49dd-9140-dbde8124d734-global"
-    },
-    {
-      "inputs": [
-        {
-          "name": "existing_resource_group_name",
-          "value": "ref:../../inputs/existing_resource_group_name"
-        },
-        {
-          "name": "region",
-          "value": "ref:../../inputs/region"
-        },
-        {
-          "name": "prefix",
-          "value": "ref:../../inputs/prefix"
-        },
-        {
-          "name": "existing_cos_instance_crn",
-          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_crn"
-        },
-        {
-          "name": "existing_kms_instance_crn",
-          "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
-        },
-        {
-          "name": "kms_endpoint_type",
-          "value": "private"
-        },
-        {
-          "name": "existing_cos_instance_crn",
-          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
-        },
-        {
-          "name": "logs_routing_tenant_regions",
-          "value": "ref:../../inputs/logs_routing_tenant_regions"
-        },
-        {
           "name": "enable_platform_metrics",
           "value": "ref:../../inputs/enable_platform_metrics"
         }
       ],
-      "name": "2a - Cloud Logs",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.643fbe72-a630-43f3-8cc2-77bccb15f604-global"
-    },
-    {
-      "inputs": [
-        {
-          "name": "existing_resource_group_name",
-          "value": "ref:../../inputs/existing_resource_group_name"
-        },
-        {
-          "name": "region",
-          "value": "ref:../../inputs/region"
-        },
-        {
-          "name": "prefix",
-          "value": "ref:../../inputs/prefix"
-        },
-        {
-          "name": "enable_platform_metrics",
-          "value": "ref:../../inputs/enable_platform_metrics"
-        }
-      ],
-      "name": "2b - Cloud Monitoring",
+      "name": "1c - Cloud Monitoring",
       "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e8444cee-432d-4af3-9211-d19cb739f4a3-global"
-    },
-    {
-      "inputs": [
-        {
-          "name": "existing_resource_group_name",
-          "value": "ref:../../inputs/existing_resource_group_name"
-        },
-        {
-          "name": "region",
-          "value": "ref:../../inputs/region"
-        },
-        {
-          "name": "prefix",
-          "value": "ref:../../inputs/prefix"
-        },
-        {
-          "name": "existing_cos_instance_crn",
-          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_crn"
-        },
-        {
-          "name": "existing_kms_instance_crn",
-          "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
-        },
-        {
-          "name": "kms_endpoint_type",
-          "value": "private"
-        },
-        {
-          "name": "existing_cos_instance_crn",
-          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
-        },
-        {
-          "name": "logs_routing_tenant_regions",
-          "value": "ref:../../inputs/logs_routing_tenant_regions"
-        },
-        {
-          "name": "enable_platform_metrics",
-          "value": "ref:../../inputs/enable_platform_metrics"
-        }
-      ],
-      "name": "2c - Cloud Logs for Activity Tracker Event Routing",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.643fbe72-a630-43f3-8cc2-77bccb15f604-global"
-    },
-    {
-      "inputs": [
-        {
-          "name": "existing_resource_group_name",
-          "value": "ref:../../inputs/existing_resource_group_name"
-        },
-        {
-          "name": "region",
-          "value": "ref:../../inputs/region"
-        },
-        {
-          "name": "prefix",
-          "value": "ref:../../inputs/prefix"
-        },
-        {
-          "name": "existing_kms_instance_crn",
-          "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
-        },
-        {
-          "name": "kms_endpoint_type",
-          "value": "private"
-        },
-        {
-          "name": "existing_cos_instance_crn",
-          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
-        },
-        {
-          "name": "existing_cloud_logs_instance_crn",
-          "value": "ref:../../members/2c - Cloud Logs for Activity Tracker Event Routing/outputs/cloud_logs_crn"
-        }
-      ],
-      "name": "2d - Activity Tracker Event Routing",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f5984196-27e2-418d-a0d3-2b6cbcda537c-global"
     },
     {
       "inputs": [
@@ -389,7 +233,7 @@
           "value": "__NULL__"
         }
       ],
-      "name": "3 - Event Notifications",
+      "name": "2 - Event Notifications",
       "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.7a066de3-c8bd-4068-9044-6132e95cad6f-global"
     },
     {
@@ -407,24 +251,112 @@
           "value": "ref:../../inputs/prefix"
         },
         {
-          "name": "scc_workload_protection_service_plan",
-          "value": "ref:../../inputs/scc_workload_protection_service_plan"
+          "name": "existing_cos_instance_crn",
+          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_crn"
         },
         {
-          "name": "cspm_enabled",
+          "name": "existing_kms_instance_crn",
+          "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+        },
+        {
+          "name": "kms_endpoint_type",
+          "value": "private"
+        },
+        {
+          "name": "existing_cos_instance_crn",
+          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+        },
+        {
+          "name": "logs_routing_tenant_regions",
+          "value": "ref:../../inputs/logs_routing_tenant_regions"
+        },
+        {
+          "name": "enable_platform_metrics",
+          "value": "ref:../../inputs/enable_platform_metrics"
+        }
+      ],
+      "name": "3a - Cloud Logs for logging",
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.643fbe72-a630-43f3-8cc2-77bccb15f604-global"
+    },
+    {
+      "inputs": [
+        {
+          "name": "existing_resource_group_name",
+          "value": "ref:../../inputs/existing_resource_group_name"
+        },
+        {
+          "name": "region",
+          "value": "ref:../../inputs/region"
+        },
+        {
+          "name": "prefix",
+          "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "existing_cos_instance_crn",
+          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_crn"
+        },
+        {
+          "name": "existing_kms_instance_crn",
+          "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+        },
+        {
+          "name": "kms_endpoint_type",
+          "value": "private"
+        },
+        {
+          "name": "existing_cos_instance_crn",
+          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+        },
+        {
+          "name": "logs_routing_tenant_regions",
+          "value": "ref:../../inputs/logs_routing_tenant_regions"
+        },
+        {
+          "name": "enable_platform_metrics",
+          "value": "ref:../../inputs/enable_platform_metrics"
+        }
+      ],
+      "name": "3b - Cloud Logs for activity tracking",
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.643fbe72-a630-43f3-8cc2-77bccb15f604-global"
+    },
+    {
+      "inputs": [
+        {
+          "name": "existing_resource_group_name",
+          "value": "ref:../../inputs/existing_resource_group_name"
+        },
+        {
+          "name": "region",
+          "value": "ref:../../inputs/region"
+        },
+        {
+          "name": "prefix",
+          "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "app_config_plan",
+          "value": "ref:../../inputs/app_config_service_plan"
+        },
+        {
+          "name": "enable_config_aggregator",
           "value": true
         },
         {
-          "name": "app_config_crn",
-          "value": "ref:../../members/1c - App Configuration/outputs/app_config_crn"
+          "name": "config_aggregator_enterprise_id",
+          "value": "ref:../../inputs/enterprise_id"
         },
         {
-          "name": "existing_monitoring_crn",
-          "value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
+          "name": "config_aggregator_enterprise_account_group_ids_to_assign",
+          "value": "ref:../../inputs/enterprise_account_group_ids_to_assign"
+        },
+        {
+          "name": "config_aggregator_enterprise_account_ids_to_assign",
+          "value": "ref:../../inputs/enterprise_account_ids_to_assign"
         }
       ],
-      "name": "4a - Security and Compliance Center Workload Protection",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.66462c31-0922-43f6-9b26-4f9fb1b69c83-global"
+      "name": "3c - App Configuration",
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dfa78503-d833-49dd-9140-dbde8124d734-global"
     },
     {
       "inputs": [
@@ -450,7 +382,7 @@
         },
         {
           "name": "existing_event_notifications_instance_crn",
-          "value": "ref:../../members/3 - Event Notifications/outputs/crn"
+          "value": "ref:../../members/2 - Event Notifications/outputs/crn"
         },
         {
           "name": "existing_secrets_manager_crn",
@@ -485,8 +417,76 @@
           "value": false
         }
       ],
-      "name": "4b - Secrets Manager",
+      "name": "3d - Secrets Manager",
       "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e204ceb9-6339-4c6f-b627-c648ae45cd97-global"
+    },
+    {
+      "inputs": [
+        {
+          "name": "existing_resource_group_name",
+          "value": "ref:../../inputs/existing_resource_group_name"
+        },
+        {
+          "name": "region",
+          "value": "ref:../../inputs/region"
+        },
+        {
+          "name": "prefix",
+          "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "scc_workload_protection_service_plan",
+          "value": "ref:../../inputs/scc_workload_protection_service_plan"
+        },
+        {
+          "name": "cspm_enabled",
+          "value": true
+        },
+        {
+          "name": "app_config_crn",
+          "value": "ref:../../members/3c - App Configuration/outputs/app_config_crn"
+        },
+        {
+          "name": "existing_monitoring_crn",
+          "value": "ref:../../members/1c - Cloud Monitoring/outputs/cloud_monitoring_crn"
+        }
+      ],
+      "name": "4a - Security and Compliance Center Workload Protection",
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.66462c31-0922-43f6-9b26-4f9fb1b69c83-global"
+    },
+    {
+      "inputs": [
+        {
+          "name": "existing_resource_group_name",
+          "value": "ref:../../inputs/existing_resource_group_name"
+        },
+        {
+          "name": "region",
+          "value": "ref:../../inputs/region"
+        },
+        {
+          "name": "prefix",
+          "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "existing_kms_instance_crn",
+          "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+        },
+        {
+          "name": "kms_endpoint_type",
+          "value": "private"
+        },
+        {
+          "name": "existing_cos_instance_crn",
+          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+        },
+        {
+          "name": "existing_cloud_logs_instance_crn",
+          "value": "ref:../../members/3b - Cloud Logs for activity tracking/outputs/cloud_logs_crn"
+        }
+      ],
+      "name": "4b - Activity Tracker Event Routing",
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f5984196-27e2-418d-a0d3-2b6cbcda537c-global"
     }
   ],
   "outputs": [
@@ -496,11 +496,11 @@
     },
     {
       "name": "secrets_manager_crn",
-      "value": "ref:../../members/4b - Secrets Manager/outputs/secrets_manager_crn"
+      "value": "ref:../../members/3d - Secrets Manager/outputs/secrets_manager_crn"
     },
     {
       "name": "monitoring_crn",
-      "value": "ref:../../members/2 - Observability/outputs/cloud_monitoring_crn"
+      "value": "ref:../../members/1c - Cloud Monitoring/outputs/cloud_monitoring_crn"
     },
     {
       "name": "cos_instance_crn",
@@ -508,11 +508,11 @@
     },
     {
       "name": "en_crn",
-      "value": "ref:../../members/3 - Event Notifications/outputs/crn"
+      "value": "ref:../../members/2 - Event Notifications/outputs/crn"
     },
     {
       "name": "app_config_crn",
-      "value": "ref:../../members/1c - App Configuration/outputs/app_config_crn"
+      "value": "ref:../../members/3c - App Configuration/outputs/app_config_crn"
     },
     {
       "name": "scc_workload_protection_crn",

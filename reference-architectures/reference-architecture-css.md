@@ -74,7 +74,7 @@ This reference architecture showcases how these services form a foundational sec
 ## Architecture diagram
 {: #architecture-diagram}
 
-The following diagram represents the architecture for the IBM Cloud Essential Security and Observability Services deployable architecture on and reuses the [best practices](/docs/framework-financial-services?topic=framework-financial-services-about) for {{site.data.keyword.framework-fs_full}}.
+The following diagram represents the architecture for the Cloud foundation for security and observability deployable architecture on and reuses the [best practices](/docs/framework-financial-services?topic=framework-financial-services-about) for {{site.data.keyword.framework-fs_full}}.
 
 ![Architecture.](core-security-services-architecture.svg "Architecture"){: caption="Figure 1. Architecture diagram" caption-side="bottom"}{: external download="core-security-services-architecture.svg"}
 

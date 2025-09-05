@@ -71,7 +71,8 @@
       "flavors": [
         {
           "label": "Standard",
-          "name": "standard",
+          "name": "standard-fully-config",
+          "index": 1,
           "compliance": {
             "authority": "scc-v3",
             "profiles": [

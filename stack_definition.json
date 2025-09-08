@@ -50,7 +50,7 @@
       "custom_config": {}
     },
     {
-      "name": "existing_en_instance_crn",
+      "name": "existing_event_notifications_instance_crn",
       "required": false,
       "type": "string",
       "custom_config": {}
@@ -115,12 +115,8 @@
     {
       "inputs": [
         {
-          "name": "resource_group_name",
+          "name": "existing_resource_group_name",
           "value": "ref:../../inputs/existing_resource_group_name"
-        },
-        {
-          "name": "use_existing_resource_group",
-          "value": true
         },
         {
           "name": "existing_kms_instance_crn",
@@ -145,15 +141,11 @@
     {
       "inputs": [
         {
-          "name": "resource_group_name",
+          "name": "existing_resource_group_name",
           "value": "ref:../../inputs/existing_resource_group_name"
         },
         {
-          "name": "use_existing_resource_group",
-          "value": true
-        },
-        {
-          "name": "cos_instance_name",
+          "name": "instance_name",
           "value": "core-services"
         },
         {
@@ -193,8 +185,8 @@
           "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
         },
         {
-          "name": "existing_en_instance_crn",
-          "value": "ref:../../inputs/existing_en_instance_crn"
+          "name": "existing_event_notifications_instance_crn",
+          "value": "ref:../../inputs/existing_event_notifications_instance_crn"
         },
         {
           "name": "skip_cos_kms_auth_policy",
@@ -213,12 +205,8 @@
           "value": "private"
         },
         {
-          "name": "resource_group_name",
+          "name": "existing_resource_group_name",
           "value": "ref:../../inputs/existing_resource_group_name"
-        },
-        {
-          "name": "use_existing_resource_group",
-          "value": true
         },
         {
           "name": "region",
@@ -230,7 +218,7 @@
         },
         {
           "name": "existing_monitoring_crn",
-          "value": "__NULL__"
+          "value": "ref:../../members/1c - Cloud Monitoring/outputs/cloud_monitoring_crn"
         }
       ],
       "name": "2 - Event Notifications",
@@ -263,16 +251,8 @@
           "value": "private"
         },
         {
-          "name": "existing_cos_instance_crn",
-          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
-        },
-        {
           "name": "logs_routing_tenant_regions",
           "value": "ref:../../inputs/logs_routing_tenant_regions"
-        },
-        {
-          "name": "enable_platform_metrics",
-          "value": "ref:../../inputs/enable_platform_metrics"
         }
       ],
       "name": "3a - Cloud Logs for logging",
@@ -305,16 +285,12 @@
           "value": "private"
         },
         {
-          "name": "existing_cos_instance_crn",
-          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
-        },
-        {
           "name": "logs_routing_tenant_regions",
-          "value": "ref:../../inputs/logs_routing_tenant_regions"
+          "value": []
         },
         {
-          "name": "enable_platform_metrics",
-          "value": "ref:../../inputs/enable_platform_metrics"
+          "name": "cloud_logs_instance_name",
+          "value": "at-cloud-logs"
         }
       ],
       "name": "3b - Cloud Logs for activity tracking",
@@ -361,12 +337,8 @@
     {
       "inputs": [
         {
-          "name": "resource_group_name",
+          "name": "existing_resource_group_name",
           "value": "ref:../../inputs/existing_resource_group_name"
-        },
-        {
-          "name": "use_existing_resource_group",
-          "value": true
         },
         {
           "name": "region",
@@ -391,10 +363,6 @@
         {
           "name": "service_plan",
           "value": "ref:../../inputs/sm_service_plan"
-        },
-        {
-          "name": "enable_event_notifications",
-          "value": true
         },
         {
           "name": "kms_key_ring_name",
@@ -453,10 +421,6 @@
     {
       "inputs": [
         {
-          "name": "existing_resource_group_name",
-          "value": "ref:../../inputs/existing_resource_group_name"
-        },
-        {
           "name": "region",
           "value": "ref:../../inputs/region"
         },
@@ -474,7 +438,7 @@
         },
         {
           "name": "existing_cos_instance_crn",
-          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
+          "value": "ref:../../members/1b - Object storage/outputs/cos_instance_crn"
         },
         {
           "name": "existing_cloud_logs_instance_crn",
@@ -512,7 +476,7 @@
     },
     {
       "name": "scc_workload_protection_crn",
-      "value": "ref:../../members/4a - Security and Compliance Center Workload Protection/outputs/crn"
+      "value": "ref:../../members/4a - Security and Compliance Center Workload Protection/outputs/scc_workload_protection_crn"
     }
   ]
 }

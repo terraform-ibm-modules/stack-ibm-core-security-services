@@ -266,7 +266,7 @@
             },
             {
               "display_name": "existing_event_notifications_instance_crn",
-              "key": "existing_en_instance_crn",
+              "key": "existing_event_notifications_instance_crn",
               "type": "string",
               "default_value": "__NULL__",
               "description": "The CRN of existing event notification instance. If not supplied, a new instance is created.",

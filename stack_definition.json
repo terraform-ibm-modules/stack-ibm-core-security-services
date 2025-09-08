@@ -70,7 +70,7 @@
       "custom_config": {}
     },
     {
-      "name": "skip_iam_authorization_policy",
+      "name": "skip_secrets_manager_iam_auth_policy",
       "required": false,
       "type": "boolean",
       "hidden": false
@@ -377,8 +377,8 @@
           "value": "base-security-services-sm"
         },
         {
-          "name": "skip_iam_authorization_policy",
-          "value": "ref:../../inputs/skip_iam_authorization_policy"
+          "name": "skip_secrets_manager_iam_auth_policy",
+          "value": "ref:../../inputs/skip_secrets_manager_iam_auth_policy"
         }
       ],
       "name": "3d - Secrets Manager",

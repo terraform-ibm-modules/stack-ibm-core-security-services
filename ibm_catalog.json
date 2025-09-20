@@ -71,7 +71,8 @@
       "flavors": [
         {
           "label": "Standard",
-          "name": "standard",
+          "name": "standard-fully-config",
+          "index": 1,
           "compliance": {
             "authority": "scc-v3",
             "profiles": [
@@ -237,7 +238,7 @@
             {
               "key": "enable_platform_metrics",
               "type": "boolean",
-              "default_value": true,
+              "default_value": false,
               "description": "Setting this to true will enable platform metrics for the Cloud Monitoring instance. NOTE: You can configure 1 instance only of the IBM Cloud Monitoring service per region to collect platform metrics in that location.",
               "required": false
             },
@@ -265,7 +266,7 @@
             },
             {
               "display_name": "existing_event_notifications_instance_crn",
-              "key": "existing_en_instance_crn",
+              "key": "existing_event_notifications_instance_crn",
               "type": "string",
               "default_value": "__NULL__",
               "description": "The CRN of existing event notification instance. If not supplied, a new instance is created.",
@@ -298,7 +299,7 @@
             },
             {
               "display_name": "disable_secrets_manager_iam_credentials_engine",
-              "key": "skip_iam_authorization_policy",
+              "key": "skip_secrets_manager_iam_auth_policy",
               "type": "boolean",
               "default_value": false,
               "description": "Whether to skip the creation of the IAM authorization policies required to enable the Secrets Manager IAM credentials engine. If set to false, policies will be created that grants the Secrets Manager instance 'Operator' access to the IAM identity service, and 'Groups Service Member Manage' access to the IAM groups service.",

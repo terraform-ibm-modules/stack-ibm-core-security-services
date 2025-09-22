@@ -193,6 +193,10 @@
           "value": false
         },
         {
+          "name": "kms_encryption_enabled",
+          "value": true
+        },
+        {
           "name": "kms_endpoint_url",
           "value": "ref:../../members/1a - Key management/outputs/kms_private_endpoint"
         },
@@ -247,6 +251,10 @@
           "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
         },
         {
+          "name": "kms_encryption_enabled_buckets",
+          "value": true
+        },
+        {
           "name": "kms_endpoint_type",
           "value": "private"
         },
@@ -275,6 +283,10 @@
         {
           "name": "existing_cos_instance_crn",
           "value": "ref:../../members/1b - Object storage/outputs/cos_instance_crn"
+        },
+        {
+          "name": "kms_encryption_enabled_buckets",
+          "value": true
         },
         {
           "name": "existing_kms_instance_crn",

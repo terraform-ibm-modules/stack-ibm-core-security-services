@@ -369,6 +369,10 @@
           "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
         },
         {
+          "name": "kms_encryption_enabled",
+          "value": true
+        },
+        {
           "name": "existing_event_notifications_instance_crn",
           "value": "ref:../../members/2 - Event Notifications/outputs/crn"
         },
@@ -447,6 +451,10 @@
         {
           "name": "existing_kms_instance_crn",
           "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+        },
+        {
+          "name": "kms_encryption_enabled_buckets",
+          "value": true
         },
         {
           "name": "kms_endpoint_type",

@@ -73,6 +73,7 @@
           "label": "Standard",
           "name": "standard-fully-config",
           "index": 1,
+          "working_directory": "./",
           "compliance": {
             "authority": "scc-v3",
             "profiles": [

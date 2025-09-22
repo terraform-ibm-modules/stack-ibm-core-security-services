@@ -467,6 +467,10 @@
         {
           "name": "existing_cloud_logs_instance_crn",
           "value": "ref:../../members/3b - Cloud Logs for activity tracking/outputs/cloud_logs_crn"
+        },
+        {
+          "name": "enable_activity_tracker_event_routing_to_cos_bucket",
+          "value": true
         }
       ],
       "name": "4b - Activity Tracker Event Routing",

@@ -185,7 +185,7 @@
           "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
         },
         {
-          "name": "cos_integration_enabled",
+          "name": "enable_collecting_failed_events",
           "value": true
         },
         {

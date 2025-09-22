@@ -185,6 +185,10 @@
           "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
         },
         {
+          "name": "cos_integration_enabled",
+          "value": true
+        },
+        {
           "name": "existing_event_notifications_instance_crn",
           "value": "ref:../../inputs/existing_event_notifications_instance_crn"
         },

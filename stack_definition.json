@@ -76,13 +76,6 @@
       "hidden": false
     },
     {
-      "name": "app_config_service_plan",
-      "required": false,
-      "type": "string",
-      "hidden": false,
-      "custom_config": {}
-    },
-    {
       "name": "scc_workload_protection_service_plan",
       "required": false,
       "type": "string",
@@ -344,7 +337,11 @@
         },
         {
           "name": "app_config_plan",
-          "value": "ref:../../inputs/app_config_service_plan"
+          "value": "enterprise"
+        },
+        {
+          "name": "kms_endpoint_url",
+          "value": "ref:../../members/1a - Key management/outputs/kms_private_endpoint"
         },
         {
           "name": "enable_config_aggregator",
@@ -377,6 +374,10 @@
         {
           "name": "existing_event_notifications_instance_crn",
           "value": "ref:../../members/2 - Event Notifications/outputs/crn"
+        },
+        {
+          "name": "event_notifications_endpoint_url",
+          "value": "ref:../../members/2 - Event Notifications/outputs/event_notifications_private_endpoint"
         }
       ],
       "name": "3c - App Configuration",

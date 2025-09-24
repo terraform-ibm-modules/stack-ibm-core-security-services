@@ -258,10 +258,6 @@
         {
           "name": "logs_routing_tenant_regions",
           "value": "ref:../../inputs/logs_routing_tenant_regions"
-        },
-        {
-          "name": "existing_event_notifications_instances",
-          "value": "ref:../../members/2 - Event Notifications/outputs/crn_list_object"
         }
       ],
       "name": "3a - Cloud Logs for logging",
@@ -312,10 +308,6 @@
         {
           "name": "cloud_logs_instance_name",
           "value": "at-cloud-logs"
-        },
-        {
-          "name": "existing_event_notifications_instances",
-          "value": "ref:../../members/2 - Event Notifications/outputs/crn_list_object"
         }
       ],
       "name": "3b - Cloud Logs for activity tracking",

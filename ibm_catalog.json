@@ -261,7 +261,7 @@
               "key": "key_protect_plan",
               "type": "string",
               "default_value": "tiered-pricing",
-              "description": "The service plan of the Key Protect instance that will be provisioned by this solution. Only used if not supplying `existing_kms_instance_crn`. Learn more [here](https://cloud.ibm.com/docs/key-protect?topic=key-protect-pricing-plan).",
+              "description": "The service plan of the Key Protect instance that will be provisioned by this solution. Only used if not supplying `existing_kms_instance_crn`. [Learn more](https://cloud.ibm.com/docs/key-protect?topic=key-protect-pricing-plan).",
               "required": false,
               "options": [
                 {
@@ -278,7 +278,7 @@
               "key": "cloud_monitoring_plan",
               "type": "string",
               "default_value": "graduated-tier",
-              "description": "The IBM Cloud Monitoring plan to provision. Available values are `lite` and `graduated-tier` and `graduated-tier-sysdig-secure-plus-monitor` (available in region eu-fr2 only). Learn more [here](https://cloud.ibm.com/docs/monitoring?topic=monitoring-service_plans)",
+              "description": "The IBM Cloud Monitoring plan to provision. Available values are `lite` and `graduated-tier` and `graduated-tier-sysdig-secure-plus-monitor` (available in region eu-fr2 only). [Learn more](https://cloud.ibm.com/docs/monitoring?topic=monitoring-service_plans)",
               "required": false,
               "options": [
                 {
@@ -288,10 +288,6 @@
                 {
                   "displayname": "Graduated Tier",
                   "value": "graduated-tier"
-                },
-                {
-                  "displayname": "Graduated Tier - Sysdig Secure + Monitor (Available in eu-fr2 region only.)",
-                  "value": "graduated-tier-sysdig-secure-plus-monitor"
                 }
               ]
             },

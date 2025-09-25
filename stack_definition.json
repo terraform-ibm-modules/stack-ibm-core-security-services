@@ -70,6 +70,13 @@
       "custom_config": {}
     },
     {
+      "name": "app_config_plan",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "custom_config": {}
+    },
+    {
       "name": "key_protect_plan",
       "required": false,
       "type": "string",
@@ -355,7 +362,7 @@
         },
         {
           "name": "app_config_plan",
-          "value": "enterprise"
+          "value": "ref:../../inputs/app_config_plan"
         },
         {
           "name": "kms_endpoint_url",

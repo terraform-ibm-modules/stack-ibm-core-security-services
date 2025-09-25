@@ -70,7 +70,7 @@
       ],
       "flavors": [
         {
-          "label": "Standard",
+          "label": "Click and go",
           "name": "standard-fully-config",
           "index": 1,
           "working_directory": "./",
@@ -261,15 +261,15 @@
               "key": "key_protect_plan",
               "type": "string",
               "default_value": "tiered-pricing",
-              "description": "The service plan of the Key Protect instance that will be provisioned by this solution. Only used if not supplying `existing_kms_instance_crn`. Learn more: https://cloud.ibm.com/docs/key-protect?topic=key-protect-pricing-plan",
+              "description": "The service plan of the Key Protect instance that will be provisioned by this solution. Only used if not supplying `existing_kms_instance_crn`. Learn more [here](https://cloud.ibm.com/docs/key-protect?topic=key-protect-pricing-plan).",
               "required": false,
               "options": [
                 {
-                  "displayname": "tiered-pricing",
+                  "displayname": "Standard",
                   "value": "tiered-pricing"
                 },
                 {
-                  "displayname": "cross-region-resiliency",
+                  "displayname": "Cross-region Resiliency",
                   "value": "cross-region-resiliency"
                 }
               ]
@@ -278,19 +278,19 @@
               "key": "cloud_monitoring_plan",
               "type": "string",
               "default_value": "graduated-tier",
-              "description": "The IBM Cloud Monitoring plan to provision. Available values are `lite` and `graduated-tier` and `graduated-tier-sysdig-secure-plus-monitor` (available in region eu-fr2 only). Learn more https://cloud.ibm.com/docs/monitoring?topic=monitoring-service_plans",
+              "description": "The IBM Cloud Monitoring plan to provision. Available values are `lite` and `graduated-tier` and `graduated-tier-sysdig-secure-plus-monitor` (available in region eu-fr2 only). Learn more [here](https://cloud.ibm.com/docs/monitoring?topic=monitoring-service_plans)",
               "required": false,
               "options": [
                 {
-                  "displayname": "lite",
+                  "displayname": "Lite",
                   "value": "lite"
                 },
                 {
-                  "displayname": "graduated-tier",
+                  "displayname": "Graduated Tier",
                   "value": "graduated-tier"
                 },
                 {
-                  "displayname": "graduated-tier-sysdig-secure-plus-monitor (Available in eu-fr2 region only.)",
+                  "displayname": "Graduated Tier - Sysdig Secure + Monitor (Available in eu-fr2 region only.)",
                   "value": "graduated-tier-sysdig-secure-plus-monitor"
                 }
               ]
@@ -343,7 +343,7 @@
               "required": false
             },
             {
-              "key": "app_config_service_plan",
+              "key": "app_config_plan",
               "type": "string",
               "default_value": "basic",
               "description": "The pricing plan to use for the IBM Cloud App Configuration instance.",

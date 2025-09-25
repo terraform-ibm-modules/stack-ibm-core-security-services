@@ -341,7 +341,7 @@
             {
               "key": "app_config_plan",
               "type": "string",
-              "default_value": "basic",
+              "default_value": "enterprise",
               "description": "The pricing plan to use for the IBM Cloud App Configuration instance.",
               "required": false,
               "options": [

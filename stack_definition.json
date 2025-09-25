@@ -43,7 +43,7 @@
       "custom_config": {}
     },
     {
-      "name": "en_email_list",
+      "name": "event_notifications_email_list",
       "required": false,
       "type": "array",
       "hidden": false,
@@ -64,6 +64,20 @@
     },
     {
       "name": "sm_service_plan",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "custom_config": {}
+    },
+    {
+      "name": "key_protect_plan",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "custom_config": {}
+    },
+    {
+      "name": "cloud_monitoring_plan",
       "required": false,
       "type": "string",
       "hidden": false,
@@ -124,8 +138,8 @@
           "value": "ref:../../inputs/prefix"
         },
         {
-          "name": "key_protect_instance_name",
-          "value": "base-security-services-kms"
+          "name": "key_protect_plan",
+          "value": "ref:../../inputs/key_protect_plan"
         }
       ],
       "name": "1a - Key management",
@@ -136,10 +150,6 @@
         {
           "name": "existing_resource_group_name",
           "value": "ref:../../inputs/existing_resource_group_name"
-        },
-        {
-          "name": "instance_name",
-          "value": "core-services"
         },
         {
           "name": "prefix",
@@ -166,6 +176,10 @@
         {
           "name": "enable_platform_metrics",
           "value": "ref:../../inputs/enable_platform_metrics"
+        },
+        {
+          "name": "cloud_monitoring_plan",
+          "value": "ref:../../inputs/cloud_monitoring_plan"
         }
       ],
       "name": "1c - Cloud Monitoring",
@@ -184,10 +198,6 @@
         {
           "name": "existing_event_notifications_instance_crn",
           "value": "ref:../../inputs/existing_event_notifications_instance_crn"
-        },
-        {
-          "name": "skip_cos_kms_auth_policy",
-          "value": false
         },
         {
           "name": "kms_encryption_enabled",
@@ -248,6 +258,10 @@
           "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
         },
         {
+          "name": "existing_monitoring_crn",
+          "value": "ref:../../members/1c - Cloud Monitoring/outputs/cloud_monitoring_crn"
+        },
+        {
           "name": "kms_encryption_enabled_buckets",
           "value": true
         },
@@ -258,6 +272,10 @@
         {
           "name": "logs_routing_tenant_regions",
           "value": "ref:../../inputs/logs_routing_tenant_regions"
+        },
+        {
+          "name": "existing_event_notifications_instances",
+          "value": "ref:../../members/2 - Event Notifications/outputs/crn_list_object"
         }
       ],
       "name": "3a - Cloud Logs for logging",
@@ -290,6 +308,10 @@
           "value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
         },
         {
+          "name": "existing_monitoring_crn",
+          "value": "ref:../../members/1c - Cloud Monitoring/outputs/cloud_monitoring_crn"
+        },
+        {
           "name": "kms_endpoint_type",
           "value": "private"
         },
@@ -308,6 +330,10 @@
         {
           "name": "cloud_logs_instance_name",
           "value": "at-cloud-logs"
+        },
+        {
+          "name": "existing_event_notifications_instances",
+          "value": "ref:../../members/2 - Event Notifications/outputs/crn_list_object"
         }
       ],
       "name": "3b - Cloud Logs for activity tracking",
@@ -370,6 +396,10 @@
         {
           "name": "event_notifications_endpoint_url",
           "value": "ref:../../members/2 - Event Notifications/outputs/event_notifications_private_endpoint"
+        },
+        {
+          "name": "event_notifications_email_list",
+          "value": "ref:../../inputs/event_notifications_email_list"
         }
       ],
       "name": "3c - App Configuration",
@@ -408,18 +438,6 @@
         {
           "name": "service_plan",
           "value": "ref:../../inputs/sm_service_plan"
-        },
-        {
-          "name": "kms_key_ring_name",
-          "value": "sm-cos-key-ring"
-        },
-        {
-          "name": "kms_key_name",
-          "value": "sm-cos-key"
-        },
-        {
-          "name": "secrets_manager_instance_name",
-          "value": "base-security-services-sm"
         },
         {
           "name": "skip_secrets_manager_iam_auth_policy",

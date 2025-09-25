@@ -258,15 +258,51 @@
               "required": false
             },
             {
-              "display_name": "event_notifications_email_list",
-              "key": "en_email_list",
+              "key": "key_protect_plan",
+              "type": "string",
+              "default_value": "tiered-pricing",
+              "description": "The service plan of the Key Protect instance that will be provisioned by this solution. Only used if not supplying `existing_kms_instance_crn`. Learn more: https://cloud.ibm.com/docs/key-protect?topic=key-protect-pricing-plan",
+              "required": false,
+              "options": [
+                {
+                  "displayname": "tiered-pricing",
+                  "value": "tiered-pricing"
+                },
+                {
+                  "displayname": "cross-region-resiliency",
+                  "value": "cross-region-resiliency"
+                }
+              ]
+            },
+            {
+              "key": "cloud_monitoring_plan",
+              "type": "string",
+              "default_value": "graduated-tier",
+              "description": "The IBM Cloud Monitoring plan to provision. Available values are `lite` and `graduated-tier` and `graduated-tier-sysdig-secure-plus-monitor` (available in region eu-fr2 only). Learn more https://cloud.ibm.com/docs/monitoring?topic=monitoring-service_plans",
+              "required": false,
+              "options": [
+                {
+                  "displayname": "lite",
+                  "value": "lite"
+                },
+                {
+                  "displayname": "graduated-tier",
+                  "value": "graduated-tier"
+                },
+                {
+                  "displayname": "graduated-tier-sysdig-secure-plus-monitor (Available in eu-fr2 region only.)",
+                  "value": "graduated-tier-sysdig-secure-plus-monitor"
+                }
+              ]
+            },
+            {
+              "key": "event_notifications_email_list",
               "type": "array",
               "default_value": [],
               "description": "List of emails to configure event notifications.",
               "required": false
             },
             {
-              "display_name": "existing_event_notifications_instance_crn",
               "key": "existing_event_notifications_instance_crn",
               "type": "string",
               "default_value": "__NULL__",

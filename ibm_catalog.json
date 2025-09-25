@@ -174,8 +174,15 @@
             {
               "key": "prefix",
               "type": "string",
-              "description": "The prefix to add to all resources created by this solution. Used to make sure that names are unique when you deploy the solution more than one time. This should start with a lower case letter and not include '--' or end in '-'.",
-              "required": true
+              "description": "The prefix to add to all resources that this solution creates (e.g `prod`, `test`, `dev`). To skip using a prefix, set this value to null or an empty string. [Learn more](https://terraform-ibm-modules.github.io/documentation/#/prefix.md).",
+              "required": true,
+              "value_constraints": [
+                {
+                  "type": "regex",
+                  "description": "Prefix must begin with a lowercase letter and may contain only lowercase letters, digits, and hyphens '-'. It must not end with a hyphen('-'), and cannot contain consecutive hyphens ('--'). It should not exceed 16 characters",
+                  "value": "^$|^__NULL__$|^[a-z](?!.*--)(?:[a-z0-9-]{0,14}[a-z0-9])?$"
+                }
+              ]
             },
             {
               "key": "region",
@@ -253,7 +260,14 @@
               "type": "string",
               "default_value": "__NULL__",
               "description": "The CRN of an existing KMS instance to use in this solution. If not set, a new Key Protect instance is provisioned.",
-              "required": false
+              "required": false,
+              "value_constraints": [
+                {
+                  "type": "regex",
+                  "description": "The value provided for 'existing_kms_instance_crn' is not valid.",
+                  "value": "^__NULL__$|^crn:(.*:){3}(kms|hs-crypto):(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+                }
+              ]
             },
             {
               "display_name": "event_notifications_email_list",
@@ -269,14 +283,28 @@
               "type": "string",
               "default_value": "__NULL__",
               "description": "The CRN of existing event notification instance. If not supplied, a new instance is created.",
-              "required": false
+              "required": false,
+              "value_constraints": [
+                {
+                  "type": "regex",
+                  "description": "The value provided for 'existing_event_notifications_instance_crn' is not valid.",
+                  "value": "^__NULL__$|^crn:(.*:){3}event-notifications:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+                }
+              ]
             },
             {
               "key": "existing_secrets_manager_crn",
               "type": "string",
               "default_value": "__NULL__",
               "description": "The CRN of an existing IBM Cloud Secrets Manager instance to use in this solution. If not set, a new Secrets Manager instance is provisioned.",
-              "required": false
+              "required": false,
+              "value_constraints": [
+                {
+                  "type": "regex",
+                  "description": "The value provided for 'existing_secrets_manager_crn' is not valid.",
+                  "value": "^__NULL__$|^crn:(.*:){3}secrets-manager:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+                }
+              ]
             },
             {
               "display_name": "secrets_manager_service_plan",

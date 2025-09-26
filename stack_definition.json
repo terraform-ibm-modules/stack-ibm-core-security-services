@@ -545,7 +545,7 @@
       "value": "ref:../../members/1b - Object storage/outputs/cos_instance_id"
     },
     {
-      "name": "en_crn",
+      "name": "event_notifications_crn",
       "value": "ref:../../members/2 - Event Notifications/outputs/crn"
     },
     {

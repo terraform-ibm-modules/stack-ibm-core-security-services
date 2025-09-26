@@ -71,7 +71,7 @@
       "flavors": [
         {
           "label": "Click and go",
-          "name": "standard-fully-config",
+          "name": "click-and-go",
           "index": 1,
           "working_directory": "./",
           "compliance": {

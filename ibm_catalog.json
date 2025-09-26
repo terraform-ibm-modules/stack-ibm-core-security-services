@@ -313,8 +313,7 @@
               "required": false
             },
             {
-              "display_name": "secrets_manager_service_plan",
-              "key": "sm_service_plan",
+              "key": "secrets_manager_service_plan",
               "type": "string",
               "default_value": "standard",
               "description": "The pricing plan to use for IBM Cloud Secrets Manager. Not used if `existing_secrets_manager_crn` is specified.",

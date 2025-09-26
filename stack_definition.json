@@ -63,7 +63,7 @@
       "custom_config": {}
     },
     {
-      "name": "sm_service_plan",
+      "name": "secrets_manager_service_plan",
       "required": false,
       "type": "string",
       "hidden": false,
@@ -444,7 +444,7 @@
         },
         {
           "name": "service_plan",
-          "value": "ref:../../inputs/sm_service_plan"
+          "value": "ref:../../inputs/secrets_manager_service_plan"
         },
         {
           "name": "skip_secrets_manager_iam_auth_policy",

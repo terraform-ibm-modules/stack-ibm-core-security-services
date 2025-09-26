@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-12-05"
+  years: 2024, 2025
+lastupdated: "2025-09-05"
 
 subcollection: deployable-reference-architectures
 
@@ -11,7 +11,7 @@ authors:
   email: bhakta@ibm.com
 
 # The release that the reference architecture describes
-version: 3.0.0
+version: 4.0.0
 
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
@@ -52,7 +52,7 @@ https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-g
 # Cloud foundation for security and observability
 {: #core-security-services-pattern}
 {: toc-content-type="reference-architecture"}
-{: toc-version="3.0.0"}
+{: toc-version="4.0.0"}
 
 <!--
 The IDs, such as {: #title-id} are required for publishing this reference architecture in IBM Cloud Docs. Set unique IDs for each heading. Also include

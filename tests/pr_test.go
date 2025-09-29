@@ -52,13 +52,13 @@ func TestProjectsFullTest(t *testing.T) {
 	})
 
 	options.StackInputs = map[string]interface{}{
-		"prefix":                       options.Prefix,
-		"region":                       validRegions[rand.Intn(len(validRegions))],
-		"existing_resource_group_name": resourceGroup,
-		"sm_service_plan":              "trial",
-		"ibmcloud_api_key":             options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
-		"enable_platform_metrics":      false,
-		"en_email_list":                []string{"GoldenEye.Operations@ibm.com"},
+		"prefix":                         options.Prefix,
+		"region":                         validRegions[rand.Intn(len(validRegions))],
+		"existing_resource_group_name":   resourceGroup,
+		"secrets_manager_service_plan":   "trial",
+		"ibmcloud_api_key":               options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
+		"enable_platform_metrics":        false,
+		"event_notifications_email_list": []string{"GoldenEye.Operations@ibm.com"},
 	}
 
 	err := options.RunProjectsTest()
@@ -114,15 +114,16 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 		})
 
 		options.StackInputs = map[string]interface{}{
-			"prefix":                        terraform.Output(t, existingTerraformOptions, "prefix"),
-			"region":                        terraform.Output(t, existingTerraformOptions, "region"),
-			"existing_resource_group_name":  terraform.Output(t, existingTerraformOptions, "resource_group_name"),
-			"ibmcloud_api_key":              options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
-			"enable_platform_metrics":       false,
-			"existing_secrets_manager_crn":  terraform.Output(t, existingTerraformOptions, "secrets_manager_instance_crn"),
-			"skip_iam_authorization_policy": true, // skip as s2s auth policy was already created for existing instance
-			"existing_kms_instance_crn":     terraform.Output(t, existingTerraformOptions, "key_project_instance_crn"),
-			"en_email_list":                 []string{"GoldenEye.Operations@ibm.com"},
+			"prefix":                               terraform.Output(t, existingTerraformOptions, "prefix"),
+			"region":                               terraform.Output(t, existingTerraformOptions, "region"),
+			"existing_resource_group_name":         terraform.Output(t, existingTerraformOptions, "resource_group_name"),
+			"ibmcloud_api_key":                     options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
+			"enable_platform_metrics":              false,
+			"existing_secrets_manager_crn":         terraform.Output(t, existingTerraformOptions, "secrets_manager_instance_crn"),
+			"skip_secrets_manager_iam_auth_policy": true, // skip as s2s auth policy was already created for existing instance
+			"existing_kms_instance_crn":            terraform.Output(t, existingTerraformOptions, "key_project_instance_crn"),
+			"event_notifications_email_list":       []string{"GoldenEye.Operations@ibm.com"},
+			"secrets_manager_secret_groups":        []string{}, // Don't create any secret groups in existing instance (The default 'General' group already exists)
 		}
 
 		err := options.RunProjectsTest()

@@ -70,6 +70,13 @@
       "custom_config": {}
     },
     {
+      "name": "secrets_manager_secret_groups",
+      "required": false,
+      "type": "array",
+      "hidden": false,
+      "custom_config": {}
+    },
+    {
       "name": "app_config_plan",
       "required": false,
       "type": "string",
@@ -410,7 +417,7 @@
         }
       ],
       "name": "3c - App Configuration",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b61bd179-3aa9-4763-9f0b-02815398b76e-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.430291dd-8a78-46c2-8d02-e951da977582-global"
     },
     {
       "inputs": [
@@ -449,10 +456,14 @@
         {
           "name": "skip_secrets_manager_iam_auth_policy",
           "value": "ref:../../inputs/skip_secrets_manager_iam_auth_policy"
+        },
+        {
+          "name": "secret_groups",
+          "value": "ref:../../inputs/secrets_manager_secret_groups"
         }
       ],
       "name": "3d - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.ceff0818-e9de-45e6-b785-4c8ad786e6bb-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3d0da0a9-0327-44fc-8796-edf8e0017e25-global"
     },
     {
       "inputs": [

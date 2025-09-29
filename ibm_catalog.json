@@ -233,7 +233,6 @@
               "type": "string",
               "default_value": "Default",
               "description": "The name of an existing resource group to provision the resources.",
-              "required": true,
               "custom_config": {
                 "type": "resource_group",
                 "grouping": "deployment",
@@ -364,6 +363,17 @@
               "default_value": false,
               "description": "Whether to skip the creation of the IAM authorization policies required to enable the Secrets Manager IAM credentials engine. If set to false, policies will be created that grants the Secrets Manager instance 'Operator' access to the IAM identity service, and 'Groups Service Member Manage' access to the IAM groups service.",
               "required": false
+            },
+            {
+              "key": "secrets_manager_secret_groups",
+              "type": "array",
+              "default_value": "[\n    {\n      secret_group_name        = \"General\"\n      secret_group_description = \"A general purpose secrets group with an associated access group which has a secrets reader role\"\n      create_access_group      = true\n      access_group_name        = \"general-secrets-group-access-group\"\n      access_group_roles       = [\"SecretsReader\"]\n    }\n  ]",
+              "description": "Secret Manager secret group and access group configurations. If a prefix input variable is specified, it is added to the `access_group_name` value in the `<prefix>-value` format. If you do not wish to create any groups, set the value to `[]`. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-secrets-manager/tree/main/solutions/fully-configurable/provisioning_secrets_groups.md).",
+              "custom_config": {
+                "type": "code_editor",
+                "grouping": "deployment",
+                "original_grouping": "deployment"
+              }
             },
             {
               "key": "app_config_plan",

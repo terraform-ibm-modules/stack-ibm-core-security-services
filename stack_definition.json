@@ -70,6 +70,13 @@
       "custom_config": {}
     },
     {
+      "name": "secrets_manager_secret_groups",
+      "required": false,
+      "type": "array",
+      "hidden": false,
+      "custom_config": {}
+    },
+    {
       "name": "app_config_plan",
       "required": false,
       "type": "string",
@@ -449,6 +456,10 @@
         {
           "name": "skip_secrets_manager_iam_auth_policy",
           "value": "ref:../../inputs/skip_secrets_manager_iam_auth_policy"
+        },
+        {
+          "name": "secret_groups",
+          "value": "ref:../../inputs/secrets_manager_secret_groups"
         }
       ],
       "name": "3d - Secrets Manager",

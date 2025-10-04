@@ -16,7 +16,7 @@ module "resource_group" {
 
 module "event_notifications" {
   source            = "terraform-ibm-modules/event-notifications/ibm"
-  version           = "2.7.1"
+  version           = "2.8.2"
   resource_group_id = module.resource_group.resource_group_id
   name              = "${var.prefix}-en"
   tags              = var.resource_tags
@@ -31,7 +31,7 @@ module "event_notifications" {
 
 module "secrets_manager" {
   source               = "terraform-ibm-modules/secrets-manager/ibm"
-  version              = "2.9.1"
+  version              = "2.10.1"
   resource_group_id    = module.resource_group.resource_group_id
   region               = var.region
   secrets_manager_name = "${var.prefix}-secrets-manager" #tfsec:ignore:general-secrets-no-plaintext-exposure
@@ -45,7 +45,7 @@ module "secrets_manager" {
 
 module "key_protect" {
   source = "terraform-ibm-modules/kms-all-inclusive/ibm"
-  version= "5.2.2"
+  version= "5.3.1"
   resource_group_id = module.resource_group.resource_group_id
   region = var.region
 }

@@ -121,6 +121,7 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 			"enable_platform_metrics":                   false,
 			"existing_secrets_manager_crn":              permanentResources["privateOnlySecMgrCRN"],
 			"skip_secrets_manager_iam_auth_policy":      true, // skip as s2s auth policy was already created for existing instance
+			"existing_kms_instance_crn":                 terraform.Output(t, existingTerraformOptions, "key_project_instance_crn"),
 			"existing_event_notifications_instance_crn": terraform.Output(t, existingTerraformOptions, "event_notification_instance_crn"),
 			"event_notifications_email_list":            []string{"GoldenEye.Operations@ibm.com"},
 			"secrets_manager_secret_groups":             []string{}, // Don't create any secret groups in existing instance (The default 'General' group already exists)

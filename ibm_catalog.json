@@ -12,7 +12,7 @@
         "support_ibm",
         "security",
         "logging_monitoring",
-        "converged_infra"
+        "platform_engineering"
       ],
       "keywords": [
         "kms",
@@ -70,8 +70,10 @@
       ],
       "flavors": [
         {
-          "label": "Standard",
-          "name": "standard",
+          "label": "Click and go",
+          "name": "click-and-go",
+          "index": 1,
+          "working_directory": "./",
           "compliance": {
             "authority": "scc-v3",
             "profiles": [
@@ -164,7 +166,7 @@
                   "url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/core-security-services-architecture.svg",
                   "caption": "Cloud foundation for security and observability stack architecture",
                   "type": "image/svg+xml",
-                  "thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architecture/core-security-services-architecture.svg"
+                  "thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-core-security-services/main/reference-architectures/core-security-services-architecture.svg"
                 },
                 "description": "The architecture of Cloud foundation for security and observability stack."
               }
@@ -174,8 +176,15 @@
             {
               "key": "prefix",
               "type": "string",
-              "description": "The prefix to add to all resources created by this solution. Used to make sure that names are unique when you deploy the solution more than one time. This should start with a lower case letter and not include '--' or end in '-'.",
-              "required": true
+              "description": "The prefix to add to all resources that this solution creates (e.g `prod`, `test`, `dev`). To skip using a prefix, set this value to null or an empty string. [Learn more](https://terraform-ibm-modules.github.io/documentation/#/prefix.md).",
+              "required": true,
+              "value_constraints": [
+                {
+                  "type": "regex",
+                  "description": "Prefix must begin with a lowercase letter and may contain only lowercase letters, digits, and hyphens '-'. It must not end with a hyphen('-'), and cannot contain consecutive hyphens ('--'). It should not exceed 16 characters.",
+                  "value": "^$|^__NULL__$|^[a-z](?!.*--)(?:[a-z0-9-]{0,14}[a-z0-9])?$"
+                }
+              ]
             },
             {
               "key": "region",
@@ -223,8 +232,7 @@
               "key": "existing_resource_group_name",
               "type": "string",
               "default_value": "Default",
-              "description": "The name of an existing resource group to provision all resources to.",
-              "required": true,
+              "description": "The name of an existing resource group to provision the resources.",
               "custom_config": {
                 "type": "resource_group",
                 "grouping": "deployment",
@@ -237,7 +245,7 @@
             {
               "key": "enable_platform_metrics",
               "type": "boolean",
-              "default_value": true,
+              "default_value": false,
               "description": "Setting this to true will enable platform metrics for the Cloud Monitoring instance. NOTE: You can configure 1 instance only of the IBM Cloud Monitoring service per region to collect platform metrics in that location.",
               "required": false
             },
@@ -253,34 +261,86 @@
               "type": "string",
               "default_value": "__NULL__",
               "description": "The CRN of an existing KMS instance to use in this solution. If not set, a new Key Protect instance is provisioned.",
-              "required": false
+              "required": false,
+              "value_constraints": [
+                {
+                  "type": "regex",
+                  "description": "The value provided for 'existing_kms_instance_crn' is not valid.",
+                  "value": "^__NULL__$|^crn:(.*:){3}(kms|hs-crypto):(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+                }
+              ]
             },
             {
-              "display_name": "event_notifications_email_list",
-              "key": "en_email_list",
+              "key": "key_protect_plan",
+              "type": "string",
+              "default_value": "tiered-pricing",
+              "description": "The service plan of the Key Protect instance that will be provisioned by this solution. Only used if not supplying `existing_kms_instance_crn`. [Learn more](https://cloud.ibm.com/docs/key-protect?topic=key-protect-pricing-plan).",
+              "required": false,
+              "options": [
+                {
+                  "displayname": "Standard",
+                  "value": "tiered-pricing"
+                },
+                {
+                  "displayname": "Cross-region Resiliency",
+                  "value": "cross-region-resiliency"
+                }
+              ]
+            },
+            {
+              "key": "cloud_monitoring_plan",
+              "type": "string",
+              "default_value": "graduated-tier",
+              "description": "The IBM Cloud Monitoring plan to provision. Available values are `lite` and `graduated-tier` and `graduated-tier-sysdig-secure-plus-monitor` (available in region eu-fr2 only). [Learn more](https://cloud.ibm.com/docs/monitoring?topic=monitoring-service_plans)",
+              "required": false,
+              "options": [
+                {
+                  "displayname": "Lite",
+                  "value": "lite"
+                },
+                {
+                  "displayname": "Graduated Tier",
+                  "value": "graduated-tier"
+                }
+              ]
+            },
+            {
+              "key": "event_notifications_email_list",
               "type": "array",
               "default_value": [],
               "description": "List of emails to configure event notifications.",
               "required": false
             },
             {
-              "display_name": "existing_event_notifications_instance_crn",
-              "key": "existing_en_instance_crn",
+              "key": "existing_event_notifications_instance_crn",
               "type": "string",
               "default_value": "__NULL__",
               "description": "The CRN of existing event notification instance. If not supplied, a new instance is created.",
-              "required": false
+              "required": false,
+              "value_constraints": [
+                {
+                  "type": "regex",
+                  "description": "The value provided for 'existing_event_notifications_instance_crn' is not valid.",
+                  "value": "^__NULL__$|^crn:(.*:){3}event-notifications:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+                }
+              ]
             },
             {
               "key": "existing_secrets_manager_crn",
               "type": "string",
               "default_value": "__NULL__",
               "description": "The CRN of an existing IBM Cloud Secrets Manager instance to use in this solution. If not set, a new Secrets Manager instance is provisioned.",
-              "required": false
+              "required": false,
+              "value_constraints": [
+                {
+                  "type": "regex",
+                  "description": "The value provided for 'existing_secrets_manager_crn' is not valid.",
+                  "value": "^__NULL__$|^crn:(.*:){3}secrets-manager:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+                }
+              ]
             },
             {
-              "display_name": "secrets_manager_service_plan",
-              "key": "sm_service_plan",
+              "key": "secrets_manager_service_plan",
               "type": "string",
               "default_value": "standard",
               "description": "The pricing plan to use for IBM Cloud Secrets Manager. Not used if `existing_secrets_manager_crn` is specified.",
@@ -298,16 +358,27 @@
             },
             {
               "display_name": "disable_secrets_manager_iam_credentials_engine",
-              "key": "skip_iam_authorization_policy",
+              "key": "skip_secrets_manager_iam_auth_policy",
               "type": "boolean",
               "default_value": false,
               "description": "Whether to skip the creation of the IAM authorization policies required to enable the Secrets Manager IAM credentials engine. If set to false, policies will be created that grants the Secrets Manager instance 'Operator' access to the IAM identity service, and 'Groups Service Member Manage' access to the IAM groups service.",
               "required": false
             },
             {
-              "key": "app_config_service_plan",
+              "key": "secrets_manager_secret_groups",
+              "type": "array",
+              "default_value": "[\n    {\n      secret_group_name        = \"General\"\n      secret_group_description = \"A general purpose secrets group with an associated access group which has a secrets reader role\"\n      create_access_group      = true\n      access_group_name        = \"general-secrets-group-access-group\"\n      access_group_roles       = [\"SecretsReader\"]\n    }\n  ]",
+              "description": "Secret Manager secret group and access group configurations. If a prefix input variable is specified, it is added to the `access_group_name` value in the `<prefix>-value` format. If you do not wish to create any groups, set the value to `[]`. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-secrets-manager/tree/main/solutions/fully-configurable/provisioning_secrets_groups.md).",
+              "custom_config": {
+                "type": "code_editor",
+                "grouping": "deployment",
+                "original_grouping": "deployment"
+              }
+            },
+            {
+              "key": "app_config_plan",
               "type": "string",
-              "default_value": "basic",
+              "default_value": "enterprise",
               "description": "The pricing plan to use for the IBM Cloud App Configuration instance.",
               "required": false,
               "options": [

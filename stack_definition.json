@@ -569,12 +569,22 @@
     }
     ,
     {
-      "name": "observability_overview_url",
+      "name": "next_step_primary_label",
+      "value": "Go to Observability Dashboard"
+    }
+    ,
+    {
+      "name": "next_step_primary_url",
       "value": "https://cloud.ibm.com/observability/logging"
     }
     ,
     {
-      "name": "security_overview_url",
+      "name": "next_step_secondary_label",
+      "value": "Go to Security Dashboard"
+    }
+    ,
+    {
+      "name": "next_step_secondary_url",
       "value": "https://cloud.ibm.com/security/overview"
     }
   ]

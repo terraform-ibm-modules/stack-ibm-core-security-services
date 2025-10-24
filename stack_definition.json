@@ -567,5 +567,15 @@
       "name": "scc_workload_protection_crn",
       "value": "ref:../../members/4a - Security and Compliance Center Workload Protection/outputs/scc_workload_protection_crn"
     }
+  ],
+  "next_step_urls": [
+    {
+      "text": "Go to Observability Dashboard",
+      "url": "https://cloud.ibm.com/observability/logging"
+    },
+    {
+      "text": "Go to Security Dashboard",
+      "url": "https://cloud.ibm.com/security/overview"
+    }
   ]
 }

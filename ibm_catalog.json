@@ -471,16 +471,20 @@
             {
               "key": "scc_workload_protection_crn",
               "description": "Security and Compliance Center Workload Protection instance CRN."
-            }
-          ],
-          "next_step_urls": [
-            {
-              "text": "Go to Observability Dashboard",
-              "url": "https://cloud.ibm.com/observability/logging"
             },
             {
-              "text": "Go to Security Dashboard",
-              "url": "https://cloud.ibm.com/security/overview"
+              "key": "next_step_urls",
+              "description": "Next steps after deployment.",
+              "value": [
+                {
+                  "text": "Go to Observability Dashboard",
+                  "url": "https://cloud.ibm.com/observability/logging"
+                },
+                {
+                  "text": "Go to Security Dashboard",
+                  "url": "https://cloud.ibm.com/security/overview"
+                }
+              ]
             }
           ],
           "install_type": "fullstack",

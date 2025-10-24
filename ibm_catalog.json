@@ -472,6 +472,11 @@
               "key": "scc_workload_protection_crn",
               "description": "Security and Compliance Center Workload Protection instance CRN."
             }
+            ,
+            {
+              "key": "next_step_urls",
+              "description": "Array of next-step links produced by the stack."
+            }
           ],
           "install_type": "fullstack",
           "release_notes_url": "https://cloud.ibm.com/docs/security-hub?topic=security-hub-release-notes"

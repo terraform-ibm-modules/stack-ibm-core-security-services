@@ -583,15 +583,5 @@
       "key": "next_step_secondary_url",
       "value": "https://cloud.ibm.com/security/overview"
     }
-  ],
-  "next_step_urls": [
-    {
-      "text": "Go to Observability Dashboard",
-      "url": "https://cloud.ibm.com/observability/logging"
-    },
-    {
-      "text": "Go to Security Dashboard",
-      "url": "https://cloud.ibm.com/security/overview"
-    }
   ]
 }

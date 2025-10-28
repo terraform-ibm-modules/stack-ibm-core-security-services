@@ -473,18 +473,20 @@
               "description": "Security and Compliance Center Workload Protection instance CRN."
             },
             {
-              "key": "next_step_urls",
-              "description": "Next steps after deployment.",
-              "value": [
-                {
-                  "text": "Go to Observability Dashboard",
-                  "url": "https://cloud.ibm.com/observability/logging"
-                },
-                {
-                  "text": "Go to Security Dashboard",
-                  "url": "https://cloud.ibm.com/security/overview"
-                }
-              ]
+              "key": "next_step_primary_label",
+              "description": "Go to Observability Dashboard"
+            },
+            {
+              "key": "next_step_primary_url",
+              "description": "https://cloud.ibm.com/observability/logging"
+            },
+            {
+              "key": "next_step_secondary_label",
+              "description": "Go to Security Dashboard"
+            },
+            {
+              "key": "next_step_secondary_url",
+              "description": "https://cloud.ibm.com/security/overview"
             }
           ],
           "install_type": "fullstack",

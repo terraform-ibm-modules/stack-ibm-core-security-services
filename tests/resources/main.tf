@@ -16,7 +16,7 @@ module "resource_group" {
 
 module "event_notifications" {
   source            = "terraform-ibm-modules/event-notifications/ibm"
-  version           = "2.10.5"
+  version           = "2.10.13"
   resource_group_id = module.resource_group.resource_group_id
   name              = "${var.prefix}-en"
   tags              = var.resource_tags
@@ -26,12 +26,29 @@ module "event_notifications" {
 }
 
 ##############################################################################
+<<<<<<< HEAD
+=======
+# Secrets Manager
+##############################################################################
+
+module "secrets_manager" {
+  source               = "terraform-ibm-modules/secrets-manager/ibm"
+  version              = "2.11.9"
+  resource_group_id    = module.resource_group.resource_group_id
+  region               = var.region
+  secrets_manager_name = "${var.prefix}-secrets-manager" #tfsec:ignore:general-secrets-no-plaintext-exposure
+  sm_service_plan      = "trial"
+  sm_tags              = var.resource_tags
+}
+
+##############################################################################
+>>>>>>> main
 # Key Protect
 ##############################################################################
 
 module "key_protect" {
   source = "terraform-ibm-modules/kms-all-inclusive/ibm"
-  version= "5.4.5"
+  version= "5.4.10"
   resource_group_id = module.resource_group.resource_group_id
   region = var.region
 }

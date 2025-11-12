@@ -273,15 +273,18 @@
             {
               "key": "key_protect_plan",
               "type": "string",
+              "type_metadata": "string",
               "default_value": "tiered-pricing",
-              "description": "The service plan of the Key Protect instance that will be provisioned by this solution. Only used if not supplying `existing_kms_instance_crn`. [Learn more](https://cloud.ibm.com/docs/key-protect?topic=key-protect-pricing-plan).",
+              "description": "The service plan of the Key Protect instance that will be provisioned by this solution. Only used if not supplying existing_kms_instance_crn.",
               "required": false,
               "options": [
                 {
+                  "description": "Key versions are created whenever a key is created or imported, and whenever an existing key is rotated. A key that has been rotated five times, for example, has six versions (five versions created by rotations plus the initial version).",
                   "displayname": "Standard",
                   "value": "tiered-pricing"
                 },
                 {
+                  "description": "Designed for users who require enhanced disaster recovery from cross-region availability. In the event a region is unavailable, requests will automatically route to the replicated data in the cross-region, ensuring key functionality persists. Base cost is charged once per region where you manage at least one key under this plan (regardless of the number of instances created in that region).",
                   "displayname": "Cross-region Resiliency",
                   "value": "cross-region-resiliency"
                 }
@@ -290,17 +293,24 @@
             {
               "key": "cloud_monitoring_plan",
               "type": "string",
-              "default_value": "graduated-tier",
-              "description": "The IBM Cloud Monitoring plan to provision. Available values are `lite` and `graduated-tier` and `graduated-tier-sysdig-secure-plus-monitor` (available in region eu-fr2 only). [Learn more](https://cloud.ibm.com/docs/monitoring?topic=monitoring-service_plans)",
-              "required": false,
+              "type_metadata": "string",
+              "default_value": "none",
+              "description": "The IBM Cloud Monitoring plan to provision.",
               "options": [
                 {
-                  "displayname": "Lite",
-                  "value": "lite"
+                  "description": "No monitoring instance provisioned",
+                  "displayname": "None",
+                  "value": "none"
                 },
                 {
+                  "description": "Pay-as-you-go pricing based on usage.",
                   "displayname": "Graduated Tier",
                   "value": "graduated-tier"
+                },
+                {
+                  "description": "Free tier with limited features.",
+                  "displayname": "Lite",
+                  "value": "lite"
                 }
               ]
             },
@@ -341,16 +351,20 @@
             },
             {
               "key": "secrets_manager_service_plan",
+              "description": "The pricing plan to use when provisioning a Secrets Manager instance. [Learn more](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui#upgrade-instance-standard).",
+              "type_metadata": "string",
+              "virtual": true,
+              "required": true,
               "type": "string",
               "default_value": "standard",
-              "description": "The pricing plan to use for IBM Cloud Secrets Manager. Not used if `existing_secrets_manager_crn` is specified.",
-              "required": false,
               "options": [
                 {
+                  "description": "Centrally manage secrets in a dedicated instance. Unlimited Secrets Manager instances per IBM Cloud account. Unlimited access to all service capabilities.",
                   "displayname": "Standard",
                   "value": "standard"
                 },
                 {
+                  "description": "Try Secrets Manager at no cost for 30 days. Unlimited access to all service capabilities for a limited time. You can have one Trial instance provisioned in your account at any time. After your trial expires, functionality is removed.",
                   "displayname": "Trial",
                   "value": "trial"
                 }
@@ -378,19 +392,23 @@
             {
               "key": "app_config_plan",
               "type": "string",
+              "type_metadata": "string",
               "default_value": "enterprise",
               "description": "The pricing plan to use for the IBM Cloud App Configuration instance.",
               "required": false,
               "options": [
                 {
+                  "description": "This plan includes property management and configuration aggregation. Feature flag capability is not included. There is no monthly instance cost. Aggregation is free. Pay only for property management entity IDs and API calls.",
                   "displayname": "Basic",
                   "value": "basic"
                 },
                 {
+                  "description": "This plan includes feature flags in addition to property management and aggregation found in the Basic Plan.",
                   "displayname": "Standard",
                   "value": "standardv2"
                 },
                 {
+                  "description": "This plan includes percentage rollout and segment targeting in addition to feature flags, property management and aggregation found in the Standard plan.",
                   "displayname": "Enterprise",
                   "value": "enterprise"
                 }
@@ -399,15 +417,18 @@
             {
               "key": "scc_workload_protection_service_plan",
               "type": "string",
+              "type_metadata": "string",
               "default_value": "graduated-tier",
               "description": "The pricing plan to use for the IBM Cloud Security and Compliance Center Workload Protection instance.",
               "required": false,
               "options": [
                 {
+                  "description": "The Graduated Tier plan for Workload Protection offers unified security and continuous compliance options for hosts, virtual machines, containers, OpenShift and Kubernetes, and multicloud environments.",
                   "displayname": "Graduated Tier",
                   "value": "graduated-tier"
                 },
                 {
+                  "description": "The Free Trial plan enables you to try all of the Workload Protection capabilities available under the paid Graduated Tier plan. However, the Free Trial plan expires after 30 days, after which you have the option to upgrade to the Graduated Tier plan.",
                   "displayname": "Free Trial",
                   "value": "free-trial"
                 }

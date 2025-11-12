@@ -73,6 +73,7 @@
           "label": "Click and go",
           "name": "click-and-go",
           "index": 1,
+          "dependency_version_2": true,
           "working_directory": "./",
           "compliance": {
             "authority": "scc-v3",

@@ -501,7 +501,8 @@
           ],
           "install_type": "fullstack",
           "release_notes_url": "https://cloud.ibm.com/docs/security-hub?topic=security-hub-release-notes",
-          "ignore_readme": true
+          "ignore_readme": true,
+          "dependency_version_2": true
         }
       ]
     }

@@ -353,7 +353,6 @@
               "type_metadata": "string",
               "virtual": true,
               "required": true,
-              "type": "string",
               "default_value": "standard",
               "options": [
                 {
@@ -389,7 +388,6 @@
             },
             {
               "key": "app_config_plan",
-              "type": "string",
               "type_metadata": "string",
               "required": false,
               "options": [

@@ -179,6 +179,10 @@
               "type": "string",
               "description": "The prefix to add to all resources that this solution creates (e.g `prod`, `test`, `dev`). To skip using a prefix, set this value to null or an empty string. [Learn more](https://terraform-ibm-modules.github.io/documentation/#/prefix.md).",
               "required": true,
+              "default_value": "dev",
+              "random_string": {
+                "length": 4
+              },
               "value_constraints": [
                 {
                   "type": "regex",
@@ -233,7 +237,7 @@
               "key": "existing_resource_group_name",
               "type": "string",
               "default_value": "Default",
-              "description": "The name of an existing resource group to provision the resources.",
+              "description": "The name of an existing resource group to provision the resources. [Learn more](https://cloud.ibm.com/docs/account?topic=account-rgs&interface=ui#create_rgs) about how to create a resource group.",
               "custom_config": {
                 "type": "resource_group",
                 "grouping": "deployment",

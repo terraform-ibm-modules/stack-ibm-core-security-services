@@ -73,7 +73,6 @@
           "label": "Click and go",
           "name": "click-and-go",
           "index": 1,
-          "dependency_version_2": true,
           "working_directory": "./",
           "compliance": {
             "authority": "scc-v3",
@@ -277,14 +276,11 @@
             },
             {
               "key": "key_protect_plan",
-              "type": "string",
               "type_metadata": "string",
-              "default_value": "tiered-pricing",
-              "description": "The service plan of the Key Protect instance that will be provisioned by this solution. Only used if not supplying existing_kms_instance_crn.",
               "required": false,
               "options": [
                 {
-                  "description": "Key versions are created whenever a key is created or imported, and whenever an existing key is rotated. A key that has been rotated five times, for example, has six versions (five versions created by rotations plus the initial version).",
+                  "description": "Key versions are created whenever a key is created or imported, and whenever an existing key is rotated. A key that has been rotated five times, for example, has six versions (five versions created by rotations plus the initial version). This plan does not offer cross-regional resiliency.",
                   "displayname": "Standard",
                   "value": "tiered-pricing"
                 },
@@ -297,10 +293,7 @@
             },
             {
               "key": "cloud_monitoring_plan",
-              "type": "string",
               "type_metadata": "string",
-              "default_value": "none",
-              "description": "The IBM Cloud Monitoring plan to provision.",
               "options": [
                 {
                   "description": "No monitoring instance provisioned",
@@ -360,8 +353,6 @@
               "type_metadata": "string",
               "virtual": true,
               "required": true,
-              "type": "string",
-              "default_value": "standard",
               "options": [
                 {
                   "description": "Centrally manage secrets in a dedicated instance. Unlimited Secrets Manager instances per IBM Cloud account. Unlimited access to all service capabilities.",
@@ -369,8 +360,8 @@
                   "value": "standard"
                 },
                 {
-                  "description": "Try Secrets Manager at no cost for 30 days. Unlimited access to all service capabilities for a limited time. You can have one Trial instance provisioned in your account at any time. After your trial expires, functionality is removed.",
-                  "displayname": "Trial",
+                  "description": "Choose this option only if your account does not already have a Trial plan instance. Only one Trial plan instance is allowed per account. After it expires, upgrade to the Standard plan to keep using Secrets Manager.",
+                  "displayname": "Trial (30 days)",
                   "value": "trial"
                 }
               ]
@@ -398,10 +389,13 @@
               "key": "app_config_plan",
               "type": "string",
               "type_metadata": "string",
-              "default_value": "enterprise",
-              "description": "The pricing plan to use for the IBM Cloud App Configuration instance.",
               "required": false,
               "options": [
+                {
+                  "description": "This plan includes all App Configuration capabilities except configuration aggregation. Use for evaluation only. Not to be used for production. Lite plan services are deleted after 30 days of inactivity.",
+                  "displayname": "Lite (30 Days)",
+                  "value": "lite"
+                },
                 {
                   "description": "This plan includes property management and configuration aggregation. Feature flag capability is not included. There is no monthly instance cost. Aggregation is free. Pay only for property management entity IDs and API calls.",
                   "displayname": "Basic",
@@ -413,7 +407,7 @@
                   "value": "standardv2"
                 },
                 {
-                  "description": "This plan includes percentage rollout and segment targeting in addition to feature flags, property management and aggregation found in the Standard plan.",
+                  "description": "This plan includes percentage rollout and segment targeting in addition to feature flags, property management and aggregation found in the Standard plan. This is the only plan that supports Key Management Service (KMS) encryption.",
                   "displayname": "Enterprise",
                   "value": "enterprise"
                 }
@@ -423,8 +417,6 @@
               "key": "scc_workload_protection_service_plan",
               "type": "string",
               "type_metadata": "string",
-              "default_value": "graduated-tier",
-              "description": "The pricing plan to use for the IBM Cloud Security and Compliance Center Workload Protection instance.",
               "required": false,
               "options": [
                 {
@@ -434,7 +426,7 @@
                 },
                 {
                   "description": "The Free Trial plan enables you to try all of the Workload Protection capabilities available under the paid Graduated Tier plan. However, the Free Trial plan expires after 30 days, after which you have the option to upgrade to the Graduated Tier plan.",
-                  "displayname": "Free Trial",
+                  "displayname": "Free Trial (30 Days)",
                   "value": "free-trial"
                 }
               ]

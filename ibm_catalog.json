@@ -392,11 +392,6 @@
               "required": false,
               "options": [
                 {
-                  "description": "This plan includes all App Configuration capabilities except configuration aggregation. Use for evaluation only. Not to be used for production. Lite plan services are deleted after 30 days of inactivity.",
-                  "displayname": "Lite (30 Days)",
-                  "value": "lite"
-                },
-                {
                   "description": "This plan includes property management and configuration aggregation. Feature flag capability is not included. There is no monthly instance cost. Aggregation is free. Pay only for property management entity IDs and API calls.",
                   "displayname": "Basic",
                   "value": "basic"

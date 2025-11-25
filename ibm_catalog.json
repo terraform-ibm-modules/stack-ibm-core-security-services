@@ -296,11 +296,6 @@
               "type_metadata": "string",
               "options": [
                 {
-                  "description": "No monitoring instance provisioned",
-                  "displayname": "None",
-                  "value": "none"
-                },
-                {
                   "description": "Pay-as-you-go pricing based on usage.",
                   "displayname": "Graduated Tier",
                   "value": "graduated-tier"

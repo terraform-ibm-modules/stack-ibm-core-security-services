@@ -24,6 +24,6 @@ output "event_notification_instance_crn" {
 }
 
 output "key_project_instance_crn" {
-  value = module.key_protect.key_protect_crn
+  value       = module.key_protect.key_protect_crn
   description = "CRN of created Key Protect instance"
 }

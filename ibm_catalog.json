@@ -277,6 +277,7 @@
             {
               "key": "key_protect_plan",
               "type_metadata": "string",
+              "default_value": "tiered-pricing",
               "required": false,
               "options": [
                 {
@@ -294,6 +295,7 @@
             {
               "key": "cloud_monitoring_plan",
               "type_metadata": "string",
+              "default_value": "graduated-tier",
               "options": [
                 {
                   "description": "Pay-as-you-go pricing based on usage.",
@@ -344,7 +346,6 @@
             },
             {
               "key": "secrets_manager_service_plan",
-              "description": "The pricing plan to use when provisioning a Secrets Manager instance. [Learn more](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui#upgrade-instance-standard).",
               "type_metadata": "string",
               "virtual": true,
               "required": true,
@@ -384,6 +385,7 @@
             {
               "key": "app_config_plan",
               "type_metadata": "string",
+              "default_value": "enterprise",
               "required": false,
               "options": [
                 {

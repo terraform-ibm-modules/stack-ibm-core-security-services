@@ -3,7 +3,6 @@ package tests
 import (
 	"fmt"
 	"log"
-	"math/rand"
 	"os"
 	"strings"
 	"testing"
@@ -53,7 +52,7 @@ func TestProjectsFullTest(t *testing.T) {
 
 	options.StackInputs = map[string]interface{}{
 		"prefix":                         options.Prefix,
-		"region":                         validRegions[rand.Intn(len(validRegions))],
+		"region":                         validRegions[common.CryptoIntn(len(validRegions))],
 		"existing_resource_group_name":   resourceGroup,
 		"secrets_manager_service_plan":   "trial",
 		"ibmcloud_api_key":               options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
@@ -76,7 +75,7 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 	// Provision RG and EN
 	// ------------------------------------------------------------------------------------
 
-	region := validRegions[rand.Intn(len(validRegions))]
+	region := validRegions[common.CryptoIntn(len(validRegions))]
 	prefix := fmt.Sprintf("css-ext-%s", strings.ToLower(random.UniqueId()))
 	realTerraformDir := "./resources"
 	tempTerraformDir, _ := files.CopyTerraformFolderToTemp(realTerraformDir, fmt.Sprintf(prefix+"-%s", strings.ToLower(random.UniqueId())))

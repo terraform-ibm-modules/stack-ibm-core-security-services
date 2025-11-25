@@ -30,8 +30,8 @@ module "event_notifications" {
 ##############################################################################
 
 module "key_protect" {
-  source = "terraform-ibm-modules/kms-all-inclusive/ibm"
-  version= "5.5.0"
+  source            = "terraform-ibm-modules/kms-all-inclusive/ibm"
+  version           = "5.5.0"
   resource_group_id = module.resource_group.resource_group_id
-  region = var.region
+  region            = var.region
 }

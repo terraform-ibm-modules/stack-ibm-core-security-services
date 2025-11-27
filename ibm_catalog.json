@@ -403,8 +403,8 @@
             },
             {
               "key": "scc_workload_protection_service_plan",
-              "type": "string",
               "type_metadata": "string",
+              "default_value": "graduated-tier",
               "required": false,
               "options": [
                 {

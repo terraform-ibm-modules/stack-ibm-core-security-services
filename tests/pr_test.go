@@ -45,9 +45,12 @@ func TestMain(m *testing.M) {
 func TestProjectsFullTest(t *testing.T) {
 	t.Parallel()
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
-		Testing:        t,
-		Prefix:         "cs", // setting prefix here gets a random string appended to it
-		ParallelDeploy: true,
+		Testing:           t,
+		Prefix:            "cs", // setting prefix here gets a random string appended to it
+		ParallelDeploy:    true,
+		SkipTestTearDown:  true,
+		SkipUndeploy:      true,
+		SkipProjectDelete: true,
 	})
 
 	options.StackInputs = map[string]interface{}{

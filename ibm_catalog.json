@@ -72,6 +72,7 @@
         {
           "label": "Click and go",
           "name": "click-and-go",
+          "short_description": "Deploys the full security and observability stack with minimal setup.",
           "index": 1,
           "working_directory": "./",
           "iam_permissions": [

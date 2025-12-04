@@ -320,7 +320,17 @@
                   "description": "The value provided for 'existing_event_notifications_instance_crn' is not valid.",
                   "value": "^__NULL__$|^crn:(.*:){3}event-notifications:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
                 }
-              ]
+              ],
+               "custom_config": {
+                "type": "platform_resource",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "resourceType": "event-notifications",
+                  "selection": "single_select",
+                  "valueType": "crn"
+                }
+              }
             },
             {
               "key": "existing_secrets_manager_crn",
@@ -334,7 +344,17 @@
                   "description": "The value provided for 'existing_secrets_manager_crn' is not valid.",
                   "value": "^__NULL__$|^crn:(.*:){3}secrets-manager:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
                 }
-              ]
+              ],
+               "custom_config": {
+                "type": "platform_resource",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "resourceType": "secrets-manager",
+                  "selection": "single_select",
+                  "valueType": "crn"
+                }
+              }
             },
             {
               "key": "secrets_manager_service_plan",

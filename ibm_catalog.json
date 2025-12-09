@@ -310,6 +310,7 @@
             },
             {
               "key": "existing_event_notifications_instance_crn",
+              "display_name": "existing_event_notifications_instance",
               "type": "string",
               "default_value": "__NULL__",
               "description": "The CRN of existing event notification instance. If not supplied, a new instance is created.",
@@ -334,6 +335,7 @@
             },
             {
               "key": "existing_secrets_manager_crn",
+              "display_name": "existing_secrets_manager",
               "type": "string",
               "default_value": "__NULL__",
               "description": "The CRN of an existing IBM Cloud Secrets Manager instance to use in this solution. If not set, a new Secrets Manager instance is provisioned.",

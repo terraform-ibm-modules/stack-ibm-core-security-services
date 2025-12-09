@@ -335,7 +335,7 @@
             },
             {
               "key": "existing_secrets_manager_crn",
-              "display_name": "existing_secrets_manager",
+              "display_name": "existing_secrets_manager_instance",
               "type": "string",
               "default_value": "__NULL__",
               "description": "The CRN of an existing IBM Cloud Secrets Manager instance to use in this solution. If not set, a new Secrets Manager instance is provisioned.",

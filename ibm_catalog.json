@@ -262,7 +262,7 @@
                 {
                   "type": "regex",
                   "description": "The value provided for 'existing_kms_instance_crn' is not valid.",
-                  "value": "^__NULL__$|^crn:(.*:){3}(kms|hs-crypto):(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+                  "value": "^__NULL__$|^crn:v\\d:(.*:){2}(kms|hs-crypto):(.*:)([aos]\\/[\\w_\\-]+):[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
                 }
               ]
             },
@@ -319,7 +319,7 @@
                 {
                   "type": "regex",
                   "description": "The value provided for 'existing_event_notifications_instance_crn' is not valid.",
-                  "value": "^__NULL__$|^crn:(.*:){3}event-notifications:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+                  "value": "^__NULL__$|^crn:v\\d:(.*:){2}event-notifications:(.*:)([aos]\\/[\\w_\\-]+):[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
                 }
               ],
                "custom_config": {
@@ -344,7 +344,7 @@
                 {
                   "type": "regex",
                   "description": "The value provided for 'existing_secrets_manager_crn' is not valid.",
-                  "value": "^__NULL__$|^crn:(.*:){3}secrets-manager:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+                  "value": "^__NULL__$|^crn:v\\d:(.*:){2}secrets-manager:(.*:)([aos]\\/[\\w_\\-]+):[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
                 }
               ],
                "custom_config": {

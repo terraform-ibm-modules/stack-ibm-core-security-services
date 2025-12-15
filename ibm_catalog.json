@@ -322,7 +322,7 @@
                   "value": "^__NULL__$|^crn:v\\d:(.*:){2}event-notifications:(.*:)([aos]\\/[\\w_\\-]+):[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
                 }
               ],
-               "custom_config": {
+              "custom_config": {
                 "type": "platform_resource",
                 "grouping": "deployment",
                 "original_grouping": "deployment",
@@ -347,7 +347,7 @@
                   "value": "^__NULL__$|^crn:v\\d:(.*:){2}secrets-manager:(.*:)([aos]\\/[\\w_\\-]+):[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
                 }
               ],
-               "custom_config": {
+              "custom_config": {
                 "type": "platform_resource",
                 "grouping": "deployment",
                 "original_grouping": "deployment",

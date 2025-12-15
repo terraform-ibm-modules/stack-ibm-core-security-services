@@ -4,7 +4,7 @@
 
 module "resource_group" {
   source  = "terraform-ibm-modules/resource-group/ibm"
-  version = "1.4.0"
+  version = "1.4.6"
   # if an existing resource group is not set (null) create a new one using prefix
   resource_group_name          = var.resource_group == null ? "${var.prefix}-resource-group" : null
   existing_resource_group_name = var.resource_group
@@ -16,7 +16,7 @@ module "resource_group" {
 
 module "event_notifications" {
   source            = "terraform-ibm-modules/event-notifications/ibm"
-  version           = "2.10.14"
+  version           = "2.10.19"
   resource_group_id = module.resource_group.resource_group_id
   name              = "${var.prefix}-en"
   tags              = var.resource_tags
@@ -31,7 +31,7 @@ module "event_notifications" {
 
 module "key_protect" {
   source            = "terraform-ibm-modules/kms-all-inclusive/ibm"
-  version           = "5.5.0"
+  version           = "5.5.4"
   resource_group_id = module.resource_group.resource_group_id
   region            = var.region
 }

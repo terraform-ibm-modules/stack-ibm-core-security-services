@@ -16,7 +16,7 @@ module "resource_group" {
 
 module "event_notifications" {
   source            = "terraform-ibm-modules/event-notifications/ibm"
-  version           = "2.10.24"
+  version           = "2.10.25"
   resource_group_id = module.resource_group.resource_group_id
   name              = "${var.prefix}-en"
   tags              = var.resource_tags
@@ -31,7 +31,7 @@ module "event_notifications" {
 
 module "key_protect" {
   source            = "terraform-ibm-modules/kms-all-inclusive/ibm"
-  version           = "5.5.11"
+  version           = "5.5.12"
   resource_group_id = module.resource_group.resource_group_id
   region            = var.region
 }

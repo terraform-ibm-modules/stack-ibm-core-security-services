@@ -11,11 +11,10 @@ authors:
   email: bhakta@ibm.com
 
 # The release that the reference architecture describes
-version: 4.0.0
+version: 4.1.1
 
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
-# See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 deployment-url: https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-core-security-svcs-0294f96e-7314-48d1-a710-c08a541b2119-global
 
 use-case:
@@ -46,13 +45,12 @@ The following line inserts all the attribute definitions. Don't delete.
 Don't include "reference architecture" in the following title.
 Specify a title based on a use case. If the architecture has a module
 or tile in the IBM Cloud catalog, match the title to the catalog. See
-https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-guidance.
 -->
 
 # Cloud foundation for security and observability
 {: #core-security-services-pattern}
 {: toc-content-type="reference-architecture"}
-{: toc-version="4.0.0"}
+{: toc-version="4.1.1"}
 
 <!--
 The IDs, such as {: #title-id} are required for publishing this reference architecture in IBM Cloud Docs. Set unique IDs for each heading. Also include

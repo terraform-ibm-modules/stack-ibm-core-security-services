@@ -157,7 +157,7 @@
         }
       ],
       "name": "1a - Key management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.83d1bcb6-41d9-43b8-bd0b-14aea5d0f923-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.fba8aa38-b3d8-4c5e-af43-e125f02e5f15-global"
     },
     {
       "inputs": [
@@ -171,7 +171,7 @@
         }
       ],
       "name": "1b - Object storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.9510728f-c31b-425c-a94a-d1585e1f22f3-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.a188a45a-0cc1-4f5b-86e5-d126b6097eb2-global"
     },
     {
       "inputs": [
@@ -197,7 +197,7 @@
         }
       ],
       "name": "1c - Cloud Monitoring",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1245fc03-8a1a-43cd-a3d1-4e517a5d006d-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.50ebf77c-a703-404a-b803-1e5f11612bc0-global"
     },
     {
       "inputs": [
@@ -247,7 +247,7 @@
         }
       ],
       "name": "2 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c6a83431-daf8-4f8a-af81-657bcd7d859f-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c087bb90-4cba-4569-8a5a-8cdf70cd0f24-global"
     },
     {
       "inputs": [
@@ -293,7 +293,7 @@
         }
       ],
       "name": "3a - Cloud Logs for logging",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.a1c8b8b0-2fda-44b5-acf9-beb70ac742b4-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.d9c20c4d-dc28-44ff-bc71-5ce113e784a2-global"
     },
     {
       "inputs": [
@@ -351,7 +351,7 @@
         }
       ],
       "name": "3b - Cloud Logs for activity tracking",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.a1c8b8b0-2fda-44b5-acf9-beb70ac742b4-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.d9c20c4d-dc28-44ff-bc71-5ce113e784a2-global"
     },
     {
       "inputs": [
@@ -417,7 +417,7 @@
         }
       ],
       "name": "3c - App Configuration",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.6b380d3c-4259-4216-86d0-335ac5834d8a-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.0da1eb31-bbea-483d-a600-2ea105ed5018-global"
     },
     {
       "inputs": [
@@ -463,7 +463,7 @@
         }
       ],
       "name": "3d - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3bfcc0f7-6134-4ad6-b123-f1271300f578-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.86f1075b-de70-46bd-a6cd-aadfdda7e1da-global"
     },
     {
       "inputs": [
@@ -497,7 +497,7 @@
         }
       ],
       "name": "4a - Security and Compliance Center Workload Protection",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.57317030-f99f-4699-b685-59036bd70c5c-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.41d84a24-fc56-4094-9f73-265ddc7ab63b-global"
     },
     {
       "inputs": [
@@ -535,7 +535,7 @@
         }
       ],
       "name": "4b - Activity Tracker Event Routing",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b4eaef05-19ca-46b7-a9ef-13df45fe6e20-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.247af203-d8ce-43bd-b8dc-f5375d94987d-global"
     }
   ],
   "outputs": [

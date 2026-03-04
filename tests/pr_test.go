@@ -47,7 +47,7 @@ func TestProjectsFullTest(t *testing.T) {
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
 		Testing:           t,
 		Prefix:            "cs", // setting prefix here gets a random string appended to it
-		CatalogFlavorName: "click-and-go"
+		CatalogFlavorName: "click-and-go",
 		ParallelDeploy:    true,
 	})
 
@@ -110,7 +110,7 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 
 		options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
 			Testing:           t,
-			CatalogFlavorName: "click-and-go"
+			CatalogFlavorName: "click-and-go",
 			ParallelDeploy:    true,
 		})
 

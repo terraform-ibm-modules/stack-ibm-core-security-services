@@ -45,9 +45,11 @@ func TestMain(m *testing.M) {
 func TestProjectsFullTest(t *testing.T) {
 	t.Parallel()
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
-		Testing:        t,
-		Prefix:         "cs", // setting prefix here gets a random string appended to it
-		ParallelDeploy: true,
+		Testing:            t,
+		Prefix:             "cs", // setting prefix here gets a random string appended to it
+		CatalogProductName: "deploy-arch-ibm-core-security-svcs",
+		CatalogFlavorName:  "click-and-go",
+		ParallelDeploy:     true,
 	})
 
 	options.StackInputs = map[string]interface{}{
@@ -108,8 +110,10 @@ func TestProjectsExistingResourcesTest(t *testing.T) {
 		// ------------------------------------------------------------------------------------
 
 		options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
-			Testing:        t,
-			ParallelDeploy: true,
+			Testing:            t,
+			CatalogFlavorName:  "click-and-go",
+			CatalogProductName: "deploy-arch-ibm-core-security-svcs",
+			ParallelDeploy:     true,
 		})
 
 		options.StackInputs = map[string]interface{}{

@@ -80,15 +80,62 @@ The architecture is anchored by three fundamental services: {{site.data.keyword.
 
 1. {{site.data.keyword.keymanagementserviceshort}}
 
-  {{site.data.keyword.keymanagementserviceshort}} is responsible for centrally managing the lifecycle of encryption keys that are used by {{site.data.keyword.cos_full_notm}} buckets, {{site.data.keyword.secrets-manager_short}}, and event notification resources. Additionally, it can manage encryption keys for any customer workload that requires protection.
+  {{site.data.keyword.keymanagementserviceshort}} is responsible for centrally managing the lifecycle of encryption keys that are used by {{site.data.keyword.cos_full_notm}} buckets, {{site.data.keyword.secrets-manager_short}}, and event notification resources. Additionally, it can manage encryption keys for any customer workload that requires protection. To automate provisioning of {{site.data.keyword.keymanagementserviceshort}} with key rings and keys as code, you can use the [KMS All-Inclusive module](https://registry.terraform.io/modules/terraform-ibm-modules/kms-all-inclusive/ibm/latest){: external} from [Terraform IBM Modules](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim).
+
+  ```terraform
+  module "kms" {
+    source  = "terraform-ibm-modules/kms-all-inclusive/ibm"
+    version = "<version>"
+
+    resource_group_id         = "<resource_group_id>"
+    region                    = "<region>"
+    key_protect_instance_name = "<instance_name>"
+    keys = [
+      {
+        key_ring_name = "<key_ring_name>"
+        keys = [
+          {
+            key_name     = "<root_key_name>"
+            force_delete = true
+          }
+        ]
+      }
+    ]
+  }
+  ```
+  {: codeblock}
 
 2. {{site.data.keyword.secrets-manager_short}}
 
-  {{site.data.keyword.secrets-manager_short}} securely stores and manages sensitive information, including API keys, credentials, and certificates. It uses encryption keys from {{site.data.keyword.keymanagementserviceshort}} to encrypt sensitive data and to seal and unseal vaults that hold the secrets. It is preconfigured to send events to the {{site.data.keyword.en_short}} service, allowing customers to set up email or SMS notifications. Moreover, it is automatically configured to forward all API logs to the customer's logging instance.
+  {{site.data.keyword.secrets-manager_short}} securely stores and manages sensitive information, including API keys, credentials, and certificates. It uses encryption keys from {{site.data.keyword.keymanagementserviceshort}} to encrypt sensitive data and to seal and unseal vaults that hold the secrets. It is preconfigured to send events to the {{site.data.keyword.en_short}} service, allowing customers to set up email or SMS notifications. Moreover, it is automatically configured to forward all API logs to the customer's logging instance. To automate provisioning as code, you can use the [Secrets Manager module](https://registry.terraform.io/modules/terraform-ibm-modules/secrets-manager/ibm/latest){: external} from [Terraform IBM Modules](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim).
+
+  ```terraform
+  module "secrets_manager" {
+    source  = "terraform-ibm-modules/secrets-manager/ibm"
+    version = "<version>"
+
+    resource_group_id    = "<resource_group_id>"
+    region               = "<region>"
+    secrets_manager_name = "<instance_name>"
+  }
+  ```
+  {: codeblock}
 
 3. {{site.data.keyword.sysdigsecure_full_notm}}
 
-  The {{site.data.keyword.sysdigsecure_full_notm}} instance is pre-configured with Cloud Security Posture Management (CSPM) enabled using the Configuration Aggregator features from the App Configuration instance that is also provisioned as part of this solution.
+  The {{site.data.keyword.sysdigsecure_full_notm}} instance is pre-configured with Cloud Security Posture Management (CSPM) enabled using the Configuration Aggregator features from the App Configuration instance that is also provisioned as part of this solution. To automate provisioning as code, you can use the [SCC Workload Protection module](https://registry.terraform.io/modules/terraform-ibm-modules/scc-workload-protection/ibm/latest){: external} from [Terraform IBM Modules](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim).
+
+  ```terraform
+  module "workload_protection" {
+    source  = "terraform-ibm-modules/scc-workload-protection/ibm"
+    version = "<version>"
+
+    name              = "<instance_name>"
+    region            = "<region>"
+    resource_group_id = "<resource_group_id>"
+  }
+  ```
+  {: codeblock}
 
 {{site.data.keyword.cos_full_notm}} buckets are set up to receive logs from logging and alerting services. Each bucket is configured to encrypt data at rest by using encryption keys managed by {{site.data.keyword.keymanagementserviceshort}}.
 
@@ -141,3 +188,8 @@ Ensures compliance with some of the controls in the CIS IBM Cloud Foundations Be
 
 1.  Go the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external} and search for the Cloud foundation for security and observability deployable architecture.
 1.  Click the tile for the deployable architecture to open the details. The Security & compliance tab lists all of the controls that are included in the deployable architecture.
+
+## Terraform IBM Modules
+{: #tim-css}
+
+The services in this architecture are built on [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) — open-source, {{site.data.keyword.IBM_notm}}-maintained Terraform modules. The full stack source, including all module wiring and input configurations, is available in the [stack-ibm-core-security-services](https://github.com/terraform-ibm-modules/stack-ibm-core-security-services){: external} repository.

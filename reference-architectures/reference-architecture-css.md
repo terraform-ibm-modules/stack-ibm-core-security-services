@@ -189,7 +189,7 @@ Ensures compliance with some of the controls in the CIS IBM Cloud Foundations Be
 1.  Go the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external} and search for the Cloud foundation for security and observability deployable architecture.
 1.  Click the tile for the deployable architecture to open the details. The Security & compliance tab lists all of the controls that are included in the deployable architecture.
 
-## Terraform IBM Modules
+## Terraform IBM Modules (TIM)
 {: #tim-css}
 
 The services in this architecture are built on [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) — open-source, {{site.data.keyword.IBM_notm}}-maintained Terraform modules. The full stack source, including all module wiring and input configurations, is available in the [stack-ibm-core-security-services](https://github.com/terraform-ibm-modules/stack-ibm-core-security-services){: external} repository.

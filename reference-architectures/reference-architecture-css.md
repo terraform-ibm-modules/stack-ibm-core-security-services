@@ -123,7 +123,8 @@ The architecture is anchored by three fundamental services: {{site.data.keyword.
 
 3. {{site.data.keyword.sysdigsecure_full_notm}}
 
-  The {{site.data.keyword.sysdigsecure_full_notm}} instance is pre-configured with Cloud Security Posture Management (CSPM) enabled using the Configuration Aggregator features from the App Configuration instance that is also provisioned as part of this solution. To automate provisioning, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.keymanagementserviceshort}}](https://registry.terraform.io/modules/terraform-ibm-modules/kms-all-inclusive/ibm/latest){: external}.
+  The {{site.data.keyword.sysdigsecure_full_notm}} instance is pre-configured with Cloud Security Posture Management (CSPM) enabled using the Configuration Aggregator features from the App Configuration instance that is also provisioned as part of this solution.
+  
   ```terraform
   module "workload_protection" {
     source  = "terraform-ibm-modules/scc-workload-protection/ibm"

@@ -191,4 +191,4 @@ Ensures compliance with some of the controls in the CIS IBM Cloud Foundations Be
 ## Terraform IBM Modules (TIM)
 {: #tim-css}
 
-The services in this architecture are built on pre-built, open-source and enterprise-ready [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim). The full stack source, including all module wiring and input configurations, is available in the [stack-ibm-core-security-services](https://github.com/terraform-ibm-modules/stack-ibm-core-security-services){: external} repository.
+The services in this architecture are based on open-source, enterprise-ready [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim). The complete stack source, including all module wiring and input configurations, is available in the [stack-ibm-core-security-services](https://github.com/terraform-ibm-modules/stack-ibm-core-security-services) repository. {: external}

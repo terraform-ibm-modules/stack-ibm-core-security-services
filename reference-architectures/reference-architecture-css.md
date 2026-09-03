@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-09-05"
+  years: 2024, 2025, 2026
+lastupdated: "2026-09-03"
 
 subcollection: deployable-reference-architectures
 
@@ -24,6 +24,7 @@ use-case:
   - DataCompliance
   - Governance
   - GRC
+  - PlatformMonitoring
 
 industry: SoftwareAndPlatformApplications, Technology, Banking, FinancialSector
 
@@ -59,13 +60,15 @@ the toc attributes on the H1, repeating the values from the YAML header.
 
 This reference architecture summarizes the deployment and best practices on {{site.data.keyword.cloud_notm}} for setting essential security services and their associated dependencies. {{site.data.keyword.cloud_notm}}'s essential security services are crucial for ensuring robust security and compliance for cloud-based applications and data. Their primary goal is to provide a framework for secure and compliant {{site.data.keyword.cloud_notm}} workloads.
 
-Here’s a brief overview of each service:
+Here's a brief overview of each service:
 
 {{site.data.keyword.keymanagementserviceshort}}: This service provides a secure and scalable way to manage encryption keys for your cloud applications. It ensures that sensitive data is protected by managing and safeguarding cryptographic keys, facilitating compliance with industry standards and regulatory requirements.
 
 {{site.data.keyword.secrets-manager_short}}: This service helps in securely storing and managing sensitive information such as API keys, credentials, and certificates. By centralizing secret management, it reduces the risk of exposure and simplifies the process of accessing and rotating secrets, thereby enhancing the security posture.
 
 {{site.data.keyword.sysdigsecure_full_notm}}: This service offers features to protect workloads, get deep cloud and container visibility, posture management (compliance, benchmarks, CIEM), vulnerability scanning, forensics, and threat detection and blocking.
+
+{{site.data.keyword.monitoringlong_notm}}: This service collects platform metrics from the services that are provisioned as part of this deployable architecture. It enables real-time visibility into the health and performance of each service, and supports the creation of dashboards and alerts to detect and respond to issues that might impact the availability and security posture of the workload.
 
 This reference architecture showcases how these services form a foundational security layer that enhances data protection, simplifies compliance, and strengthens overall cloud security for any workload in {{site.data.keyword.cloud_notm}}.
 
@@ -80,64 +83,90 @@ The architecture is anchored by three fundamental services: {{site.data.keyword.
 
 1. {{site.data.keyword.keymanagementserviceshort}}
 
-  {{site.data.keyword.keymanagementserviceshort}} is responsible for centrally managing the lifecycle of encryption keys that are used by {{site.data.keyword.cos_full_notm}} buckets, {{site.data.keyword.secrets-manager_short}}, and event notification resources. Additionally, it can manage encryption keys for any customer workload that requires protection. To automate provisioning of {{site.data.keyword.keymanagementserviceshort}} with Key rings and Keys , you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.keymanagementserviceshort}}](https://registry.terraform.io/modules/terraform-ibm-modules/kms-all-inclusive/ibm/latest) {: external}.
+   {{site.data.keyword.keymanagementserviceshort}} is responsible for centrally managing the lifecycle of encryption keys that are used by {{site.data.keyword.cos_full_notm}} buckets, {{site.data.keyword.secrets-manager_short}}, and event notification resources. Additionally, it can manage encryption keys for any customer workload that requires protection. To automate provisioning of {{site.data.keyword.keymanagementserviceshort}} with Key rings and Keys, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.keymanagementserviceshort}}](https://registry.terraform.io/modules/terraform-ibm-modules/kms-all-inclusive/ibm/latest){: external}.
 
-  ```terraform
-  module "kms" {
-    source  = "terraform-ibm-modules/kms-all-inclusive/ibm"
-    version = "<version>"
+   ```terraform
+   module "kms" {
+     source  = "terraform-ibm-modules/kms-all-inclusive/ibm"
+     version = "<version>"
 
-    resource_group_id         = "<resource_group_id>"
-    region                    = "<region>"
-    key_protect_instance_name = "<instance_name>"
-    keys = [
-      {
-        key_ring_name = "<key_ring_name>"
-        keys = [
-          {
-            key_name     = "<root_key_name>"
-            force_delete = true
-          }
-        ]
-      }
-    ]
-  }
-  ```
-  {: codeblock}
+     resource_group_id         = "<resource_group_id>"
+     region                    = "<region>"
+     key_protect_instance_name = "<instance_name>"
+     keys = [
+       {
+         key_ring_name = "<key_ring_name>"
+         keys = [
+           {
+             key_name     = "<root_key_name>"
+             force_delete = true
+           }
+         ]
+       }
+     ]
+   }
+   ```
+   {: codeblock}
 
 2. {{site.data.keyword.secrets-manager_short}}
 
-  {{site.data.keyword.secrets-manager_short}} securely stores and manages sensitive information, including API keys, credentials, and certificates. It uses encryption keys from {{site.data.keyword.keymanagementserviceshort}} to encrypt sensitive data and to seal and unseal vaults that hold the secrets. It is preconfigured to send events to the {{site.data.keyword.en_short}} service, allowing customers to set up email or SMS notifications. Moreover, it is automatically configured to forward all API logs to the customer's logging instance. To automate provisioning , you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.secrets-manager_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/secrets-manager/ibm/latest) {: external}.
+   {{site.data.keyword.secrets-manager_short}} securely stores and manages sensitive information, including API keys, credentials, and certificates. It uses encryption keys from {{site.data.keyword.keymanagementserviceshort}} to encrypt sensitive data and to seal and unseal vaults that hold the secrets. It is preconfigured to send events to the {{site.data.keyword.en_short}} service, allowing customers to set up email or SMS notifications. Moreover, it is automatically configured to forward all API logs to the customer's logging instance. To automate provisioning, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.secrets-manager_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/secrets-manager/ibm/latest){: external}.
 
-  ```terraform
-  module "secrets_manager" {
-    source  = "terraform-ibm-modules/secrets-manager/ibm"
-    version = "<version>"
+   ```terraform
+   module "secrets_manager" {
+     source  = "terraform-ibm-modules/secrets-manager/ibm"
+     version = "<version>"
 
-    resource_group_id    = "<resource_group_id>"
-    region               = "<region>"
-    secrets_manager_name = "<instance_name>"
-  }
-  ```
-  {: codeblock}
+     resource_group_id    = "<resource_group_id>"
+     region               = "<region>"
+     secrets_manager_name = "<instance_name>"
+   }
+   ```
+   {: codeblock}
 
 3. {{site.data.keyword.sysdigsecure_full_notm}}
 
-  The {{site.data.keyword.sysdigsecure_full_notm}} instance is pre-configured with Cloud Security Posture Management (CSPM) enabled using the Configuration Aggregator features from the App Configuration instance that is also provisioned as part of this solution.
+   The {{site.data.keyword.sysdigsecure_full_notm}} instance is pre-configured with Cloud Security Posture Management (CSPM) enabled using the Configuration Aggregator features from the App Configuration instance that is also provisioned as part of this solution.
 
-  ```terraform
-  module "workload_protection" {
-    source  = "terraform-ibm-modules/scc-workload-protection/ibm"
-    version = "<version>"
+   ```terraform
+   module "workload_protection" {
+     source  = "terraform-ibm-modules/scc-workload-protection/ibm"
+     version = "<version>"
 
-    name              = "<instance_name>"
-    region            = "<region>"
-    resource_group_id = "<resource_group_id>"
-  }
-  ```
-  {: codeblock}
+     name              = "<instance_name>"
+     region            = "<region>"
+     resource_group_id = "<resource_group_id>"
+   }
+   ```
+   {: codeblock}
 
 {{site.data.keyword.cos_full_notm}} buckets are set up to receive logs from logging and alerting services. Each bucket is configured to encrypt data at rest by using encryption keys managed by {{site.data.keyword.keymanagementserviceshort}}.
+
+## IBM Cloud Monitoring
+{: #ibm-cloud-monitoring}
+
+After you deploy the architecture, you can monitor the health and performance of its services through {{site.data.keyword.monitoringlong_notm}}.
+
+### Access the monitoring instance
+{: #access-monitoring-instance}
+
+1. In the {{site.data.keyword.cloud_notm}} console, go to **Observability** > **Monitoring**.
+1. Locate the {{site.data.keyword.monitoringshort_notm}} instance that was provisioned by the deployable architecture. By default, the instance name includes the `prefix` value that you specified during deployment.
+1. Click **Open dashboard** to open the {{site.data.keyword.monitoringshort_notm}} web UI.
+
+### Use the pre-built dashboards
+{: #use-pre-built-dashboards}
+
+{{site.data.keyword.monitoringshort_notm}} provides pre-built dashboards for {{site.data.keyword.cloud_notm}} services. After platform metrics are enabled, you can access these dashboards from the **Dashboards** panel in the {{site.data.keyword.monitoringshort_notm}} UI:
+
+- **IBM Key Protect**: Monitor key operation counts, API latency, and error rates.
+- **IBM Secrets Manager**: Monitor secret access counts, rotation activity, and API request rates.
+- **IBM Cloud Object Storage**: Monitor request rates, bandwidth, and error metrics for the log archive buckets.
+
+### Terraform IBM Modules (TIM) for Cloud Monitoring
+{: #tim-cloud-monitoring}
+
+The {{site.data.keyword.monitoringlong_notm}} instance and Metrics Routing configuration in this architecture are based on the open-source [terraform-ibm-cloud-monitoring](https://registry.terraform.io/modules/terraform-ibm-modules/cloud-monitoring/ibm/latest){: external} module. The module provisions the {{site.data.keyword.monitoringshort_notm}} instance, creates a Manager access key for agent ingestion, and optionally configures IBM Cloud Metrics Routing targets, routes, and account-level settings using its `metrics_routing` submodule.
 
 ## Design concepts
 {: #design-concepts}
@@ -177,6 +206,7 @@ The following table outlines the products or services used in the architecture f
 |  | [{{site.data.keyword.secrets-manager_short}}](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started) | Certificate and Secrets Management |
 |  | [{{site.data.keyword.sysdigsecure_full_notm}}](https://cloud.ibm.com/docs/workload-protection?topic=workload-protection-getting-started) | Implement controls for secure data and workload deployments, and assess security and compliance posture |
 | Service Management | [{{site.data.keyword.monitoringlong_notm}}](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor) | Apps and operational monitoring |
+|  | [IBM Cloud Metrics Routing](https://cloud.ibm.com/docs/metrics-router?topic=metrics-router-about) | Routes platform metrics from deployed services to the {{site.data.keyword.monitoringshort_notm}} instance |
 |  | [{{site.data.keyword.logs_full_notm}}](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-getting-started) | Apps and operational logs |
 |  | [{{site.data.keyword.atracker_short}}](https://cloud.ibm.com/docs/atracker?topic=atracker-getting-started) | Audit logs |
 {: caption="Table 2. Components" caption-side="bottom"}

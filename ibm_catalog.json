@@ -30,8 +30,7 @@
         "cspm",
         "cloud security posture management",
         "config aggregator",
-        "app config",
-        "monitoring"
+        "app config"
       ],
       "short_description": "Deploy core security and other supporting services to get set up to manage the security compliance of the resources in your account.",
       "long_description": "Get IBM Cloud’s suite of core security services with a single deployment enabling you to securely manage keys and secrets and run security and compliance scans so that you always know the posture of the resources in your account. You can also take advantage of an event notification routing service that notifies you to critical events that occur in your IBM Cloud account and observability services that provide enterprise-grade monitoring and logging giving you operational visibility into the performance and health of your apps, services, and infrastructure.",

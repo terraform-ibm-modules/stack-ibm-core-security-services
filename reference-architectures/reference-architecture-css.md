@@ -11,7 +11,7 @@ authors:
   email: bhakta@ibm.com
 
 # The release that the reference architecture describes
-version: 4.1.1
+version: 4.2.20
 
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
@@ -24,7 +24,6 @@ use-case:
   - DataCompliance
   - Governance
   - GRC
-  - PlatformMonitoring
 
 industry: SoftwareAndPlatformApplications, Technology, Banking, FinancialSector
 
@@ -51,7 +50,7 @@ or tile in the IBM Cloud catalog, match the title to the catalog. See
 # Cloud foundation for security and observability
 {: #core-security-services-pattern}
 {: toc-content-type="reference-architecture"}
-{: toc-version="4.1.1"}
+{: toc-version="4.2.20"}
 
 <!--
 The IDs, such as {: #title-id} are required for publishing this reference architecture in IBM Cloud Docs. Set unique IDs for each heading. Also include
@@ -83,90 +82,81 @@ The architecture is anchored by three fundamental services: {{site.data.keyword.
 
 1. {{site.data.keyword.keymanagementserviceshort}}
 
-   {{site.data.keyword.keymanagementserviceshort}} is responsible for centrally managing the lifecycle of encryption keys that are used by {{site.data.keyword.cos_full_notm}} buckets, {{site.data.keyword.secrets-manager_short}}, and event notification resources. Additionally, it can manage encryption keys for any customer workload that requires protection. To automate provisioning of {{site.data.keyword.keymanagementserviceshort}} with Key rings and Keys, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.keymanagementserviceshort}}](https://registry.terraform.io/modules/terraform-ibm-modules/kms-all-inclusive/ibm/latest){: external}.
+  {{site.data.keyword.keymanagementserviceshort}} is responsible for centrally managing the lifecycle of encryption keys that are used by {{site.data.keyword.cos_full_notm}} buckets, {{site.data.keyword.secrets-manager_short}}, and event notification resources. Additionally, it can manage encryption keys for any customer workload that requires protection. To automate provisioning of {{site.data.keyword.keymanagementserviceshort}} with Key rings and Keys, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.keymanagementserviceshort}}](https://registry.terraform.io/modules/terraform-ibm-modules/kms-all-inclusive/ibm/latest){: external}.
 
-   ```terraform
-   module "kms" {
-     source  = "terraform-ibm-modules/kms-all-inclusive/ibm"
-     version = "<version>"
+  ```terraform
+  module "kms" {
+    source  = "terraform-ibm-modules/kms-all-inclusive/ibm"
+    version = "<version>"
 
-     resource_group_id         = "<resource_group_id>"
-     region                    = "<region>"
-     key_protect_instance_name = "<instance_name>"
-     keys = [
-       {
-         key_ring_name = "<key_ring_name>"
-         keys = [
-           {
-             key_name     = "<root_key_name>"
-             force_delete = true
-           }
-         ]
-       }
-     ]
-   }
-   ```
-   {: codeblock}
+    resource_group_id         = "<resource_group_id>"
+    region                    = "<region>"
+    key_protect_instance_name = "<instance_name>"
+    keys = [
+      {
+        key_ring_name = "<key_ring_name>"
+        keys = [
+          {
+            key_name     = "<root_key_name>"
+            force_delete = true
+          }
+        ]
+      }
+    ]
+  }
+  ```
+  {: codeblock}
 
 2. {{site.data.keyword.secrets-manager_short}}
 
-   {{site.data.keyword.secrets-manager_short}} securely stores and manages sensitive information, including API keys, credentials, and certificates. It uses encryption keys from {{site.data.keyword.keymanagementserviceshort}} to encrypt sensitive data and to seal and unseal vaults that hold the secrets. It is preconfigured to send events to the {{site.data.keyword.en_short}} service, allowing customers to set up email or SMS notifications. Moreover, it is automatically configured to forward all API logs to the customer's logging instance. To automate provisioning, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.secrets-manager_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/secrets-manager/ibm/latest){: external}.
+  {{site.data.keyword.secrets-manager_short}} securely stores and manages sensitive information, including API keys, credentials, and certificates. It uses encryption keys from {{site.data.keyword.keymanagementserviceshort}} to encrypt sensitive data and to seal and unseal vaults that hold the secrets. It is preconfigured to send events to the {{site.data.keyword.en_short}} service, allowing customers to set up email or SMS notifications. Moreover, it is automatically configured to forward all API logs to the customer's logging instance. To automate provisioning, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.secrets-manager_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/secrets-manager/ibm/latest){: external}.
 
-   ```terraform
-   module "secrets_manager" {
-     source  = "terraform-ibm-modules/secrets-manager/ibm"
-     version = "<version>"
+  ```terraform
+  module "secrets_manager" {
+    source  = "terraform-ibm-modules/secrets-manager/ibm"
+    version = "<version>"
 
-     resource_group_id    = "<resource_group_id>"
-     region               = "<region>"
-     secrets_manager_name = "<instance_name>"
-   }
-   ```
-   {: codeblock}
+    resource_group_id    = "<resource_group_id>"
+    region               = "<region>"
+    secrets_manager_name = "<instance_name>"
+  }
+  ```
+  {: codeblock}
 
 3. {{site.data.keyword.sysdigsecure_full_notm}}
 
-   The {{site.data.keyword.sysdigsecure_full_notm}} instance is pre-configured with Cloud Security Posture Management (CSPM) enabled using the Configuration Aggregator features from the App Configuration instance that is also provisioned as part of this solution.
+  The {{site.data.keyword.sysdigsecure_full_notm}} instance is pre-configured with Cloud Security Posture Management (CSPM) enabled using the Configuration Aggregator features from the App Configuration instance that is also provisioned as part of this solution.
 
-   ```terraform
-   module "workload_protection" {
-     source  = "terraform-ibm-modules/scc-workload-protection/ibm"
-     version = "<version>"
+  ```terraform
+  module "workload_protection" {
+    source  = "terraform-ibm-modules/scc-workload-protection/ibm"
+    version = "<version>"
 
-     name              = "<instance_name>"
-     region            = "<region>"
-     resource_group_id = "<resource_group_id>"
-   }
-   ```
-   {: codeblock}
+    name              = "<instance_name>"
+    region            = "<region>"
+    resource_group_id = "<resource_group_id>"
+  }
+  ```
+  {: codeblock}
 
 {{site.data.keyword.cos_full_notm}} buckets are set up to receive logs from logging and alerting services. Each bucket is configured to encrypt data at rest by using encryption keys managed by {{site.data.keyword.keymanagementserviceshort}}.
 
 ## IBM Cloud Monitoring
 {: #ibm-cloud-monitoring}
 
-After you deploy the architecture, you can monitor the health and performance of its services through {{site.data.keyword.monitoringlong_notm}}.
+{{site.data.keyword.monitoringlong_notm}} collects platform metrics from the services that are deployed as part of this architecture, enabling real-time visibility into their health and performance. IBM Cloud Metrics Routing is configured to route platform metrics to the provisioned {{site.data.keyword.monitoringshort_notm}} instance. To automate provisioning, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.monitoringlong_notm}}](https://registry.terraform.io/modules/terraform-ibm-modules/cloud-monitoring/ibm/latest){: external}.
 
-### Access the monitoring instance
-{: #access-monitoring-instance}
+  ```terraform
+  module "cloud_monitoring" {
+    source            = "terraform-ibm-modules/cloud-monitoring/ibm"
+    version           = "<version>"
 
-1. In the {{site.data.keyword.cloud_notm}} console, go to **Observability** > **Monitoring**.
-1. Locate the {{site.data.keyword.monitoringshort_notm}} instance that was provisioned by the deployable architecture. By default, the instance name includes the `prefix` value that you specified during deployment.
-1. Click **Open dashboard** to open the {{site.data.keyword.monitoringshort_notm}} web UI.
-
-### Use the pre-built dashboards
-{: #use-pre-built-dashboards}
-
-{{site.data.keyword.monitoringshort_notm}} provides pre-built dashboards for {{site.data.keyword.cloud_notm}} services. After platform metrics are enabled, you can access these dashboards from the **Dashboards** panel in the {{site.data.keyword.monitoringshort_notm}} UI:
-
-- **IBM Key Protect**: Monitor key operation counts, API latency, and error rates.
-- **IBM Secrets Manager**: Monitor secret access counts, rotation activity, and API request rates.
-- **IBM Cloud Object Storage**: Monitor request rates, bandwidth, and error metrics for the log archive buckets.
-
-### Terraform IBM Modules (TIM) for Cloud Monitoring
-{: #tim-cloud-monitoring}
-
-The {{site.data.keyword.monitoringlong_notm}} instance and Metrics Routing configuration in this architecture are based on the open-source [terraform-ibm-cloud-monitoring](https://registry.terraform.io/modules/terraform-ibm-modules/cloud-monitoring/ibm/latest){: external} module. The module provisions the {{site.data.keyword.monitoringshort_notm}} instance, creates a Manager access key for agent ingestion, and optionally configures IBM Cloud Metrics Routing targets, routes, and account-level settings using its `metrics_routing` submodule.
+    resource_group_id       = "<resource_group_id>"
+    region                  = "<region>"
+    enable_platform_metrics = true
+  }
+  ```
+  {: codeblock}
 
 ## Design concepts
 {: #design-concepts}

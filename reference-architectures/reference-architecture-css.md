@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-09-05"
+  years: 2024, 2025, 2026
+lastupdated: "2026-09-03"
 
 subcollection: deployable-reference-architectures
 
@@ -11,11 +11,10 @@ authors:
   email: bhakta@ibm.com
 
 # The release that the reference architecture describes
-version: 4.0.0
+version: 4.2.20
 
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
-# See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 deployment-url: https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-core-security-svcs-0294f96e-7314-48d1-a710-c08a541b2119-global
 
 use-case:
@@ -46,13 +45,12 @@ The following line inserts all the attribute definitions. Don't delete.
 Don't include "reference architecture" in the following title.
 Specify a title based on a use case. If the architecture has a module
 or tile in the IBM Cloud catalog, match the title to the catalog. See
-https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-guidance.
 -->
 
 # Cloud foundation for security and observability
 {: #core-security-services-pattern}
 {: toc-content-type="reference-architecture"}
-{: toc-version="4.0.0"}
+{: toc-version="4.2.20"}
 
 <!--
 The IDs, such as {: #title-id} are required for publishing this reference architecture in IBM Cloud Docs. Set unique IDs for each heading. Also include
@@ -61,13 +59,15 @@ the toc attributes on the H1, repeating the values from the YAML header.
 
 This reference architecture summarizes the deployment and best practices on {{site.data.keyword.cloud_notm}} for setting essential security services and their associated dependencies. {{site.data.keyword.cloud_notm}}'s essential security services are crucial for ensuring robust security and compliance for cloud-based applications and data. Their primary goal is to provide a framework for secure and compliant {{site.data.keyword.cloud_notm}} workloads.
 
-Here’s a brief overview of each service:
+Here's a brief overview of each service:
 
 {{site.data.keyword.keymanagementserviceshort}}: This service provides a secure and scalable way to manage encryption keys for your cloud applications. It ensures that sensitive data is protected by managing and safeguarding cryptographic keys, facilitating compliance with industry standards and regulatory requirements.
 
 {{site.data.keyword.secrets-manager_short}}: This service helps in securely storing and managing sensitive information such as API keys, credentials, and certificates. By centralizing secret management, it reduces the risk of exposure and simplifies the process of accessing and rotating secrets, thereby enhancing the security posture.
 
 {{site.data.keyword.sysdigsecure_full_notm}}: This service offers features to protect workloads, get deep cloud and container visibility, posture management (compliance, benchmarks, CIEM), vulnerability scanning, forensics, and threat detection and blocking.
+
+{{site.data.keyword.monitoringlong_notm}}: This service collects platform metrics from the services that are provisioned as part of this deployable architecture. It enables real-time visibility into the health and performance of each service, and supports the creation of dashboards and alerts to detect and respond to issues that might impact the availability and security posture of the workload.
 
 This reference architecture showcases how these services form a foundational security layer that enhances data protection, simplifies compliance, and strengthens overall cloud security for any workload in {{site.data.keyword.cloud_notm}}.
 
@@ -82,17 +82,81 @@ The architecture is anchored by three fundamental services: {{site.data.keyword.
 
 1. {{site.data.keyword.keymanagementserviceshort}}
 
-  {{site.data.keyword.keymanagementserviceshort}} is responsible for centrally managing the lifecycle of encryption keys that are used by {{site.data.keyword.cos_full_notm}} buckets, {{site.data.keyword.secrets-manager_short}}, and event notification resources. Additionally, it can manage encryption keys for any customer workload that requires protection.
+  {{site.data.keyword.keymanagementserviceshort}} is responsible for centrally managing the lifecycle of encryption keys that are used by {{site.data.keyword.cos_full_notm}} buckets, {{site.data.keyword.secrets-manager_short}}, and event notification resources. Additionally, it can manage encryption keys for any customer workload that requires protection. To automate provisioning of {{site.data.keyword.keymanagementserviceshort}} with Key rings and Keys, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.keymanagementserviceshort}}](https://registry.terraform.io/modules/terraform-ibm-modules/kms-all-inclusive/ibm/latest){: external}.
+
+  ```terraform
+  module "kms" {
+    source  = "terraform-ibm-modules/kms-all-inclusive/ibm"
+    version = "<version>"
+
+    resource_group_id         = "<resource_group_id>"
+    region                    = "<region>"
+    key_protect_instance_name = "<instance_name>"
+    keys = [
+      {
+        key_ring_name = "<key_ring_name>"
+        keys = [
+          {
+            key_name     = "<root_key_name>"
+            force_delete = true
+          }
+        ]
+      }
+    ]
+  }
+  ```
+  {: codeblock}
 
 2. {{site.data.keyword.secrets-manager_short}}
 
-  {{site.data.keyword.secrets-manager_short}} securely stores and manages sensitive information, including API keys, credentials, and certificates. It uses encryption keys from {{site.data.keyword.keymanagementserviceshort}} to encrypt sensitive data and to seal and unseal vaults that hold the secrets. It is preconfigured to send events to the {{site.data.keyword.en_short}} service, allowing customers to set up email or SMS notifications. Moreover, it is automatically configured to forward all API logs to the customer's logging instance.
+  {{site.data.keyword.secrets-manager_short}} securely stores and manages sensitive information, including API keys, credentials, and certificates. It uses encryption keys from {{site.data.keyword.keymanagementserviceshort}} to encrypt sensitive data and to seal and unseal vaults that hold the secrets. It is preconfigured to send events to the {{site.data.keyword.en_short}} service, allowing customers to set up email or SMS notifications. Moreover, it is automatically configured to forward all API logs to the customer's logging instance. To automate provisioning, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.secrets-manager_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/secrets-manager/ibm/latest){: external}.
+
+  ```terraform
+  module "secrets_manager" {
+    source  = "terraform-ibm-modules/secrets-manager/ibm"
+    version = "<version>"
+
+    resource_group_id    = "<resource_group_id>"
+    region               = "<region>"
+    secrets_manager_name = "<instance_name>"
+  }
+  ```
+  {: codeblock}
 
 3. {{site.data.keyword.sysdigsecure_full_notm}}
 
   The {{site.data.keyword.sysdigsecure_full_notm}} instance is pre-configured with Cloud Security Posture Management (CSPM) enabled using the Configuration Aggregator features from the App Configuration instance that is also provisioned as part of this solution.
 
+  ```terraform
+  module "workload_protection" {
+    source  = "terraform-ibm-modules/scc-workload-protection/ibm"
+    version = "<version>"
+
+    name              = "<instance_name>"
+    region            = "<region>"
+    resource_group_id = "<resource_group_id>"
+  }
+  ```
+  {: codeblock}
+
 {{site.data.keyword.cos_full_notm}} buckets are set up to receive logs from logging and alerting services. Each bucket is configured to encrypt data at rest by using encryption keys managed by {{site.data.keyword.keymanagementserviceshort}}.
+
+## IBM Cloud Monitoring
+{: #ibm-cloud-monitoring}
+
+{{site.data.keyword.monitoringlong_notm}} collects platform metrics from the services that are deployed as part of this architecture, enabling real-time visibility into their health and performance. IBM Cloud Metrics Routing is configured to route platform metrics to the provisioned {{site.data.keyword.monitoringshort_notm}} instance. To automate provisioning, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.monitoringlong_notm}}](https://registry.terraform.io/modules/terraform-ibm-modules/cloud-monitoring/ibm/latest){: external}.
+
+  ```terraform
+  module "cloud_monitoring" {
+    source            = "terraform-ibm-modules/cloud-monitoring/ibm"
+    version           = "<version>"
+
+    resource_group_id       = "<resource_group_id>"
+    region                  = "<region>"
+    enable_platform_metrics = true
+  }
+  ```
+  {: codeblock}
 
 ## Design concepts
 {: #design-concepts}
@@ -132,6 +196,7 @@ The following table outlines the products or services used in the architecture f
 |  | [{{site.data.keyword.secrets-manager_short}}](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started) | Certificate and Secrets Management |
 |  | [{{site.data.keyword.sysdigsecure_full_notm}}](https://cloud.ibm.com/docs/workload-protection?topic=workload-protection-getting-started) | Implement controls for secure data and workload deployments, and assess security and compliance posture |
 | Service Management | [{{site.data.keyword.monitoringlong_notm}}](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor) | Apps and operational monitoring |
+|  | [IBM Cloud Metrics Routing](https://cloud.ibm.com/docs/metrics-router?topic=metrics-router-about) | Routes platform metrics from deployed services to the {{site.data.keyword.monitoringshort_notm}} instance |
 |  | [{{site.data.keyword.logs_full_notm}}](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-getting-started) | Apps and operational logs |
 |  | [{{site.data.keyword.atracker_short}}](https://cloud.ibm.com/docs/atracker?topic=atracker-getting-started) | Audit logs |
 {: caption="Table 2. Components" caption-side="bottom"}
@@ -143,3 +208,8 @@ Ensures compliance with some of the controls in the CIS IBM Cloud Foundations Be
 
 1.  Go the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external} and search for the Cloud foundation for security and observability deployable architecture.
 1.  Click the tile for the deployable architecture to open the details. The Security & compliance tab lists all of the controls that are included in the deployable architecture.
+
+## Terraform IBM Modules (TIM)
+{: #tim-css}
+
+The services in this architecture are based on open-source, enterprise-ready [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim). The complete stack source, including all module wiring and input configurations, is available in the [Cloud foundation for security and observability](https://github.com/terraform-ibm-modules/stack-ibm-core-security-services) repository. {: external}

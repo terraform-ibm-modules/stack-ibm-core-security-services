@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025, 2026
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-10"
 
 keywords: core security services, security, key protect, secrets manager, workload protection, cloud monitoring, deployable architecture
 
